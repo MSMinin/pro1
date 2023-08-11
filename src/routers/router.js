@@ -6,9 +6,9 @@ module.exports = (app) => {
     app.use("/worldcup", wRouter);
 
     const router = require("express").Router();
-    router.get("/", (req, res) => {
+    /*router.get("/", (req, res) => {
         res.send("test");
-    })
+    })*/
 
     return router;
 }
