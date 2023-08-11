@@ -5,6 +5,6 @@ router.get("/", (req, res) => {
     res.render("main");
 });
 
-router.post("/login", pCtrl.process.loginChk)
+router.post("/login", pCtrl.process.loginChk);
 
 module.exports = router;
