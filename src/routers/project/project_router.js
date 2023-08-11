@@ -7,8 +7,6 @@ router.get("/", (req, res) => {
 
 router.post("/login", pCtrl.process.loginChk)
 
-router.get("/memberinfo", (req, res)=>{
-    res.render("memberinfo");
-});
+
 
 module.exports = router;
