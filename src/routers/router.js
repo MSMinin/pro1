@@ -5,7 +5,11 @@ module.exports = (app) => {
 
     const router = require("express").Router();
     router.get("/", (req, res) => {
-        res.send("test");
+        if(req.session.username) {
+            res.cookie("isLogin", true);
+        }
+        console.log(req.session.username)
+        res.render("main", {username : req.session.username, list : req.session.username});
     })
 
     return router;

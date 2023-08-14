@@ -1,25 +1,34 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script>
+        list = () => {
+            msg = `<fieldset><%-include('./list_view.ejs')%></fieldset>`;
+            document.querySelector("#mainDiv").innerHTML = msg;
+        }
+    </script>
+    
     <style>
-        fieldset {border-radius: 10px;}
+        button a {text-decoration: none; color: black;}
+        fieldset {border-radius: 10px; }
+        #loginField {width: 130px;}
         li {list-style-type: none; font-size: 15px; padding-left: 5px;}
         #main { text-align: center; }
         #wrap { display: flex; width: 1000px; height: 100%; margin: auto;}
-        #wrap div:nth-child(2) { background: blue; margin-left: 60px; width: 700px;}
-        #wrap div:nth-child(3) { background: green; margin-left: 40px; width: 200px;}
+        #mainDiv {margin-left: 40px; width: 700px;}
+        #contentDiv { background: green; margin-left: 40px; width: 200px;}
         nav a {text-decoration: none; color: black;}
         #nn {text-align: center;}
         nav label {padding: 0 100px 0 100px;}
     </style>
+
 </head>
 <body>
     <h1 id="main">메인 페이지</h1>
-   
     <hr>
     <header>
         <nav id="nn">
@@ -39,8 +48,8 @@
 
             <nav id="nav">
                 <fieldset>
-                    <a href="#">회원정보</a>
-                        <li>정보관리</li>
+                    회원정보
+                        <li><a href="/project/list_view">정보관리</a></li>
                         <li></li>
                         <li></li>
                     <a href="#">게시판</a><br>
@@ -60,12 +69,12 @@
             </nav>
         </div>
 
-        <div>
+        <div id="mainDiv">
             <fieldset>메인</fieldset>
 
         </div>
 
-        <div>
+        <div id="contentDiv">
            <fieldset>
             컨텐츠 바로가기
         </fieldset> 

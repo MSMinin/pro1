@@ -1,15 +1,15 @@
 const express = require("express");
 const app = express();
 
-// const bodyParser = require("body-parser");
-// app.use(bodyParser.urlencoded({extended: true}));
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({extended: true}));
 
-// const session = require("express-session");
-// const sessionConfig = require("./config/cookie_session/cookie_session_config");
-// app.use(session(sessionConfig.sessionConfig));
+const session = require("express-session");
+const sessionConfig = require("./config/cookie_session/cookie_session_config");
+app.use(session(sessionConfig.sessionConfig));
 
-// const cookieParser = require("cookie-parser");
-// app.use(cookieParser());
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
 
 const router = require("./src/routers/router")(app);
 
