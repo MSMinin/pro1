@@ -1,0 +1,21 @@
+<style>
+    #world {margin-left: 25%; border: solid 1px;}
+</style>
+
+<body>
+    <%-include("../default/header.ejs")%>
+
+        <table border="1" id="world">
+            <tr style="text-align: center; border: solid 1px black;">
+                <th>근거리</th>
+                <th>장거리</th>
+            </tr>
+            <tr style="text-align: center;">
+                <td><a href="/worldcup/start/<%= nlist[0].N_ID %>"><img src="/worldcup/image/<%=files[0]%>" width="400px" height="400px"/></a></td>
+                <td><a href="/worldcup/start/<%= nlist[1].N_ID %>"><img src="/worldcup/image/<%=files[1]%>" width="400px" height="400px"/></a></td>
+            </tr>
+        </table>
+
+    <%-include("../default/footer.ejs")%>
+</body>
+</html>
