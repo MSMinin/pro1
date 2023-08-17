@@ -1,0 +1,129 @@
+    <header>
+      <div id="main01">
+        <dd id="title">
+          <fieldset>
+            여행사 페이지
+          </fieldset>
+        </dd>
+        <dd id="login">
+          <fieldset>
+            <div class="btn-group"><!--로그인 전 버튼, 로그인 시 토글버튼(세션 if문 작성)-->
+              <%if(username) {%>
+                <label class="btn btn-outline-secondary btn-sm" for="btn-check-2-outlined" type="button" 
+                style="background-color: white; color: black;"><%=username%></label>
+                <label class="btn btn-outline-secondary btn-sm" for="btn-check-2-outlined" type="button" 
+                style="background-color: white; color: black;"><a href="/member/logout">로그아웃</a></label>
+                <button class="btn btn-sm dropdown-toggle" for="option6" type="button" data-bs-toggle="dropdown"
+                  aria-expanded="false" style="background-color: white; color: black;">
+                </button>
+              
+                <ul class="dropdown-menu">
+                  <li><a href="/member/infoChk/<%=username%>">회원정보</a></li>
+                  <li>자유게시판</li>
+                  <li>체험게시판</li>
+                  <li>후기 게시판</li>
+                </ul>
+              <%} else {%>
+                  <button class="btn btn-outline-secondary btn-sm" for="btn-check-2-outlined" type="button" 
+                      style="background-color: white; color: black;"><a href="/member/loginForm">login</a></button>
+                      <button class="btn btn-sm dropdown-toggle" for="option6" type="button" data-bs-toggle="dropdown"
+                     aria-expanded="false" style="background-color: white; color: black;">
+                  </button>
+                
+                  <ul class="dropdown-menu">
+                    <li>자유게시판</li>
+                    <li>체험게시판</li>
+                    <li>후기 게시판</li>
+                  </ul>
+              <% } %>
+                    
+            </div>
+          </fieldset>
+        </dd>
+      </div>
+    </header>
+      <nav id="li01" class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
+        <ul> 
+          <li class="dropdown">
+            <span class="dropbtn">
+              <a href="#">국내패키지</a>
+            </span>
+            <div class="dropdown-content">
+              <dd>
+                <p><a href="">전주</a></p>
+                <p><a href="">대구</a></p>
+                <p><a href="">부산</a></p>
+                <p><a href="">대전</a></p>
+              </dd>
+              </dl>
+            </div>
+          </li>
+        </ul>
+        <ul> 
+          <li class="dropdown">
+            <span class="dropbtn">
+              <a href="#">해외패키지</a>
+            </span>
+            <div class="dropdown-content">
+              <dd>
+                <p><a href="">일본</a></p>
+                <p><a href="">유럽</a></p>
+                <p><a href="">중국</a></p>
+                <p><a href="">동아시아</a></p>
+              </dd>
+              </dl>
+            </div>
+            </li>
+          </ul>
+          <ul> 
+            <li class="dropdown">
+              <span class="dropbtn">
+                <a href="#">항공</a>
+              </span>
+              <div class="dropdown-content">
+                <dl><dt>국내</dt>
+                <dd>
+                  <p><a href="">제주도</a></p>
+                  <p><a href="">부산</a></p>
+                  <p><a href="">서울</a></p>
+                  <p><a href="">인천</a></p>
+                </dd>
+                </dl>
+                <dl><dt>해외</dt>
+                <dd>
+                  <p><a href="">일본</a></p>
+                  <p><a href="">유럽</a></p>
+                  <p><a href="">중국</a></p>
+                  <p><a href="">동아시아</a></p>
+                </dd>
+                </dl>
+              </div>
+            </li>
+          </ul>
+          <ul> 
+            <li class="dropdown">
+              <span class="dropbtn">
+                <a href="#">호텔</a>
+              </span>
+              <div class="dropdown-content">
+                <dl><dt>국내</dt>
+                <dd>
+                  <p><a href="">제주도</a></p>
+                  <p><a href="">부산</a></p>
+                  <p><a href="">서울</a></p>
+                  <p><a href="">인천</a></p>
+                </dd>
+              </dl>
+              <dl><dt>해외</dt>
+              <dd>
+                <p><a href="">일본</a></p>
+                  <p><a href="">유럽</a></p>
+                  <p><a href="">중국</a></p>
+                  <p><a href="">동아시아</a></p>
+              </dd>
+              </dl>
+            </div>
+          </li>
+        </ul>
+      </nav> 
+      
