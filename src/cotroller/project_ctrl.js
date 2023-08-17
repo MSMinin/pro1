@@ -2,7 +2,7 @@ const pService = require("../service/project_service");
 
 const view = {
     loginForm : (req, res) => {
-        res.render("member/loginForm");
+        res.render("member/loginForm", {username : req.session.username});
     },
 
     registerForm : (req, res) => {
@@ -131,9 +131,9 @@ const process  = {
         //res.send(msgPack.msg);
     }
 }
-const views ={
+const cView ={
     tokyo : async(req, res) => {
-        res.render("country/tokyo");
+        res.render("country/tokyo", {username : req.session.username});
     },
     osaka : async(req, res) => {
         res.render("country/osaka");
@@ -143,4 +143,4 @@ const views ={
     }
 }
 
-module.exports = {view, process, views}
+module.exports = {view, process, cView}
