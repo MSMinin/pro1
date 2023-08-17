@@ -181,6 +181,4 @@ const worldcupCheck = async(params) => {
     return msgPack;
 }
 
-module.exports = {loginChk, register, logout, infoChk, modifyForm, modify, deleteM, findId, chgPassword, chgPwd,
-    worldcupCheck, getList}
-
+module.exports = {loginChk, register, logout, infoChk, modifyForm, modify, deleteM, findId, chgPassword, chgPwd, worldcupCheck, getList}
