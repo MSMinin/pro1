@@ -1,0 +1,30 @@
+<h3>boardList.ejs</h3>
+
+전체 글 개수 : <%= totalContent %>
+<table border="1">
+    <tr>
+        <th>글 번호</th> <th>제목</th> <th> 등록날짜</th> <th>조회수</th> <th>좋아요</th>
+    </tr>
+
+    <% list.forEach( data => { %>
+        <tr>
+            <td><%=data.NUM %></td>
+            <td>
+                <a href="/content/<%= data.NUM %>"> <%= data.TITLE %></a>
+            </td>
+            <td><%= data.DATES %></td>
+            <td><%= data.VIEWCOUNT %></td>
+            <td><%= data.LIKES %></td>
+        </tr>
+    <% }); 
+    if (list.length == 0) {%>
+        <tr>
+            <td colspan="5"> <b>등록된 글이 없습니다</b> </td>
+        </tr>
+    <% } %>
+    
+    <tr>
+        <td><a href="/write_form">글 등록</a></td>
+    </tr>
+        
+</table>

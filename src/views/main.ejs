@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset {border-radius: 10px;}
+        li {list-style-type: none; font-size: 15px; padding-left: 5px;}
+        #main { text-align: center; }
+        #wrap { display: flex; width: 1000px; height: 100%; margin: auto;}
+        #wrap div:nth-child(2) { background: blue; margin-left: 60px; width: 700px;}
+        #wrap div:nth-child(3) { background: green; margin-left: 40px; width: 200px;}
+        nav a {text-decoration: none; color: black;}
+        #nn {text-align: center;}
+        nav label {padding: 0 100px 0 100px;}
+    </style>
+</head>
+<body>
+    <h1 id="main">메인 페이지</h1>
+   
+    <hr>
+    <header>
+        <nav id="nn">
+            <label>asd</label>
+            <label>asdf</label>
+            <label>asssss</label>
+            <label>asdsd</label>
+        </nav> 
+    </header>
+    
+    <hr>
+    <div id="wrap">
+        
+        <div id="loginform">
+            <%-include("./login.ejs")%>
+            <br>
+
+            <nav id="nav">
+                <fieldset>
+                    <a href="#">회원정보</a>
+                        <li>정보관리</li>
+                        <li></li>
+                        <li></li>
+                    <a href="/boardList">게시판</a><br>
+                        <li>자유게시판</li>
+                        <li></li>
+                        <li></li>
+                    <a href="#">컨텐츠</a><br>
+                        <li>m</li>
+                        <li></li>
+                        <li></li>
+                    <a href="#">자유 게시판</a><br>
+                    <a href="#">자유 게시판</a><br>
+                    <a href="#">자유 게시판</a><br>
+                    <a href="#">자유 게시판</a><br>
+                    <a href="#">자유 게시판</a><br>
+                </fieldset>
+            </nav>
+        </div>
+
+        <div>
+            <fieldset>메인</fieldset>
+
+        </div>
+
+        <div>
+           <fieldset>
+            컨텐츠 바로가기
+        </fieldset> 
+        </div>
+    </div>
+    
+    <footer>
+        <hr>
+        안녕하세용
+    </footer>
+</body>
+</html>

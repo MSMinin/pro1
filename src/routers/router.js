@@ -1,7 +1,8 @@
 module.exports = (app) => {
     const MRouter = require("./member/member_router");
     const wRouter = require("./worldcup/worldcup_router");
-    const cRouter = require("./country/country_router")
+    const cRouter = require("./country/country_router");
+    const pRouter = require("./project/project_router");
 
     app.use("/member", MRouter);
     app.use("/worldcup", wRouter);
@@ -12,6 +13,8 @@ module.exports = (app) => {
     app.get("/", (req, res) => {
         res.render("index", {username : req.session.username});
     })
+
+    app.use("/", pRouter);
 
     return router;
 }
