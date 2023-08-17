@@ -10,7 +10,6 @@ const pageRead = {
         console.log("ser content: ", num);
         await pageUpdate.upHit(num);
         const data = await pDAO.daoRead.content(num);
-        if(data.likes)
         console.log("ser content : ", data);
         return data.rows[0];
     },
@@ -94,6 +93,7 @@ const pageUpdate = {
 const getList = ()=>{
     return pDAO.getList();
 }
+
 const worldcupCheck = async(params) => {
     let msg="", url="", msgPack={};
     if(list.num1==="near"){
@@ -137,6 +137,6 @@ const worldcupCheck = async(params) => {
     //msgPack.msg = getMessage(msg, url);
     return msgPack;
 }
-module.exports = {pageRead, pageInsert, pageModify, pageDelete, pageUpdate,
-                    worldcupCheck, getList};
+
+module.exports = {pageRead, pageInsert, pageModify, pageDelete, pageUpdate, worldcupCheck, getList};
 

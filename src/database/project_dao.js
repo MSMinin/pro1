@@ -7,12 +7,11 @@ const daoRead = {
     boardList : async () => {
         const con = await oracledb.getConnection(dbConfig);
         const result = await con.execute("select * from proboard order by num desc");
-        console.log("dao", result);
         return result;
     },
     content : async (num) =>{
         const con = await oracledb.getConnection(dbConfig);
-        const sql = `select * from proBoard where num='${num}'`;
+        const sql = `select * from proBoard where num=${num}`;
         const data = await con.execute(sql);
         return data;
     },

@@ -41,6 +41,7 @@ const views = {
 
 
 var list = {};
+
 const process  = {
     loginChk : async (req, res) => {
         console.log("req.body : ", req.body);
@@ -73,9 +74,6 @@ const process  = {
         const msg = await ser.pageUpdate.likes(req.body.num, result);
         res.redirect("/content/"+ req.body.num);
     },
-
-
-    // dh
     worldcup1 : async(req, res) => {
         //console.log("w1 : ",req.params["id"]);
         list.NUM1 = req.params["id"];
