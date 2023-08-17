@@ -134,6 +134,7 @@ chgPwd = async (body) => {
 const getList = async ()=>{
     const con = await oracledb.getConnection(dbConfig);
     const sql = `select * from worldcup`;
+    console.log((await con.execute(sql)).rows);
     return (await con.execute(sql)).rows;
 }
 
