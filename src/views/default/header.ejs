@@ -1,3 +1,4 @@
+
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -14,6 +15,7 @@
       #wrap { display: flex; width: 100%; height: 100%; margin: auto;}
       #wrap>#banner { background: blue; margin-left: 60px; width: 70%; height: 50%;}
       #wrap>#test { background: green; margin-left: 40px; width: 20%; height: 50%;}
+
       nav a {text-decoration: none; color: black;}
       #nn {text-align: center; }
       nav label {padding: 0 100px 0 100px; }
@@ -40,77 +42,71 @@
       .dropdown:hover .dropdown-content {
           display: block; 
       }
-  </style>
-  <script>
-       var bDisplay01 = true; 
-       
-       function doDisplay01(){    
-          con = document.getElementById("myDIV01");    
-          if(con.style.display=='none'){       
-              con.style.display = 'block';    
-          }else{       
-              con.style.display = 'none';    
-          } 
-          
-      } 
-      var bDisplay02 = true; 
-      
-      function doDisplay02(){    
-          con = document.getElementById("myDIV02");    
-          if(con.style.display=='none'){       
-              con.style.display = 'block';    
-          }else{       
-              con.style.display = 'none';    
-          } 
-      }
+</style>
+<script>
+  var bDisplay01 = true; 
+  
+  function doDisplay01(){    
+     con = document.getElementById("myDIV01");    
+     if(con.style.display=='none'){       
+         con.style.display = 'block';    
+     }else{       
+         con.style.display = 'none';    
+     } 
+     
+ } 
+ var bDisplay02 = true; 
+ 
+ function doDisplay02(){    
+     con = document.getElementById("myDIV02");    
+     if(con.style.display=='none'){       
+         con.style.display = 'block';    
+     }else{       
+         con.style.display = 'none';    
+     } 
+ }
 
-  </script>
+</script>
 
-</head>
-    <header>
-      <div id="main01">
-        <dd id="title">
-          <fieldset>
-            여행사 페이지
-          </fieldset>
-        </dd>
-        <dd id="login">
-          <fieldset>
-            <div class="btn-group">
-              <%if(username) {%>
-                <label class="btn btn-outline-secondary btn-sm" for="btn-check-2-outlined" type="button" 
+<div id="main01">
+  <dd id="title">
+      여행사 페이지
+  </dd>
+  <dd id="login">
+      <div class="btn-group"><!--로그인 전 버튼, 로그인 시 토글버튼(세션 if문 작성)-->
+        <%if(username) {%>
+          <label class="btn btn-outline-secondary btn-sm" for="btn-check-2-outlined" type="button" 
                 style="background-color: white; color: black;"><%=username%></label>
-                <label class="btn btn-outline-secondary btn-sm" for="btn-check-2-outlined" type="button" 
+          <label class="btn btn-outline-secondary btn-sm" for="btn-check-2-outlined" type="button" 
                 style="background-color: white; color: black;"><a href="/member/logout">로그아웃</a></label>
-                <button class="btn btn-sm dropdown-toggle" for="option6" type="button" data-bs-toggle="dropdown"
+          <button class="btn btn-sm dropdown-toggle" for="option6" type="button" data-bs-toggle="dropdown"
                   aria-expanded="false" style="background-color: white; color: black;">
-                </button>
+          </button>
               
-                <ul class="dropdown-menu">
-                  <li><a href="/member/infoChk/<%=username%>">회원정보</a></li>
-                  <li>자유게시판</li>
-                  <li>체험게시판</li>
-                  <li>후기 게시판</li>
-                </ul>
-              <%} else {%>
-                  <button class="btn btn-outline-secondary btn-sm" for="btn-check-2-outlined" type="button" 
+          <ul class="dropdown-menu">
+            <li><a href="/member/infoChk/<%=username%>">회원정보</a></li>
+            <li>자유게시판</li>
+            <li>체험게시판</li>
+            <li>후기 게시판</li>
+          </ul>
+        <%} else {%>
+          <button class="btn btn-outline-secondary btn-sm" for="btn-check-2-outlined" type="button" 
                       style="background-color: white; color: black;"><a href="/member/loginForm">login</a></button>
-                      <button class="btn btn-sm dropdown-toggle" for="option6" type="button" data-bs-toggle="dropdown"
+          <button class="btn btn-sm dropdown-toggle" for="option6" type="button" data-bs-toggle="dropdown"
                      aria-expanded="false" style="background-color: white; color: black;">
-                  </button>
+          </button>
                 
-                  <ul class="dropdown-menu">
-                    <li>자유게시판</li>
-                    <li>체험게시판</li>
-                    <li>후기 게시판</li>
-                  </ul>
-              <% } %>
+          <ul class="dropdown-menu">
+            <li>자유게시판</li>
+            <li>체험게시판</li>
+            <li>후기 게시판</li>
+          </ul>
+        <% } %>
                     
-            </div>
-          </fieldset>
-        </dd>
       </div>
-    </header>
+  </dd>
+</div>
+
       <nav id="li01" class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
         <ul> 
           <li class="dropdown">
@@ -135,7 +131,7 @@
             </span>
             <div class="dropdown-content">
               <dd>
-                <p><a href="">일본</a></p>
+                <p><a href="/country/tokyo">일본</a></p>
                 <p><a href="">유럽</a></p>
                 <p><a href="">중국</a></p>
                 <p><a href="">동아시아</a></p>
@@ -147,51 +143,15 @@
           <ul> 
             <li class="dropdown">
               <span class="dropbtn">
-                <a href="#">항공</a>
+                <a href="https://www.koreanair.com/">항공</a>
               </span>
-              <div class="dropdown-content">
-                <dl><dt>국내</dt>
-                <dd>
-                  <p><a href="">제주도</a></p>
-                  <p><a href="">부산</a></p>
-                  <p><a href="">서울</a></p>
-                  <p><a href="">인천</a></p>
-                </dd>
-                </dl>
-                <dl><dt>해외</dt>
-                <dd>
-                  <p><a href="">일본</a></p>
-                  <p><a href="">유럽</a></p>
-                  <p><a href="">중국</a></p>
-                  <p><a href="">동아시아</a></p>
-                </dd>
-                </dl>
-              </div>
             </li>
           </ul>
           <ul> 
             <li class="dropdown">
               <span class="dropbtn">
-                <a href="#">호텔</a>
+                <a href="/worldcup/1">여행지 월드컵</a>
               </span>
-              <div class="dropdown-content">
-                <dl><dt>국내</dt>
-                <dd>
-                  <p><a href="">제주도</a></p>
-                  <p><a href="">부산</a></p>
-                  <p><a href="">서울</a></p>
-                  <p><a href="">인천</a></p>
-                </dd>
-              </dl>
-              <dl><dt>해외</dt>
-              <dd>
-                <p><a href="">일본</a></p>
-                  <p><a href="">유럽</a></p>
-                  <p><a href="">중국</a></p>
-                  <p><a href="">동아시아</a></p>
-              </dd>
-              </dl>
-            </div>
           </li>
         </ul>
       </nav> 
