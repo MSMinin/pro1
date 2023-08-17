@@ -81,4 +81,13 @@ const daoDelete = {
     }
 }
 
-module.exports = {daoRead, daoInsert, daoDelete, daoUpdate};
+
+// dh
+const getList = async()=>{
+    const con = await oracledb.getConnection(dbConfig);
+    const sql = `select * from worldcup`;
+    return (await con.execute(sql)).rows;
+}
+
+module.exports = {daoRead, daoInsert, daoDelete, daoUpdate, getList};
+

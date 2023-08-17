@@ -23,6 +23,8 @@ router.get("/delete/:num", pCtrl.process.delete);
 
 router.post("/likes", pCtrl.process.likes);
 
-router.post("/login", pCtrl.process.loginChk)
+router.post("/login", pCtrl.process.loginChk);
+
+
 
 module.exports = router;
