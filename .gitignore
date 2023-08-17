@@ -15,6 +15,9 @@
 ### Java ###
 # Compiled class file
 *.class
+*.js
+*.css
+*.svg
 
 # Log file
 *.log
