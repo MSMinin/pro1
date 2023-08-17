@@ -1,0 +1,14 @@
+<% console.log(list) %>
+<h3>현재 회원가입한 ID리스트입니다.</h3>
+<script>
+    sizeUp = () => {
+        window.resizeTo(450, 300);
+    }
+</script>
+<table border="1">
+    <% for(var i =0; i < list.length; i++) { %>
+        <tr>
+           <td><%= i+1 %>. ID</td> <td><a href="/member/chgPwdForm/<%= list[i].ID %>" onclick="sizeUp()"><%= list[i].ID %></a></td>
+        </tr>
+    <% } %>
+</table>

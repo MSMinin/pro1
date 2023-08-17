@@ -1,0 +1,38 @@
+<script>
+    registerForm = () => {
+        const opt = "width=450, height=300, top=100, left=500"; 
+        window.open("/member/registerForm","",opt); 
+    } 
+    findPwd = () => {
+        const opt = "width=300, height=200, top=100, left=500"; 
+        window.open("/member/find","",opt); 
+    }
+</script>
+
+<style>
+    #main{margin: auto; width: 50%;}
+    #id { margin: 10 10 0 10; width: 100%; margin-bottom: 30px; height: 5%; text-align: center;}
+    #pwd { margin: 10 0  10 10; width: 100%; height: 5%; text-align: center;}
+    fieldset {border-radius: 10px;}
+    .right { color: gray; font-size: 13px; width: 50%; margin: auto;}
+    #float{float: right; }
+    .find {cursor: pointer;}
+
+    #login {width: 25%; margin: auto; display: block;}
+   
+</style>
+<div id = "main" >
+    <fieldset>
+        <form action="/member/login" method="post">
+            <div class="right">
+                <input type="text" id = "id" name="id" placeholder="아이디"><br>
+                <input type="password" id = "pwd" name = "pwd" placeholder="비밀번호"><br>
+                <div id = "float">
+                    <a class = "find" onclick="findPwd()">아이디 찾기 및 비밀번호 변경</a> |
+                    <a class = "find"  onclick="registerForm()">회원가입</a><br>
+                </div>
+            </div>
+                <input id = "login" type="submit" value="로그인">
+        </form>
+    </fieldset>
+</div>

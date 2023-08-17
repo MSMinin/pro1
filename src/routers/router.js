@@ -1,15 +1,21 @@
 module.exports = (app) => {
-    const pRouter = require("./project/project_router");
+    const MRouter = require("./member/member_router");
     const wRouter = require("./worldcup/worldcup_router");
+    const cRouter = require("./country/country_router")
 
     app.use("/", pRouter);
+    app.use("/member", MRouter);
     app.use("/worldcup", wRouter);
+    app.use("/country", cRouter);
 
     const router = require("express").Router();
-    
-    router.get("/", (req, res) => {
-        res.render("main");
-    });
 
+    // router.get("/", (req, res) => {
+    //     res.render("main");
+    // });
+
+    app.get("/", (req, res) => {
+        res.render("index", {username : req.session.username});
+    })
     return router;
 }
