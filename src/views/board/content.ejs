@@ -1,0 +1,47 @@
+<h3>content.ejs</h3>
+<table border="1">
+    <tr>
+        <th>글 번호</th> <td><%= result.NUM %></td>
+    </tr>
+
+    <tr>
+        <th>글 작성자</th> <td><%= result.ID %></td>
+    </tr>
+    <tr>
+        <th>조회수</th> <td><%= result.VIEWCOUNT%></td>
+    </tr>
+    <tr>
+        <th>좋아요</th> <td><%= result.LIKES%></td>
+    </tr>
+    <tr>
+        <th>제목</th> <td><%= result.TITLE %></td>
+    </tr>
+    <tr>
+        <th>내용</th> <td><%= result.CONTENT %></td>
+    </tr>
+</table>
+
+<!--좋아요 기능-->
+<span id="click">♡</span><br>
+
+<form action="/likes" method="post">
+    <input type="submit" name="likes" onclick="likeCount()" value= "좋아요">
+    <input type="hidden" value="<%= result.NUM%>" name="num">
+</form>
+
+    <script>
+        function likeCount(){
+            var click = document.getElementById('click');
+            if(click.innerText == "♡"){
+                click.innerText = "♥";
+            }else {
+                click.innerText = "♡";
+            }
+        }
+    </script>
+
+
+<a href="/modify_form/<%= result.NUM %>" method="get"><input type="submit" name="modify" value="수정"></a>
+<a href="/delete/<%= result.NUM %>" method="get"><input type="submit" name="delete" value="삭제"></a><br><br>
+
+<a href="/boardList" method="get">목록으로 돌아가기</a><br>

@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 
-// const bodyParser = require("body-parser");
-// app.use(bodyParser.urlencoded({extended: true}));
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({extended: true}));
 
 // const session = require("express-session");
 // const sessionConfig = require("./config/cookie_session/cookie_session_config");
