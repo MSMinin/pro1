@@ -137,8 +137,19 @@ const getList = async ()=>{
     console.log((await con.execute(sql)).rows);
     return (await con.execute(sql)).rows;
 }
+const getHtml = async (num)=>{
+    const con = await oracledb.getConnection(dbConfig);
+    const sql = `select * from cAdd where n_id='${num}'`;
+    let result;
+    try{
+        result =  await con.execute(sql, num);
+    }catch(err){
+        console.log(err);
+    }
+    return result;
+}
 
-module.exports = { loginChk, register, infoChk,modifyForm, modify, deleteM, findId, chgPassword, chgPwd, getList };
+module.exports = { loginChk, register, infoChk,modifyForm, modify, deleteM, findId, chgPassword, chgPwd, getList, getHtml};
 
 
 

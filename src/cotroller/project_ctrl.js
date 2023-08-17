@@ -1,4 +1,5 @@
 const pService = require("../service/project_service");
+const cService = require("../service/country_service");
 
 const view = {
     loginForm : (req, res) => {
@@ -104,8 +105,9 @@ const process  = {
         //console.log("w2 list : ",list);
         const nlist = await pService.getList();
         console.log("w2 : ",nlist);
+        const fileList = fs.readdirSync("./src/image");
         if(req.params["id"]==="nature"){
-            res.render("worldcup/worldcup3", {nlist, username : req.session.username});
+            res.render("worldcup/worldcup3", {nlist, username : req.session.username, files:fileList});
         }else{
             res.render("worldcup/worldcup4", {nlist, username : req.session.username});
         }
@@ -133,12 +135,15 @@ const process  = {
 }
 const cView ={
     tokyo : async(req, res) => {
+        const weather = await cService.getHtml(2);
         res.render("country/tokyo", {username : req.session.username});
     },
     osaka : async(req, res) => {
+        const weather = await cService.getHtml();
         res.render("country/osaka", {username : req.session.username});
     },
     sapporo : async(req, res) => {
+        const weather = await cService.getHtml();
         res.render("country/sapporo", {username : req.session.username});
     }
 }
