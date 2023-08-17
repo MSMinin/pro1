@@ -2,7 +2,7 @@ const pService = require("../service/project_service");
 
 const view = {
     loginForm : (req, res) => {
-        res.render("member/loginForm");
+        res.render("member/loginForm", {username : req.session.username});
     },
 
     registerForm : (req, res) => {
