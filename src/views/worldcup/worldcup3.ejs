@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        section {margin: 0% 20% ;padding: 5% 20%;}
+    </style>
 </head>
 <body>
-    <a href="/worldcup/3/<%= nlist[0].NUM3 %>"><img src="../../image/오로라.jpeg"></a>
-    <a href="/worldcup/3/<%= nlist[1].NUM3 %>"><img src="../../image/오로라.jpeg"></a>
-    산/바다
+    <header>
+        <%-include("../default/header.ejs")%>
+    </header>
+    <section>
+        <a href="/worldcup/3/<%= nlist[0].NUM3 %>"><img src="../../image/오로라.jpeg"></a>
+        <a href="/worldcup/3/<%= nlist[1].NUM3 %>"><img src="../../image/오로라.jpeg"></a><br>
+        산/바다
+    </section>
 </body>
 </html>

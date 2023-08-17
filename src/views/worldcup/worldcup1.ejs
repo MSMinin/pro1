@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        section {margin: 0% 20% ;padding: 5% 20%;}
+    </style>
 </head>
 <body>
-    
-<a href="/worldcup/1/<%= nlist[0].NUM1 %>"><img src="../../image/오로라.jpeg"></a>
-<a href="/worldcup/1/<%= nlist[4].NUM1 %>"><img src="../../image/오로라.jpeg"></a>
- 
-근거리/장거리
+    <header>
+        <%-include("../default/header.ejs")%>
+    </header>
+    <section>
+        <a href="/worldcup/1/<%= nlist[0].NUM1 %>"><img src="../../image/오로라.jpeg"></a>
+        <a href="/worldcup/1/<%= nlist[4].NUM1 %>"><img src="../../image/오로라.jpeg"></a><br>
+        근거리/장거리
+    </section>
+
 </body>
 </html>

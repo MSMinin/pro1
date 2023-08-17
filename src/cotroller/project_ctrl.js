@@ -16,7 +16,7 @@ const view = {
     worldcup1 : async(req, res) => {
         const nlist = await pService.getList();
         //console.log("nlist : ",nlist);
-        res.render("worldcup/worldcup1", {nlist});
+        res.render("worldcup/worldcup1", {nlist, username : req.session.username});
     },
 
     worldcup2 : (req, res) => {
@@ -95,7 +95,7 @@ const process  = {
         list.NUM1 = req.params["id"];
         //console.log("w1 list : ",list);
         const nlist = await pService.getList();
-        res.render("worldcup/worldcup2", {nlist});
+        res.render("worldcup/worldcup2", {nlist, username : req.session.username});
     },
 
     worldcup2 : async(req, res) => {
@@ -105,9 +105,9 @@ const process  = {
         const nlist = await pService.getList();
         console.log("w2 : ",nlist);
         if(req.params["id"]==="nature"){
-            res.render("worldcup/worldcup3", {nlist});
+            res.render("worldcup/worldcup3", {nlist, username : req.session.username});
         }else{
-            res.render("worldcup/worldcup4", {nlist});
+            res.render("worldcup/worldcup4", {nlist, username : req.session.username});
         }
     },
 
@@ -136,10 +136,10 @@ const cView ={
         res.render("country/tokyo", {username : req.session.username});
     },
     osaka : async(req, res) => {
-        res.render("country/osaka");
+        res.render("country/osaka", {username : req.session.username});
     },
     sapporo : async(req, res) => {
-        res.render("country/sapporo");
+        res.render("country/sapporo", {username : req.session.username});
     }
 }
 
