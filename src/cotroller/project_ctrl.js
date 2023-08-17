@@ -131,5 +131,16 @@ const process  = {
         //res.send(msgPack.msg);
     }
 }
+const views ={
+    tokyo : async(req, res) => {
+        res.render("country/tokyo");
+    },
+    osaka : async(req, res) => {
+        res.render("country/osaka");
+    },
+    sapporo : async(req, res) => {
+        res.render("country/sapporo");
+    }
+}
 
-module.exports = {view, process}
+module.exports = {view, process, views}
