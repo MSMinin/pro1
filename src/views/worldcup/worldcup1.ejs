@@ -1,15 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<style>
+    #world {margin-left: 25%; border: solid 1px;}
+</style>
+
 <body>
-    
-<a href="/worldcup/1/<%= nlist[0].NUM1 %>"><img src="../../image/오로라.jpeg"></a>
-<a href="/worldcup/1/<%= nlist[4].NUM1 %>"><img src="../../image/오로라.jpeg"></a>
- 
-근거리/장거리
+    <%-include("../default/header.ejs")%>
+
+        <table border="1" id="world">
+            <tr style="text-align: center; border: solid 1px black;">
+                <th>근거리</th>
+                <th>장거리</th>
+            </tr>
+            <tr style="text-align: center;">
+                <td><a href="/worldcup/start/<%= nlist[0].N_ID %>"><img src="/worldcup/image/<%=files[0]%>" width="400px" height="400px"/></a></td>
+                <td><a href="/worldcup/start/<%= nlist[1].N_ID %>"><img src="/worldcup/image/<%=files[1]%>" width="400px" height="400px"/></a></td>
+            </tr>
+        </table>
+
+    <%-include("../default/footer.ejs")%>
 </body>
 </html>
