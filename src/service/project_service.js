@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const pDAO = require("../database/project_dao");  
 
 loginChk = async (body) => {
@@ -22,13 +21,6 @@ loginChk = async (body) => {
     }
         msgPack.msg = getMessage(msg, url);
         return msgPack;
-}
-
-getMessage = (msg, url) => {
-    return `<script>
-                alert('${msg}');
-                location.href = '${url}';
-            </script>`
 }
 
 register = async (body) => {
@@ -120,10 +112,10 @@ chgPwd = async (body) => {
         url = "/member/infoChk/" + body.id;
         num = 1;
     }
-    return getMessage(msg, url, num);
+    return getMessage1(msg, url, num);
 }
 
-getMessage = (msg, url, num) => {
+const getMessage1 = (msg, url, num) => {
     return `<script>
                 alert('${msg}');
                 location.href = '${url}';
@@ -181,12 +173,6 @@ const worldcupCheck = async(params) => {
     //msgPack.msg = getMessage(msg, url);
     return msgPack;
 }
-
-module.exports = {loginChk, register, logout, infoChk, modifyForm, modify, deleteM, findId, chgPassword, chgPwd,
-    worldcupCheck, getList}
-
-=======
-const pDAO = require("../database/project_dao");
 
 const pageRead = {
     boardList : async () =>{
@@ -276,5 +262,5 @@ const pageUpdate = {
     }
 }
 
-module.exports = {pageRead, pageInsert, pageModify, pageDelete, pageUpdate};
->>>>>>> minji
+module.exports = {loginChk, register, logout, infoChk, modifyForm, modify, deleteM, findId, chgPassword, chgPwd,
+    worldcupCheck, getList, pageRead, pageInsert, pageModify, pageDelete, pageUpdate};

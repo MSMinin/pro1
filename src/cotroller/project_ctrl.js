@@ -208,5 +208,3 @@ const cView ={
 }
 
 module.exports = {view, process, cView}
-
-
