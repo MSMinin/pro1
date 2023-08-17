@@ -1,0 +1,20 @@
+<script>
+    registerForm = () => {
+        const opt = "width=450, height=300, top=100, left=500"; 
+        window.open("/member/registerForm","",opt); 
+    } 
+    findPwd = () => {
+        const opt = "width=300, height=200, top=100, left=500"; 
+        window.open("/member/find","",opt); 
+    }
+</script>
+
+<fieldset>
+<form action="/member/login" method="post">
+    <input type="text" name="id" placeholder="input id"><br>
+    <input type="password" name = "pwd" placeholder="input password"><br>
+    <input type="submit" value="로그인"><button type="button" onclick="findPwd()">아이디 찾기 및 비밀번호 변경</button><br>
+    <button type="button" onclick="registerForm()">회원가입</button>
+</form>
+
+</fieldset>

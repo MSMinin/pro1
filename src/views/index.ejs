@@ -1,3 +1,4 @@
+<%console.log(username)%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,6 +65,7 @@
               con.style.display = 'none';    
           } 
       }
+
   </script>
 
 </head>
@@ -78,15 +80,37 @@
       <dd id="login">
         <fieldset>
           <div class="btn-group"><!--로그인 전 버튼, 로그인 시 토글버튼(세션 if문 작성)-->
-            <button class="btn btn-outline-secondary btn-sm" for="btn-check-2-outlined" type="button" style="background-color: white; color: black;">login</button>
-            <button class="btn btn-sm dropdown-toggle" for="option6" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white; color: black;">
-              <%=  %><!--로그인한 사람 이름-->
-            </button>
-            <ul class="dropdown-menu">
-              <li>자유게시판</li>
-              <li>체험게시판</li>
-              <li>후기 게시판</li>
-            </ul>
+            <%if(username) {%>
+              <label class="btn btn-outline-secondary btn-sm" for="btn-check-2-outlined" type="button" 
+              style="background-color: white; color: black;"><%=username%></label>
+              <label class="btn btn-outline-secondary btn-sm" for="btn-check-2-outlined" type="button" 
+              style="background-color: white; color: black;"><a href="/member/logout">로그아웃</a></label>
+              <button class="btn btn-sm dropdown-toggle" for="option6" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false" style="background-color: white; color: black;">
+              </button>
+            
+              <ul class="dropdown-menu">
+                <li><a href="/member/infoChk/<%=username%>">회원정보</a></li>
+                <li>자유게시판</li>
+                <li>체험게시판</li>
+                <li>후기 게시판</li>
+              </ul>
+            <%} else {%>
+                <button class="btn btn-outline-secondary btn-sm" for="btn-check-2-outlined" type="button" 
+                    style="background-color: white; color: black;"><a href="/member/loginForm">login</a></button>
+                    <button class="btn btn-sm dropdown-toggle" for="option6" type="button" data-bs-toggle="dropdown"
+                   aria-expanded="false" style="background-color: white; color: black;">
+                </button>
+              
+                <ul class="dropdown-menu">
+                  <li>자유게시판</li>
+                  <li>체험게시판</li>
+                  <li>후기 게시판</li>
+                </ul>
+            <% } %>
+            
+
+            
           </div>
         </fieldset>
       </dd>
