@@ -32,7 +32,10 @@ const view = {
     login : (req, res) => {
         res.render("login");
     },
-    
+    image : (req, res) => {
+        let filePath = `./src/image/${req.params.fileName}`;
+        res.download(filePath);
+    }
 }
 
 var list = {};
