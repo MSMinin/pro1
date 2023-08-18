@@ -9,19 +9,11 @@
       #main01 {width: 100%; height: 150px; display:flex; flex-flow:row;}
       #main01>#title{ text-align: center; padding: 7%; width: 80%;}
       #main01>#login{width: 20%;}
-      fieldset {border-radius: 10px;}
       a { text-decoration: none; color: black;}
       li {list-style-type: none; font-size: 15px; padding-left: 1px; text-align: left;}
-      #wrap { display: flex; width: 100%; height: 100%; margin: auto;}
-      #wrap>#banner { background: blue; margin-left: 60px; width: 70%; height: 50%;}
-      #wrap>#test { background: green; margin-left: 40px; width: 20%; height: 50%;}
-
       nav a {text-decoration: none; color: black;}
-      #nn {text-align: center; }
       nav label {padding: 0 100px 0 100px; }
       
-      #li01{ display: flex; flex-flow: row wrap; 
-          text-align: center; justify-content: space-around; }
       .dropdown{
           position : relative;
           display : inline-block;
@@ -38,7 +30,7 @@
           width: 100px; height: 20px; 
           margin: auto;
       }
-      
+
       .dropdown:hover .dropdown-content {
           display: block; 
       }
@@ -114,38 +106,79 @@
         국내패키지
       </button>
       <ul class="dropdown-menu dropdown-menu-info">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><a class="dropdown-item" href="#">1</a></li>
+        <li><a class="dropdown-item" href="#">2</a></li>
+        <li><a class="dropdown-item" href="#">3</a></li>
       </ul>
     </li>
     <li class="nav-item dropdown">
       <button class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         해외패키지
       </button>
-      <ul class="dropdown-menu dropdown-menu-info">
+      <ul class="dropdown-content dropdown-content">
+          <li>
+            <div class="btn-group dropend">
+              <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="dropdown-item" href="#">일본</a>
+              </button>
+              <ul class="dropdown-menu dropdown-menu">
+                <li>
+                  <div class="btn">
+                    <a class="dropdown-item" href="/country/tokyo">도쿄</a><hr>
+                    <a class="dropdown-item" href="/country/osaka">오사카</a><hr>
+                    <a class="dropdown-item" href="/country/sapporo">삿포로</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
         <li>
           <div class="btn-group dropend">
-            <div class="btn-group dropend">
-              <button type="button" class="btn btn-info text-black">
-                <a href="/country/tokyo">일본</a>
-              </button>
-              <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                <span class="visually-hidden">Toggle Dropend</span>
-              </button>
-              <ul class="dropdown-menu">
-                <li>
-                  <button type="button" class="btn btn-info text-black">
-                    <a href="/country/tokyo">일본</a>
-                  </button>
-                </li>
+            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="dropdown-item" href="#">유럽</a>
+            </button>
+            <ul class="dropdown-menu dropdown-menu">
+              <li>
+                <div class="btn">
+                  <a class="dropdown-item" href="/country/tokyo">1</a><hr>
+                    <a class="dropdown-item" href="/country/osaka">2</a>
+                </div>
+              </li>
             </ul>
           </div>
         </li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li>
+          <div class="btn-group dropend">
+            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="dropdown-item" href="#">중국</a>
+            </button>
+            <ul class="dropdown-menu dropdown-menu">
+              <li>
+                <div class="btn">
+                  <a class="dropdown-item" href="/country/tokyo">1</a><hr>
+                    <a class="dropdown-item" href="/country/osaka">2</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="btn-group dropend">
+            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="dropdown-item" href="#">동아시아</a>
+            </button>
+            <ul class="dropdown-menu dropdown-menu">
+              <li>
+                <div class="btn">
+                  <a class="dropdown-item" href="/country/tokyo">1</a><hr>
+                    <a class="dropdown-item" href="/country/osaka">2</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
       </ul>
-    </li>
+    <li>
     <button class="btn btn-info">
       <a href="https://www.koreanair.com/">항공</a>
     </button>
@@ -161,100 +194,3 @@
     </button>
   </div>
 </nav>
-
-      <nav id="li01" class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
-        <ul> 
-          <li class="dropdown">
-            <span class="dropbtn">
-              <a href="#">국내패키지</a>
-            </span>
-            <div class="dropdown-content">
-              <dd>
-                <p><a href="">전주</a></p>
-                <p><a href="">대구</a></p>
-                <p><a href="">부산</a></p>
-                <p><a href="">대전</a></p>
-              </dd>
-            </div>
-          </li>
-        </ul>
-        <ul class="dropdown"> 
-          <div class="dropdown-center">
-            <button class="btn btn-info dropdown-toggle text-black" data-bs-toggle="dropdown" aria-expanded="false">
-              해외패키지
-            </button>
-          <div class="dropdown-content">
-            <li>
-              <div class="btn-group dropend">
-                <button type="button" class="btn btn-info text-black">
-                  <a href="/country/tokyo">일본</a>
-                </button>
-                <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                  <span class="visually-hidden">Toggle Dropend</span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li>
-                    <button type="button" class="btn btn-info text-black">
-                      <a href="/country/tokyo">일본</a>
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button" class="btn btn-info text-black">
-                      <a href="/country/tokyo">일본</a>
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button" class="btn btn-info text-black">
-                      <a href="/country/tokyo">일본</a>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="btn-group dropend">
-                <button type="button" class="btn btn-secondary">
-                  <a href="/country/tokyo">유럽</a>
-                </button>
-                <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                  <span class="visually-hidden">Toggle Dropend</span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a href="/country/tokyo">유럽</a></li>
-                  <li><a href="/country/tokyo">유럽</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="btn-group dropend">
-                <button type="button" class="btn btn-secondary">
-                  <a href="/country/tokyo">중국</a>
-                </button>
-                <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                  <span class="visually-hidden">Toggle Dropend</span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a href="/country/tokyo">중국</a></li>
-                  <li><a href="/country/tokyo">중국</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="btn-group dropend">
-                <button type="button" class="btn btn-secondary">
-                  <a href="/country/tokyo">동아시아</a>
-                </button>
-                <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                  <span class="visually-hidden">Toggle Dropend</span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a href="/country/tokyo">동아시아</a></li>
-                  <li><a href="/country/tokyo">동아시아</a></li>
-                </ul>
-              </div>
-            </li>
-          </div>
-        </ul>
-      </nav> 
-      <hr>
-      
