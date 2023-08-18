@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const pDAO = require("../database/project_dao");
 
 const pageRead = {
@@ -20,15 +19,6 @@ const pageRead = {
         console.log( totalContent );
         return totalContent.rows[0]['COUNT(*)'];
     }
-}
-
-const getMessage = (msg, url)=> {
-    console.log("getMessage", msg);
-
-    return `<script>
-                alert("${msg}");
-                location.href="${url}"
-            </script>`;
 }
 
 const pageInsert = {
@@ -88,10 +78,6 @@ const pageUpdate = {
         await pDAO.daoUpdate.likes(num, like);
     }
 }
-
-module.exports = {pageRead, pageInsert, pageModify, pageDelete, pageUpdate};
-=======
-const pDAO = require("../database/project_dao");  
 
 loginChk = async (body) => {
     let member = await pDAO.loginChk(body.id);
@@ -275,6 +261,5 @@ const worldcupCheck = async(params) => {
 }
 
 module.exports = {loginChk, register, logout, infoChk, modifyForm, modify, deleteM, findId, chgPassword, chgPwd,
-    worldcupCheck, getList}
+    worldcupCheck, getList, pageRead, pageInsert, pageModify, pageDelete, pageUpdate}
 
->>>>>>> moonsm

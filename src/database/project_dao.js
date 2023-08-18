@@ -1,5 +1,4 @@
 const oracledb = require("oracledb");
-<<<<<<< HEAD
 const dbConfig = require("../../../pro1/config/database/db_config");
 oracledb.outFormat = oracledb.OBJECT;
 oracledb.autoCommit = true;
@@ -81,15 +80,6 @@ const daoDelete = {
         }
     }
 }
-
-module.exports = {daoRead, daoInsert, daoDelete, daoUpdate};
-=======
-const dbConfig = require("../../config/database/db_config");
-const { chgPwdForm } = require("../service/project_service");
-
-
-oracledb.autoCommit = true;
-oracledb.outFormat = oracledb.OBJECT;
 
 loginChk = async (id) => {
     const con = await oracledb.getConnection(dbConfig);
@@ -223,9 +213,5 @@ const getList = async ()=>{
     return (await con.execute(sql)).rows;
 }
 
-module.exports = { loginChk, register, infoChk,modifyForm, modify, deleteM, findId, chgPassword, chgPwd, getList };
-
-
-
-
->>>>>>> moonsm
+module.exports = { loginChk, register, infoChk,modifyForm, modify, deleteM, findId, chgPassword, chgPwd, getList
+                    ,daoRead, daoInsert, daoDelete, daoUpdate };
