@@ -4,6 +4,7 @@ const cService = require("../service/country_service");
 const fs = require("fs");
 const fileList = fs.readdirSync("./src/image");
 const fileList2 = fs.readdirSync("./src/image/country");
+const fileList3 = fs.readdirSync("./src/views/data1/images");
 
 const view = {
     loginForm : (req, res) => {
@@ -240,5 +241,14 @@ const cView ={
         res.render("country/jeonju", {username : req.session.username, files : fileList2});
     },
 }
+const banner={
+    index : (req, res) => {
+        res.render("index", {username : req.session.username,files : fileList3});
+    },
+    image : (req, res) => {
+        let filePath = `./src/views/data1/images/${req.params.fileName}`;
+        res.download(filePath);
+    }
+}
 
-module.exports = {view, process, cView}
+module.exports = {view, process, cView, banner}
