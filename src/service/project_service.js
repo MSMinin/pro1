@@ -37,7 +37,7 @@ register = async (body) => {
         url = '/member/registerForm';
         num = 0;
     }
-    return getMessage(msg, url, num);
+    return getMessage1(msg, url, num);
 }
 
 logout = (req, res) => {
@@ -114,10 +114,18 @@ chgPwd = async (body) => {
         url = "/member/infoChk/" + body.id;
         num = 1;
     }
-    return getMessage(msg, url, num);
+    return getMessage1(msg, url, num);
 }
 
-
+getMessage1 = (msg, url, num) => {
+    return `<script>
+                alert('${msg}');
+                location.href = '${url}';
+                if(${num} == 1) {
+                    window.close();
+                }
+            </script>`
+}
 
 
 const getList = ()=>{
@@ -168,16 +176,6 @@ const worldcupCheck = async(params) => {
     return msgPack;
 }
 
-getMessage = (msg, url, num) => {
-    return `<script>
-                alert('${msg}');
-                location.href = '${url}';
-                if(${num} == 1) {
-                    window.close();
-                }
-            </script>`
-}
-
 getMessage = (msg, url) => {
     return `<script>
                 alert('${msg}');
@@ -185,4 +183,4 @@ getMessage = (msg, url) => {
             </script>`
 }
 
-module.exports = {getList, worldcupCheck, register};
+module.exports = {getList, worldcupCheck, register, loginChk};
