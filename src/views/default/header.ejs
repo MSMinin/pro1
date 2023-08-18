@@ -157,7 +157,11 @@
           <ul> 
             <li class="dropdown">
               <span class="dropbtn">
-                <a href="/boardList">게시판</a>
+                <%if(username) {%>
+                  <a href="/boardList">게시판</a>
+                <%} else {%>
+                  <a href="/member/loginForm">게시판</a>
+                <% } %>
               </span>
           </li>
         </ul>

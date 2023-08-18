@@ -35,7 +35,7 @@ register = async (body) => {
         url = '/member/registerForm';
         num = 0;
     }
-    return getMessage1(msg, url, num);
+    return getMessage(msg, url, num);
 }
 
 logout = (req, res) => {
@@ -112,7 +112,7 @@ chgPwd = async (body) => {
         url = "/member/infoChk/" + body.id;
         num = 1;
     }
-    return getMessage1(msg, url, num);
+    return getMessage(msg, url, num);
 }
 
 getMessage = (msg, url, num) => {
