@@ -18,11 +18,10 @@
 
 <!--<form action ="/write" method="post" enctype="multipart/form-data">-->
 <form action ="/write" method="post">
-    <input type="hidden" name="id">
-    
-    제목 : 
+    <input type="hidden" name="id" value="<%= username %>">
+    제목 :<br>
         <input type="text" name="title" placeholder="input title"><br><br>
-    내용 : <br>
-    <textarea style="resize: none;" rows="20" cols="100" name="content" placeholder="글 작성해주세여"></textarea><br>
-    <input type="submit" value="등록">
+    내용 :<br>
+        <textarea style="resize: none;" rows="20" cols="100" name="content" placeholder="글 작성해주세여"></textarea><br>
+        <input type="submit" value="등록">
 </form>

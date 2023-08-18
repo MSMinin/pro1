@@ -184,34 +184,6 @@ const process  = {
 
     loginChk : async (req, res) => {
         console.log("req.body : ", req.body);
-    },
-    write : async (req, res) => {
-        console.log("ctrl write: ", req.body);
-        const msg = await pService.pageInsert.write(req.body);
-        res.send(msg);
-    },
-    modify : async (req, res) => {
-        console.log("ctrl modify", req.body);
-        const msg = await pService.pageModify.modify(req.body);
-        res.send(msg);
-    },
-    delete : async (req, res)=> {
-        console.log("ctrl delete", req.params.num);
-        const msg = await pService.pageDelete.delete(req.params.num);
-        res.send(msg);
-    },
-    likes : async (req, res)=>{
-        console.log("ctrl likes", req.body.likes);
-        console.log("ctrl likes", req.body.num);
-
-        var like= req.body.like;
-        if(like === "좋아요"){
-            result = 1;
-        }else {
-            result = 0;
-        }
-        const msg = await pService.pageUpdate.likes(req.body.num, result);
-        res.redirect("/content/"+ req.body.num);
     }
 }
 const cView ={

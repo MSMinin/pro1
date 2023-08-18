@@ -9,19 +9,11 @@
       #main01 {width: 100%; height: 150px; display:flex; flex-flow:row;}
       #main01>#title{ text-align: center; padding: 7%; width: 80%;}
       #main01>#login{width: 20%;}
-      fieldset {border-radius: 10px;}
       a { text-decoration: none; color: black;}
       li {list-style-type: none; font-size: 15px; padding-left: 1px; text-align: left;}
-      #wrap { display: flex; width: 100%; height: 100%; margin: auto;}
-      #wrap>#banner { background: blue; margin-left: 60px; width: 70%; height: 50%;}
-      #wrap>#test { background: green; margin-left: 40px; width: 20%; height: 50%;}
-
       nav a {text-decoration: none; color: black;}
-      #nn {text-align: center; }
       nav label {padding: 0 100px 0 100px; }
       
-      #li01{ display: flex; flex-flow: row wrap; 
-          text-align: center; justify-content: space-around; }
       .dropdown{
           position : relative;
           display : inline-block;
@@ -38,7 +30,7 @@
           width: 100px; height: 20px; 
           margin: auto;
       }
-      
+
       .dropdown:hover .dropdown-content {
           display: block; 
       }
@@ -84,62 +76,124 @@
   </dd>
 </div>
 
-      <nav id="li01" class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
-        <ul> 
-          <li class="dropdown">
-            <span class="dropbtn">
-              <a href="#">국내패키지</a>
-            </span>
-            <div class="dropdown-content">
-              <dd>
-                <p><a href="/country/seoul">서울</a></p>
-                <p><a href="/country/gangneung">강릉</a></p>
-                <p><a href="/country/daegu">대구</a></p>
-                <p><a href="/country/gyeongju">경주</a></p>
-                <p><a href="/country/jeonju">전주</a></p>
-                <p><a href="/country/busan">부산</a></p>
-              </dd>
-              </dl>
+<nav class="navbar navbar-expand-lg navbar-info bg-info" style="padding: 0% 5% ;">
+  <div class="container-fluid">
+    <li class="nav-item dropdown">
+      <button class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        국내패키지
+      </button>
+      <ul class="dropdown-content">
+        <li>
+          <div>
+            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
+                <a href="/country/seoul">서울</a>
+            </button>
+            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
+                <a href="/country/gangneung">강릉</a>
+            </button>
+            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
+                <a href="/country/daegu">대구</a>
+            </button>
+            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
+                <a href="/country/gyeongju">경주</a>
+            </button>
+            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
+                <a href="/country/jeonju">전주</a>
+            </button>
+            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
+                <a href="/country/busan">부산</a>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <button class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        해외패키지
+      </button>
+      <ul class="dropdown-content dropdown-content">
+          <li>
+            <div class="btn-group dropend">
+              <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="dropdown-item" href="#">일본</a>
+              </button>
+              <ul class="dropdown-menu dropdown-menu">
+                <li>
+                  <div class="btn">
+                    <a class="dropdown-item" href="/country/tokyo">도쿄</a><hr>
+                    <a class="dropdown-item" href="/country/osaka">오사카</a><hr>
+                    <a class="dropdown-item" href="/country/sapporo">삿포로</a>
+                  </div>
+                </li>
+              </ul>
+
             </div>
           </li>
-        </ul>
-        <ul> 
-          <li class="dropdown">
-            <span class="dropbtn">
-              <a href="#">해외패키지</a>
-            </span>
-            <div class="dropdown-content">
-              <dd>
-                <p><a href="/country/tokyo">일본</a></p>
-                <p><a href="">유럽</a></p>
-                <p><a href="">중국</a></p>
-                <p><a href="">동아시아</a></p>
-              </dd>
-              </dl>
-            </div>
-            </li>
-          </ul>
-          <ul> 
-            <li class="dropdown">
-              <span class="dropbtn">
-                <a href="https://www.koreanair.com/">항공</a>
-              </span>
-            </li>
-          </ul>
-          <ul> 
-            <li class="dropdown">
-              <span class="dropbtn">
-                <a href="/worldcup/start">여행지 월드컵</a>
-              </span>
-            </li>
-          </ul>
-          <ul> 
-            <li class="dropdown">
-              <span class="dropbtn">
-                <a href="/boardList">게시판</a>
-              </span>
-          </li>
-        </ul>
-      </nav> 
-      <hr>
-      
+        <li>
+          <div class="btn-group dropend">
+            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="dropdown-item" href="#">유럽</a>
+            </button>
+            <ul class="dropdown-menu dropdown-menu">
+              <li>
+                <div class="btn">
+                  <a class="dropdown-item" href="/country/tokyo">1</a><hr>
+                    <a class="dropdown-item" href="/country/osaka">2</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="btn-group dropend">
+            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="dropdown-item" href="#">중국</a>
+            </button>
+            <ul class="dropdown-menu dropdown-menu">
+              <li>
+                <div class="btn">
+                  <a class="dropdown-item" href="/country/tokyo">1</a><hr>
+                    <a class="dropdown-item" href="/country/osaka">2</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="btn-group dropend">
+            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="dropdown-item" href="#">동아시아</a>
+            </button>
+            <ul class="dropdown-menu dropdown-menu">
+              <li>
+                <div class="btn">
+                  <a class="dropdown-item" href="/country/tokyo">1</a><hr>
+                    <a class="dropdown-item" href="/country/osaka">2</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    <li>
+    <li>
+      <button class="btn btn-info">
+        <a href="https://www.koreanair.com/">항공</a>
+      </button>
+    </li>
+    <li>
+      <button class="btn btn-info">
+        <a href="/worldcup/start">여행지 월드컵</a>
+      </button>
+    </li>
+    <li>
+      <button class="btn btn-info">
+        <%if(username) {%>
+          <a href="/boardList">게시판</a>
+        <%} else {%>
+          <a href="/member/loginForm">게시판</a>
+        <% } %>
+      </button>
+    </li>
+  </div>
+</nav>

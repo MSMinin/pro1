@@ -116,6 +116,7 @@ chgPwd = async (body) => {
 }
 
 getMessage = (msg, url, num) => {
+
     return `<script>
                 alert('${msg}');
                 location.href = '${url}';
@@ -133,4 +134,3 @@ const getList = ()=>{
 
 
 module.exports = {loginChk, register, logout, infoChk, modifyForm, modify, deleteM, findId, chgPassword, chgPwd, getList}
-
