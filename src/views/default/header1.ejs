@@ -107,61 +107,6 @@
   </dd>
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-info bg-info">
-  <div class="container-fluid">
-    <li class="nav-item dropdown">
-      <button class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        국내패키지
-      </button>
-      <ul class="dropdown-menu dropdown-menu-info">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
-    </li>
-    <li class="nav-item dropdown">
-      <button class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        해외패키지
-      </button>
-      <ul class="dropdown-menu dropdown-menu-info">
-        <li>
-          <div class="btn-group dropend">
-            <div class="btn-group dropend">
-              <button type="button" class="btn btn-info text-black">
-                <a href="/country/tokyo">일본</a>
-              </button>
-              <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                <span class="visually-hidden">Toggle Dropend</span>
-              </button>
-              <ul class="dropdown-menu">
-                <li>
-                  <button type="button" class="btn btn-info text-black">
-                    <a href="/country/tokyo">일본</a>
-                  </button>
-                </li>
-            </ul>
-          </div>
-        </li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
-    </li>
-    <button class="btn btn-info">
-      <a href="https://www.koreanair.com/">항공</a>
-    </button>
-    <button class="btn btn-info">
-      <a href="/worldcup/start">여행지 월드컵</a>
-    </button>
-    <button class="btn btn-info">
-      <%if(username) {%>
-        <a href="/boardList">게시판</a>
-      <%} else {%>
-        <a href="/member/loginForm">게시판</a>
-      <% } %>
-    </button>
-  </div>
-</nav>
-
       <nav id="li01" class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
         <ul> 
           <li class="dropdown">
@@ -254,6 +199,31 @@
               </div>
             </li>
           </div>
+        </ul>
+          <ul> 
+            <li class="dropdown">
+              <span class="dropbtn">
+                <a href="https://www.koreanair.com/">항공</a>
+              </span>
+            </li>
+          </ul>
+          <ul> 
+            <li class="dropdown">
+              <span class="dropbtn">
+                <a href="/worldcup/start">여행지 월드컵</a>
+              </span>
+            </li>
+          </ul>
+          <ul> 
+            <li class="dropdown">
+              <span class="dropbtn">
+                <%if(username) {%>
+                  <a href="/boardList">게시판</a>
+                <%} else {%>
+                  <a href="/member/loginForm">게시판</a>
+                <% } %>
+              </span>
+          </li>
         </ul>
       </nav> 
       <hr>
