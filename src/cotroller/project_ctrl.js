@@ -122,11 +122,6 @@ const process  = {
         const nlist = await pService.getList();
         console.log("w2 : ",nlist);
         const fileList = fs.readdirSync("./src/image");
-        if(req.params["id"]==="nature"){
-            res.render("worldcup/worldcup3", {nlist, username : req.session.username, files:fileList});
-        }else{
-            res.render("worldcup/worldcup4", {nlist, username : req.session.username});
-        }
         if(req.params.id == 3) {
             res.render("worldcup/worldcup3_1", {nlist, files : fileList, username : req.session.username});
         }else if(req.params.id  == 4) {
