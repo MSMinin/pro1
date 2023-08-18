@@ -17,7 +17,6 @@ const view = {
     find : (req, res) => {
         res.render("member/find");
     },
-
     startWorldCup : async(req, res) => {
         const nlist = await pService.getList();
         //console.log("nlist : ",nlist);
@@ -45,8 +44,11 @@ const process  = {
         }
         res.send(msgPack.msg);
     },
-
+    loginChk : async (req, res) => {
+        console.log("req.body : ", req.body);
+    },
     register : async (req, res) => {
+        console.log(req.body);
         const msg = await pService.register(req.body);
         console.log(msg);
         res.send(msg);
@@ -234,39 +236,5 @@ const cView ={
         res.render("country/sapporo", {username : req.session.username});
     }
 }
-const views ={
-    boardList : async (req, res) => {
-        const list = await pService.pageRead.boardList();
-        console.log(list);
-        const totalContent = await pService.pageRead.totalContent();
-        // const data = await pService.pageRead.list(req.query.start, totalContent);
-    },
-    image : (req, res) => {
-        let filePath = `./src/image/${req.params.fileName}`;
-        res.download(filePath);
-    },
-    boardList : async (req, res) => {
-        const list = await ser.pageRead.boardList();
-        console.log(list);
-        const totalContent = await ser.pageRead.totalContent();
-        // const data = await ser.pageRead.list(req.query.start, totalContent);
-        res.render("board/boardList", {list, totalContent});
-    },
-    writeForm : (req, res) =>{
-        console.log("ctrl writeForm", req.params);
-        res.render("board/write_form", req.params);
-    },
-    modifyForm : async(req, res) =>{
-        console.log("ctrl modifyForm: ", req.params.num);
-        const result = await pService.pageRead.content(req.params.num);
-        res.render("board/modify_form", {result});
-    },
-    content : async(req, res)=> {
-        console.log("ctrl content: ", req.params.num);
-        const result = await pService.pageRead.content(req.params.num);
-        console.log(result);
-        res.render("board/content", {result});
-    }
-}
 
-module.exports = {view, process, cView, views}
+module.exports = {view, process, cView}

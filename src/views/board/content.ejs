@@ -21,6 +21,8 @@
     </tr>
 </table>
 
+
+
 <!--좋아요 기능-->
 <span id="click">♡</span><br>
 
@@ -29,16 +31,18 @@
     <input type="hidden" value="<%= result.NUM%>" name="num">
 </form>
 
-    <script>
-        function likeCount(){
-            var click = document.getElementById('click');
-            if(click.innerText == "♡"){
-                click.innerText = "♥";
-            }else {
-                click.innerText = "♡";
-            }
+<script>
+    function likeCount(){
+        var click = document.getElementById('click');
+        if(click.innerText == "♡"){
+            click.innerText = "♥";
+        }else {
+            click.innerText = "♡";
         }
-    </script>
+    }
+</script>
+
+
 
 
 <a href="/modify_form/<%= result.NUM %>" method="get"><input type="submit" name="modify" value="수정"></a>
