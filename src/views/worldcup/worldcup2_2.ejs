@@ -1,20 +1,21 @@
 <style>
-    #world {margin-left: 25%; border: solid 1px;}
+    section {margin: 0% 20% ;padding: 5% 10%;}
 </style>
 
 <body>
     <%-include("../default/header.ejs")%>
-
-    <table border="1" id="world">
-        <tr style="text-align: center; border: solid 1px black;">
-            <th>자연</th>
-            <th>도시</th>
-        </tr>
-        <tr>
-            <td><a href="/worldcup/start/2/<%= nlist[2].N_ID %>"><img src="/worldcup/image/<%=files[2]%>" width="400px" height="400px"/></a></td>
-            <td><a href="/worldcup/start/2/<%= nlist[3].N_ID %>"><img src="/worldcup/image/<%=files[3]%>" width="400px" height="400px"/></a></td>
-        </tr>
-    </table>
+    <section>
+        <table  id="world">
+            <tr style="text-align: center;">
+                <th>자연</th>
+                <th>도시</th>
+            </tr>
+            <tr>
+                <td><a href="/worldcup/start/2/<%= nlist[2].N_ID %>"><img src="/worldcup/image/<%=files[2]%>" width="400px" height="400px"/></a></td>
+                <td><a href="/worldcup/start/2/<%= nlist[3].N_ID %>"><img src="/worldcup/image/<%=files[3]%>" width="400px" height="400px"/></a></td>
+            </tr>
+        </table>
+    </section>
     <%-include("../default/footer.ejs")%>
 </body>
 </html>
