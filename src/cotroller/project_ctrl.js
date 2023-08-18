@@ -1,6 +1,10 @@
 const pService = require("../service/project_service");
 const cService = require("../service/country_service");
 
+const fs = require("fs");
+const fileList = fs.readdirSync("./src/image");
+
+
 const view = {
     loginForm : (req, res) => {
         res.render("member/loginForm", {username : req.session.username});
@@ -14,48 +18,25 @@ const view = {
         res.render("member/find");
     },
 
-    worldcup1 : async(req, res) => {
+    startWorldCup : async(req, res) => {
         const nlist = await pService.getList();
         //console.log("nlist : ",nlist);
-        res.render("worldcup/worldcup1", {nlist, username : req.session.username});
+        res.render("worldcup/worldcup1", {nlist, files : fileList, username : req.session.username});
     },
 
     worldcup2 : (req, res) => {
         res.redirect("/worldcup/1");
-
-    },
+    }, 
     main : (req, res)=> {
         res.render("main");
     },
     login : (req, res) => {
         res.render("login");
     },
-    boardList : async (req, res) => {
-        const list = await pService.pageRead.boardList();
-        console.log(list);
-        const totalContent = await pService.pageRead.totalContent();
-        // const data = await pService.pageRead.list(req.query.start, totalContent);
-        res.render("board/boardList", {list, totalContent});
-    },
-    writeForm : (req, res) =>{
-        console.log("ctrl writeForm", req.params);
-        res.render("board/write_form", req.params);
-    },
-    modifyForm : async(req, res) =>{
-        console.log("ctrl modifyForm: ", req.params.num);
-        const result = await pService.pageRead.content(req.params.num);
-        res.render("board/modify_form", {result});
-    },
-    content : async(req, res)=> {
-        console.log("ctrl content: ", req.params.num);
-        const result = await pService.pageRead.content(req.params.num);
-        console.log(result);
-        res.render("board/content", {result});
-    }
+    
 }
 
 var list = {};
-
 const process  = {
     login : async (req, res) => {
         const msgPack = await pService.loginChk(req.body);
@@ -80,7 +61,7 @@ const process  = {
         console.log("req.parmas : ", req.params);
         const mlist = await pService.infoChk(req.params);
         console.log("서비스에서 받아온 mlist(result) : ",mlist);
-        res.render("member/infoChk", {list : mlist})
+        res.render("member/infoChk", {list : mlist, username : req.session.username})
     },
     
     modifyForm : async (req, res) => {
@@ -120,17 +101,19 @@ const process  = {
     },
 
     worldcup1 : async(req, res) => {
-        //console.log("w1 : ",req.params["id"]);
+        console.log("req.params.ID 체크 : ",req.params.id);
         list.NUM1 = req.params["id"];
-        //console.log("w1 list : ",list);
         const nlist = await pService.getList();
-        res.render("worldcup/worldcup2", {nlist, username : req.session.username});
+        if(req.params.id == 1) {
+            res.render("worldcup/worldcup2_1", {nlist, files : fileList, username : req.session.username});
+        }else if(req.params.id  == 2) {
+            res.render("worldcup/worldcup2_2", {nlist, files : fileList, username : req.session.username});
+        } 
     },
 
-    worldcup2 : async(req, res) => {
-        //console.log("w2 : ",req.params["id"]);
-        list.NUM2 = req.params["id"];
-        //console.log("w2 list : ",list);
+    worldcup2_1 : async(req, res) => {
+        console.log("req.params.ID 체크 : ",req.params.id);
+        list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         console.log("w2 : ",nlist);
         const fileList = fs.readdirSync("./src/image");
@@ -139,20 +122,65 @@ const process  = {
         }else{
             res.render("worldcup/worldcup4", {nlist, username : req.session.username});
         }
+        if(req.params.id == 3) {
+            res.render("worldcup/worldcup3_1", {nlist, files : fileList, username : req.session.username});
+        }else if(req.params.id  == 4) {
+            res.render("worldcup/worldcup3_2", {nlist, files : fileList, username : req.session.username});
+        } 
     },
 
-    worldcup3 : async(req, res) => {
-        console.log("w3 : ",req.params["id"]);
-        list.NUM3 = req.params["id"];
-        console.log("w3 list : ",list);
-        //pService.worldcupCheck(res.params);
+    worldcup2_2 : async(req, res) => {
+        console.log("req.params.ID 체크 : ",req.params.id);
+        list.NUM1 = req.params["id"];
+        const nlist = await pService.getList();
+        if(req.params.id == 3) {
+            res.render("worldcup/worldcup3_3", {nlist, files : fileList, username : req.session.username});
+        }else if(req.params.id  == 4) {
+            res.render("worldcup/worldcup3_4", {nlist, files : fileList, username : req.session.username});
+        } 
     },
 
-    worldcup4 : async(req, res) => {
-        console.log("w3 : ",req.params["id"]);
-        list.NUM3 = req.params["id"];
-        console.log("w3 list : ",list);
-        //pService.worldcupCheck(res.params);
+    worldcup3_1 : async(req, res) => {
+        console.log("req.params.ID 체크 : ",req.params.id);
+        list.NUM1 = req.params["id"];
+        const nlist = await pService.getList();
+        if(req.params.id == 5) {
+            res.render("worldcup/result1_3_5", {nlist, files : fileList, username : req.session.username});
+        }else if(req.params.id  == 6) {
+            res.render("worldcup/result1_3_6", {nlist, files : fileList, username : req.session.username});
+        } 
+    },
+    worldcup3_2 : async(req, res) => {
+        console.log("req.params.ID 체크 : ",req.params.id);
+        list.NUM1 = req.params["id"];
+        const nlist = await pService.getList();
+        if(req.params.id == 5) {
+            res.render("worldcup/result2_3_5", {nlist, files : fileList, username : req.session.username});
+        }else if(req.params.id  == 6) {
+            res.render("worldcup/result2_3_6", {nlist, files : fileList, username : req.session.username});
+        } 
+    },
+
+    worldcup4_1 : async(req, res) => {
+        console.log("req.params.ID 체크 : ",req.params.id);
+        list.NUM1 = req.params["id"];
+        const nlist = await pService.getList();
+        if(req.params.id == 7) {
+            res.render("worldcup/result1_4_7", {nlist, files : fileList, username : req.session.username});
+        }else if(req.params.id  == 8) {
+            res.render("worldcup/result1_4_8", {nlist, files : fileList, username : req.session.username});
+        } 
+    },
+    
+    worldcup4_2 : async(req, res) => {
+        console.log("req.params.ID 체크 : ",req.params.id);
+        list.NUM1 = req.params["id"];
+        const nlist = await pService.getList();
+        if(req.params.id == 7) {
+            res.render("worldcup/result2_4_7", {nlist, files : fileList, username : req.session.username});
+        }else if(req.params.id  == 8) {
+            res.render("worldcup/result2_4_8", {nlist, files : fileList, username : req.session.username});
+        } 
     },
 
     worldcupCheck : async(req, res) => {
@@ -194,7 +222,7 @@ const process  = {
 }
 const cView ={
     tokyo : async(req, res) => {
-        const weather = await cService.getHtml(2);
+        const weather = await cService.getHtml();
         res.render("country/tokyo", {username : req.session.username});
     },
     osaka : async(req, res) => {
@@ -206,5 +234,39 @@ const cView ={
         res.render("country/sapporo", {username : req.session.username});
     }
 }
+const views ={
+    boardList : async (req, res) => {
+        const list = await pService.pageRead.boardList();
+        console.log(list);
+        const totalContent = await pService.pageRead.totalContent();
+        // const data = await pService.pageRead.list(req.query.start, totalContent);
+    },
+    image : (req, res) => {
+        let filePath = `./src/image/${req.params.fileName}`;
+        res.download(filePath);
+    },
+    boardList : async (req, res) => {
+        const list = await ser.pageRead.boardList();
+        console.log(list);
+        const totalContent = await ser.pageRead.totalContent();
+        // const data = await ser.pageRead.list(req.query.start, totalContent);
+        res.render("board/boardList", {list, totalContent});
+    },
+    writeForm : (req, res) =>{
+        console.log("ctrl writeForm", req.params);
+        res.render("board/write_form", req.params);
+    },
+    modifyForm : async(req, res) =>{
+        console.log("ctrl modifyForm: ", req.params.num);
+        const result = await pService.pageRead.content(req.params.num);
+        res.render("board/modify_form", {result});
+    },
+    content : async(req, res)=> {
+        console.log("ctrl content: ", req.params.num);
+        const result = await pService.pageRead.content(req.params.num);
+        console.log(result);
+        res.render("board/content", {result});
+    }
+}
 
-module.exports = {view, process, cView}
+module.exports = {view, process, cView, views}

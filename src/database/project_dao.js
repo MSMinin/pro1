@@ -2,9 +2,9 @@ const oracledb = require("oracledb");
 const dbConfig = require("../../config/database/db_config");
 const { chgPwdForm } = require("../service/project_service");
 
-
-oracledb.autoCommit = true;
 oracledb.outFormat = oracledb.OBJECT;
+oracledb.autoCommit = true;
+
 
 loginChk = async (id) => {
     const con = await oracledb.getConnection(dbConfig);
@@ -227,4 +227,7 @@ const daoDelete = {
     }
 }
 
-module.exports = { loginChk, register, infoChk,modifyForm, modify, deleteM, findId, chgPassword, chgPwd, getList, getHtml, daoRead, daoInsert, daoDelete, daoUpdate};
+
+module.exports = { loginChk, register, infoChk,modifyForm, modify, deleteM, findId, chgPassword, chgPwd, getList
+                    ,daoRead, daoInsert, daoDelete, daoUpdate };
+

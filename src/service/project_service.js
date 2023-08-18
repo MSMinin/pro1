@@ -1,4 +1,4 @@
-const pDAO = require("../database/project_dao");  
+const pDAO = require("../database/project_dao");
 
 loginChk = async (body) => {
     let member = await pDAO.loginChk(body.id);
@@ -262,5 +262,7 @@ const pageUpdate = {
     }
 }
 
+
 module.exports = {loginChk, register, logout, infoChk, modifyForm, modify, deleteM, findId, chgPassword, chgPwd,
-    worldcupCheck, getList, pageRead, pageInsert, pageModify, pageDelete, pageUpdate};
+    worldcupCheck, getList, pageRead, pageInsert, pageModify, pageDelete, pageUpdate}
+

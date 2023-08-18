@@ -1,5 +1,10 @@
+<style>
+    #infoChk {margin-left: 40%;}
+</style>
+<%-include("../default/header.ejs")%>
+<div id = "infoChk">
 <h2>회원 정보 확인</h2>
-<table>
+<table border="1">
     <tr>
         <td>아이디</td> <td>&nbsp;</td> <td><%=list.ID%></td>
     </tr>
@@ -24,3 +29,5 @@
         <td><button><a href="/member/delete/<%=list.ID%>">회원정보 삭제</a></button></td>
     </tr>
 </table>
+</div>
+<%-include("../default/footer.ejs")%>
