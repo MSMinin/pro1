@@ -52,7 +52,7 @@ const pageInsert = {
             url="/write_form";
         }else {
             msg="등록되었습니다";
-            url="/content/"+body.num;
+            url="/boardList";
         }
         return getMessage(msg, url);
     }

@@ -35,7 +35,7 @@ register = async (body) => {
         url = '/member/registerForm';
         num = 0;
     }
-    return getMessage(msg, url, num);
+    return getMessage1(msg, url, num);
 }
 
 logout = (req, res) => {
@@ -112,10 +112,11 @@ chgPwd = async (body) => {
         url = "/member/infoChk/" + body.id;
         num = 1;
     }
-    return getMessage(msg, url, num);
+    return getMessage1(msg, url, num);
 }
 
 getMessage = (msg, url, num) => {
+
     return `<script>
                 alert('${msg}');
                 location.href = '${url}';
@@ -133,4 +134,3 @@ const getList = ()=>{
 
 
 module.exports = {loginChk, register, logout, infoChk, modifyForm, modify, deleteM, findId, chgPassword, chgPwd, getList}
-
