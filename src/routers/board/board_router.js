@@ -1,12 +1,7 @@
 const router = require("express").Router();
-const pCtrl = require("../../cotroller/project_ctrl");
+const pCtrl = require("../../cotroller/board/board_ctrl");
 
-const  multer = require("multer");
-
-// router.get("/", (req, res) => {
-//     res.render("main");
-// });
-
+// const  multer = require("multer");
 
 router.get("/boardList", pCtrl.views.boardList);
 
@@ -22,9 +17,5 @@ router.post("/modify", pCtrl.process.modify);
 router.get("/delete/:num", pCtrl.process.delete);
 
 router.post("/likes", pCtrl.process.likes);
-
-router.post("/login", pCtrl.process.loginChk);
-
-
 
 module.exports = router;

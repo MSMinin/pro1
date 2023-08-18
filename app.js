@@ -13,6 +13,7 @@ app.use(cookieParser());
 
 const router = require("./src/routers/router")(app);
 
+
 app.set("views", "./src/views");
 app.set("view engine", "ejs");
 

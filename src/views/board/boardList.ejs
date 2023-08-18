@@ -23,8 +23,21 @@
         </tr>
     <% } %>
     
-    <tr>
-        <td><a href="/write_form">글 등록</a></td>
-    </tr>
+    <tr><td colspan="4">
+        <% if( start <= 1){ %>
+            <button disabled>이전</button>
+        <% } else { %>
+            <button type="button" onclick="
+                location.href='/boardList?start=<%=start-1%>'">이전</button>
+        <% }for(let i=1 ; i <= page.totPage ; i++ ){ %>
+            <a href="/boardList?start=<%=i %>"><%=i %></a>
+        <% }if( start < page.totPage ){%>
+            <button type="button" onclick="
+                location.href='/boardList?start=<%=start+1%>'">다음</button>
+        <% }else{ %>
+            <button disabled>다음</button>
+        <% } %>
+    </td>
+    <td><a href="/write_form">글 등록</a></td>
         
 </table>
