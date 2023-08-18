@@ -19,8 +19,6 @@ router.get("/start/1/4/:id", pCtrl.process.worldcup4_1);
 router.get("/start/2/4/:id", pCtrl.process.worldcup4_2);
 //2번, 4번 고르고 7,8 고르기 (끝)
 
-router.get("/worldcupCheck",pCtrl.process.worldcupCheck);
-
-router.get("/image/:fileName", pCtrl.view.image)
+router.get("/image/:fileName", pCtrl.view.image);
 
 module.exports = router;

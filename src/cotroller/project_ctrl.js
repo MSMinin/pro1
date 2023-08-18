@@ -3,7 +3,7 @@ const cService = require("../service/country_service");
 
 const fs = require("fs");
 const fileList = fs.readdirSync("./src/image");
-
+const fileList2 = fs.readdirSync("./src/image/country");
 
 const view = {
     loginForm : (req, res) => {
@@ -121,7 +121,6 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         console.log("w2 : ",nlist);
-        const fileList = fs.readdirSync("./src/image");
         if(req.params.id == 3) {
             res.render("worldcup/worldcup3_1", {nlist, files : fileList, username : req.session.username});
         }else if(req.params.id  == 4) {
@@ -183,11 +182,6 @@ const process  = {
         } 
     },
 
-    worldcupCheck : async(req, res) => {
-        //console.log("w4 : ",res.params);
-        //const msgPack = await pService.worldcupCheck(req.params);
-        //res.send(msgPack.msg);
-    },
     loginChk : async (req, res) => {
         console.log("req.body : ", req.body);
     },
@@ -222,16 +216,20 @@ const process  = {
 }
 const cView ={
     tokyo : async(req, res) => {
-        const weather = await cService.getHtml();
-        res.render("country/tokyo", {username : req.session.username});
+        //const weather = await cService.getHtml();
+        res.render("country/tokyo", {username : req.session.username, files : fileList2});
     },
     osaka : async(req, res) => {
-        const weather = await cService.getHtml();
-        res.render("country/osaka", {username : req.session.username});
+        //const weather = await cService.getHtml();
+        res.render("country/osaka", {username : req.session.username, files : fileList2});
     },
     sapporo : async(req, res) => {
-        const weather = await cService.getHtml();
-        res.render("country/sapporo", {username : req.session.username});
+        //const weather = await cService.getHtml();
+        res.render("country/sapporo", {username : req.session.username, files : fileList2});
+    },
+    image : (req, res) => {
+        let filePath = `./src/image/country/${req.params.fileName}`;
+        res.download(filePath);
     }
 }
 

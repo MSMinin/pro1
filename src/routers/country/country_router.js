@@ -12,5 +12,6 @@ router.get("/sapporo", pCtrl.cView.sapporo);
 //router.get("/fr", pCtrl);
 //router.get("/en", pCtrl);
 //router.get("/us", pCtrl);
+router.get("/image/:fileName", pCtrl.cView.image);
 
 module.exports = router
