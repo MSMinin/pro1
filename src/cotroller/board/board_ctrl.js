@@ -8,22 +8,23 @@ const views = {
         const totalContent = await ser.pageRead.totalContent();
         const data = await ser.pageRead.boardList(req.query.start, totalContent);
         res.render("board/boardList", { list : data.list, 
-            start : data.start, page : data.page, totalContent});
+            start : data.start, page : data.page, totalContent, username : req.session.username});
     },
     writeForm : (req, res) =>{
         console.log("ctrl writeForm", req.params);
-        res.render("board/write_form", req.params);
+        console.log("ctrl writeForm", req.session.username);
+        res.render("board/write_form", { content: req.params,  username : req.session.username});
     },
     modifyForm : async(req, res) =>{
         console.log("ctrl modifyForm: ", req.params.num);
         const result = await ser.pageRead.content(req.params.num);
-        res.render("board/modify_form", {result});
+        res.render("board/modify_form", {result, username : req.session.username});
     },
     content : async(req, res)=> {
         console.log("ctrl content: ", req.params.num);
         const result = await ser.pageRead.content(req.params.num);
         console.log(result);
-        res.render("board/content", {result});
+        res.render("board/content", {result, username : req.session.username});
     }
 }
 
