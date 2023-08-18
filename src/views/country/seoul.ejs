@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {margin: 0% 20% ;}
+        #country {padding: 5% 20%;}
+        div > table {margin: 0% 20% ; text-align: center;}
+        div{ display: flex; flex-flow: row wrap; 
+          text-align: center; justify-content: space-around; }
+    </style>
+</head>
+<body>
+    <header>
+        <%-include("../default/header.ejs")%>
+    </header>
+    <section>
+        <div id="country">
+            <table>
+                <tr><th>
+                    <h1>서울<br><br></h1></th>
+                </tr>
+                <tr><td><img src="/country/image/<%=files[0]%>" width="400px" height="400px"/><br><br>
+                    </td>
+                </tr>
+                <tr><td>
+                대한민국의 수도인 서울은 현대적인 고층 빌딩, 첨단 기술의 지하철, 
+                대중문화와 사찰, 고궁, 노점상이 공존하는 대도시
+                </td>
+                </tr>
+            </table>
+            <div>
+                <table><h3><br>hotel<br><br></h3>
+                    <tr>
+                        <td><img src="/country/image/<%=files[1]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[2]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[3]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.agoda.com/ko-kr/the-shilla-seoul/hotel/seoul-kr.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1891442&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2023-08-27&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=KRW&isFreeOccSearch=false&tag=fdc94f04-aedd-be5e-ed05-44d5ba273c0d&isCityHaveAsq=false&tspTypes=-1&los=1&searchrequestid=9a73842d-2983-4727-bac9-0c4d853e05e0">신라호텔</a></td>
+                        <td><a href="https://www.agoda.com/ko-kr/grand-walkerhill-seoul/hotel/seoul-kr.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1891442&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2023-08-27&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=KRW&isFreeOccSearch=false&tag=fdc94f04-aedd-be5e-ed05-44d5ba273c0d&isCityHaveAsq=false&tspTypes=7,9,9&los=1&searchrequestid=9a73842d-2983-4727-bac9-0c4d853e05e0">그랜드 워커힐</a></td>
+                        <td><a href="https://www.agoda.com/ko-kr/jw-marriott-hotel-seoul/hotel/seoul-kr.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1891442&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2023-08-27&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=KRW&isFreeOccSearch=false&tag=fdc94f04-aedd-be5e-ed05-44d5ba273c0d&isCityHaveAsq=false&los=1&searchrequestid=9a73842d-2983-4727-bac9-0c4d853e05e0">JW 메리어트 호텔</a></td>
+                    </tr>
+                    <tr>
+                        <td>서울 중심에 위치, 남산 셔틀버스</td>
+                        <td>한강뷰, 아차산에 둘러싸인 휴식공간</td>
+                        <td>센트럴시티에 위치, 서울 야경보기 좋음</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>food<br><br></h3>
+                    <tr>
+                        <td><img src="/country/image/<%=files[4]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[5]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[6]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.tripadvisor.co.kr/Restaurant_Review-g294197-d10257443-Reviews-Jihwaja-Seoul.html">지화자</a></td>
+                        <td><a href="https://www.tripadvisor.co.kr/Restaurant_Review-g294197-d3200324-Reviews-Jungsik-Seoul.html">정식당</a></td>
+                        <td><a href="https://www.tripadvisor.co.kr/Restaurant_Review-g294197-d2230268-Reviews-Jin_Ok_Hwa_Original_Chicken_Restaurant-Seoul.html">진옥화할매원조닭한마리</a></td>
+                    </tr>
+                    <tr>
+                        <td>중음식을 재현하는 한정식 최고급 음식점</td>
+                        <td>현대적이고 독창적인 새로운 한식을 선보임</td>
+                        <td>닭한마리가 이곳의 단일 메뉴, 진한 국물이 일품</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>store<br><br></h3>
+                    <tr>
+                        <td><img src="/country/image/<%=files[7]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[8]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[9]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.coex.co.kr/">코엑스</a></td>
+                        <td><a href="https://www.lwt.co.kr/ko/main/main.do">롯데타워</a></td>
+                        <td><a href="https://korean.visitseoul.net/shopping/%EB%AA%85%EB%8F%99-%EC%87%BC%ED%95%91/KOP000067">명동</a></td>
+                    </tr>
+                    <tr>
+                        <td>서울의 중심에서 새로운 라이프스타일을 제시하는 복합 문화공간.</td>
+                        <td>대한민국 최고층 건물,  5성급 호텔과 오피스, 오피스텔, 전망대, 면세점 등 다양함</td>
+                        <td>브랜드 매장, 백화점, 편집샵, 노점까지 매우 다양함</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>spot<br><br></h3>
+                    <tr>
+                        <td><img src="/country/image/<%=files[10]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[11]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[12]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://korean.visitseoul.net/attractions/%EA%B2%BD%EB%B3%B5%EA%B6%81_/72">경복궁</a></td>
+                        <td><a href="https://korean.visitseoul.net/attractions/%EB%82%A8%EC%82%B0%EC%84%9C%EC%9A%B8%ED%83%80%EC%9B%8C%20_/36">남산타워</a></td>
+                        <td><a href="https://korean.visitseoul.net/attractions/%EB%B6%81%EC%B4%8C%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84_/261">북촌한옥마을</a></td>
+                    </tr>
+                    <tr>
+                        <td>태조가 한양 천도를 단행하면서 조선 시대에 가장 먼저 지은 궁궐, 사적 제117호로 지정</td>
+                        <td>남산에 있는 송신탑이자 서울을 대표하는 랜드마크, 세계타워연맹(WFGT)에 가입됨</td>
+                        <td>지리상으로 경복궁과 창덕궁, 종묘의 사이에 자리잡고 있는 한옥마을 </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+        <%-include("../default/footer.ejs")%>
+</body>
+</html>

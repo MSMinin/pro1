@@ -230,7 +230,43 @@ const cView ={
     image : (req, res) => {
         let filePath = `./src/image/country/${req.params.fileName}`;
         res.download(filePath);
-    }
+    },
+    seoul : async(req, res) => {
+        //const weather = await cService.getHtml();
+        
+
+        res.render("country/seoul", {username : req.session.username, files : fileList2});
+    },
+    daegu : async(req, res) => {
+        //const weather = await cService.getHtml();
+        
+
+        res.render("country/daegu", {username : req.session.username, files : fileList2});
+    },
+    busan : async(req, res) => {
+        //const weather = await cService.getHtml();
+        
+
+        res.render("country/busan", {username : req.session.username, files : fileList2});
+    },
+    gangneung : async(req, res) => {
+        //const weather = await cService.getHtml();
+        
+
+        res.render("country/gangneung", {username : req.session.username, files : fileList2});
+    },
+    gyeongju : async(req, res) => {
+        //const weather = await cService.getHtml();
+        
+
+        res.render("country/gyeongju", {username : req.session.username, files : fileList2});
+    },
+    jeonju : async(req, res) => {
+        //const weather = await cService.getHtml();
+        
+
+        res.render("country/jeonju", {username : req.session.username, files : fileList2});
+    },
 }
 
 module.exports = {view, process, cView}

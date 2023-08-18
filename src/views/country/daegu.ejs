@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {margin: 0% 20% ;}
+        #country {padding: 5% 20%;}
+        div > table {margin: 0% 20% ; text-align: center;}
+        div{ display: flex; flex-flow: row wrap; 
+          text-align: center; justify-content: space-around; }
+    </style>
+</head>
+<body>
+    <header>
+        <%-include("../default/header.ejs")%>
+    </header>
+    <section>
+        <div id="country">
+            <table>
+                <tr><th>
+                    <h1>대구<br><br></h1></th>
+                </tr>
+                <tr><td><img src="/country/image/<%=files[25]%>" width="400px" height="400px"/><br><br>
+                    </td>
+                </tr>
+                <tr><td>
+                    경상도의 중심부, 인구가 밀집된 시가지는 산으로 둘러싸인 대구분지 안에 있어서 날씨가 더움
+                </td>
+                </tr>
+            </table>
+            <div>
+                <table><h3><br>hotel<br><br></h3>
+                    <tr>
+                        <td><img src="/country/image/<%=files[26]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[27]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[28]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.agoda.com/ko-kr/hotel-susung/hotel/daegu-kr.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1891442&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2023-08-27&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=KRW&isFreeOccSearch=false&tag=fdc94f04-aedd-be5e-ed05-44d5ba273c0d&isCityHaveAsq=false&los=1&searchrequestid=82653a6a-bb92-4e93-968d-6e5368e34ffa">호텔 수성</a></td>
+                        <td><a href="https://www.agoda.com/ko-kr/rivertain-hotel_3/hotel/daegu-kr.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1891442&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2023-08-27&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=KRW&isFreeOccSearch=false&tag=fdc94f04-aedd-be5e-ed05-44d5ba273c0d&isCityHaveAsq=false&los=1&searchrequestid=82653a6a-bb92-4e93-968d-6e5368e34ffa">리버틴호텔</a></td>
+                        <td><a href="https://www.agoda.com/ko-kr/sono-business-hotel/hotel/daegu-kr.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1891442&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2023-08-27&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=KRW&isFreeOccSearch=false&tag=fdc94f04-aedd-be5e-ed05-44d5ba273c0d&isCityHaveAsq=false&los=1&searchrequestid=a547dffb-a8e1-4192-81a4-7a7e4666bcaf">소노 비즈니스 호텔</a></td>
+                    </tr>
+                    <tr>
+                        <td>대구의 강남으로 알려진 수성구에 위치, 수성 호수와 대구 도심 전망</td>
+                        <td>대구 중심지에 위치, 교동시장 동성로 다 가까움</td>
+                        <td>프리미엄 게스트하우스, 공용 세탁실도 있음</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>food<br><br></h3>
+                    <tr>
+                        <td><img src="/country/image/<%=files[29]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[30]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[31]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.tripadvisor.co.kr/Restaurant_Review-g297886-d21247524-Reviews-Gukil_Ddaro_Gukbap-Daegu.html">국일따로국밥</a></td>
+                        <td><a href="https://www.tripadvisor.co.kr/Restaurant_Review-g297886-d9411399-Reviews-Miseong_Dang_Napjak_Dumplings-Daegu.html">미성당납작만두</a></td>
+                        <td><a href="https://www.tripadvisor.co.kr/Restaurant_Review-g297886-d8055148-Reviews-Bongsan_Jjimgalbi-Daegu.html">봉산찜갈비</a></td>
+                    </tr>
+                    <tr>
+                        <td>따로국밥의 원조인 국밥집</td>
+                        <td>50년간 장사를 해온 납작만두집</td>
+                        <td>대구식 매운찜갈비를 처음 개발한 원조집</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>store<br><br></h3>
+                    <tr>
+                        <td><img src="/country/image/<%=files[32]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[33]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://daeguseomun.modoo.at/">서문시장</a></td>
+                        <td><a href="http://www.grandculture.net/daegu/donggu/toc/GC40003501">관문시장</a></td>
+                    </tr>
+                    <tr>
+                        <td>대구 최대의 전통시장, 대구 뿐만 아니라 전국에서도 손꼽힐 만한 대규모의 재래시장</td>
+                        <td>대구광역시 남구 대명11동에 위치한 전통시장</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>spot<br><br></h3>
+                    <tr>
+                        <td><img src="/country/image/<%=files[34]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[35]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[36]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://korean.visitseoul.net/attractions/%EA%B2%BD%EB%B3%B5%EA%B6%81_/72">앞산공원</a></td>
+                        <td><a href="https://korean.visitseoul.net/attractions/%EB%82%A8%EC%82%B0%EC%84%9C%EC%9A%B8%ED%83%80%EC%9B%8C%20_/36">김광석길</a></td>
+                        <td><a href="https://korean.visitseoul.net/attractions/%EB%B6%81%EC%B4%8C%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84_/261">대구수목원</a></td>
+                    </tr>
+                    <tr>
+                        <td>대구에서 가장 큰 자연공원, 대표적인 시설로는 심신수련장, 케이블카 등이 있음</td>
+                        <td>싱어송라이터 김광석이 태어난 곳으로, 그를 기리기 위하여 그가 나고 자란 신천 둑길을 따라 조성</td>
+                        <td>전국 최초로 쓰레기 매립장을 수목원으로 조성한 곳, 여가와 휴식 공간</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+        <%-include("../default/footer.ejs")%>
+</body>
+</html>

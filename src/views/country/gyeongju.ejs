@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {margin: 0% 20% ;}
+        #country {padding: 5% 20%;}
+        div > table {margin: 0% 20% ; text-align: center;}
+        div{ display: flex; flex-flow: row wrap; 
+          text-align: center; justify-content: space-around; }
+    </style>
+</head>
+<body>
+    <header>
+        <%-include("../default/header.ejs")%>
+    </header>
+    <section>
+        <div id="country">
+            <table>
+                <tr><th>
+                    <h1>경주<br><br></h1></th>
+                </tr>
+                <tr><td><img src="/country/image/<%=files[37]%>" width="400px" height="400px"/><br><br>
+                    </td>
+                </tr>
+                <tr><td>
+                    대한민국 경상북도 동남부에 있는 시, 
+                    기원전 57년 신라의 건국부터 935년 신라 멸망까지 992년 동안 신라의 수도였고, 
+                    서라벌, 금성 등으로 불렸음
+                </td>
+                </tr>
+            </table>
+            <div>
+                <table><h3><br>hotel<br><br></h3>
+                    <tr>
+                        <td><img src="/country/image/<%=files[38]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[39]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[40]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.agoda.com/ko-kr/the-suite-hotel-gyeongju/hotel/gyeongju-si-kr.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1891442&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2023-08-27&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=KRW&isFreeOccSearch=false&tag=fdc94f04-aedd-be5e-ed05-44d5ba273c0d&isCityHaveAsq=false&los=1&searchrequestid=33c83944-be82-43f3-bd1e-9d2a75c37cf1">스위트 호텔 경주</a></td>
+                        <td><a href="https://www.agoda.com/ko-kr/benikea-swiss-rosen-hotel/hotel/gyeongju-si-kr.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1891442&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2023-08-27&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=KRW&isFreeOccSearch=false&tag=fdc94f04-aedd-be5e-ed05-44d5ba273c0d&isCityHaveAsq=false&tspTypes=9&los=1&searchrequestid=33c83944-be82-43f3-bd1e-9d2a75c37cf1">베니키아 스위스 로젠 호텔 경주</a></td>
+                        <td><a href="https://www.agoda.com/ko-kr/commodore-hotel/hotel/gyeongju-si-kr.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1891442&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2023-08-27&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=KRW&isFreeOccSearch=false&tag=fdc94f04-aedd-be5e-ed05-44d5ba273c0d&isCityHaveAsq=false&tspTypes=7&los=1&searchrequestid=33c83944-be82-43f3-bd1e-9d2a75c37cf1">코모도호텔 경주</a></td>
+                    </tr>
+                    <tr>
+                        <td>수영장, 사우나, 골프장, 테디베어 박물관 등 다양한 부대시설과 자연과 어우러진 곳</td>
+                        <td>문화체육관광부가 후원하고 한국관광공사가 인증하는 한국형 비즈니스호텔 급 체인브랜드</td>
+                        <td>보문호가 내려다 보이는 편안한 분위기의 호텔</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>food<br><br></h3>
+                    <tr>
+                        <td><img src="/country/image/<%=files[41]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[42]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[43]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.tripadvisor.co.kr/Restaurant_Review-g297888-d4414177-Reviews-Byeolchaeban_Gyodong_Ssambap-Gyeongju_Gyeongsangbuk_do.html">별채반 교동쌈밥</a></td>
+                        <td><a href="https://www.tripadvisor.co.kr/Restaurant_Review-g297888-d7007757-Reviews-Gyeongju_Cheonnyeon_Hanu_Bomun-Gyeongju_Gyeongsangbuk_do.html">경주천년한우</a></td>
+                        <td><a href="https://www.tripadvisor.co.kr/Restaurant_Review-g297888-d5972609-Reviews-Hongsi_Hanjungsik-Gyeongju_Gyeongsangbuk_do.html">홍시한정식</a></td>
+                    </tr>
+                    <tr>
+                        <td>한옥에서 식사를 할 수 있는 경주 전통 식당</td>
+                        <td>경주한우를 가성비 좋게 먹을수 있는 식당</td>
+                        <td>발효음식, 홍시를 테마로한 한정식집</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>store<br><br></h3>
+                    <tr>
+                        <td><img src="/country/image/<%=files[44]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[45]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.gyeongju.go.kr/tour/page.do?mnu_uid=2258">황리단길</a></td>
+                        <td><a href="https://www.gyeongju.go.kr/tour/page.do?cmd=2&mnu_uid=2292&area_uid=78">성동시장</a></td>
+                    </tr>
+                    <tr>
+                        <td>황남동 + 경리단길이란 뜻, 거리에 개량식 한옥이나 길가 상점을 개조한 독특하고 다양한 점포들이 있음</td>
+                        <td>경주시에서 제일 큰 재래시장, 시설 현대화로 깔끔해지고, 한식뷔페촌, 분식 등 먹거리도 많음</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>spot<br><br></h3>
+                    <tr>
+                        <td><img src="/country/image/<%=files[46]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[47]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/image/<%=files[48]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.gyeongju.go.kr/tour/page.do?code_uid=1044&sortKwd=&srchKwd=&listType=&mnu_uid=2349&area_uid=260&cmd=2&pageNo=1">불국사</a></td>
+                        <td><a href="https://www.gyeongju.go.kr/tour/page.do?mnu_uid=2695&con_uid=165&cmd=2">안압지</a></td>
+                        <td><a href="https://www.gyeongju.go.kr/tour/page.do?cmd=2&mnu_uid=2292&area_uid=48">국립경주박물관</a></td>
+                    </tr>
+                    <tr>
+                        <td>불국정토를 속세에 건설하겠다는 야심찬 통일신라의 꿈을 드러내는 호국 사찰</td>
+                        <td>동궁과 월지는 경주시에 위치한 통일신라 시대 궁궐 유적</td>
+                        <td>경주 및 경상북도 지역에서 출토된 유물을 전시하는 박물관, 주로 신라 시대의 유물을 중심으로 전시 </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+        <%-include("../default/footer.ejs")%>
+</body>
+</html>
