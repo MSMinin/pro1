@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {margin: 0% 20% ;}
+        #country {padding: 5% 20%;}
+        div > table {margin: 0% 20% ; text-align: center;}
+    </style>
+</head>
+<body>
+    <header>
+        <%-include("../../default/header.ejs")%>
+    </header>
+    <section>
+        <div id="country">
+            <div><h3>OSAKA</h3><br></div>
+            <div><img src="/country/japan/image/<%=files[13]%>" width="400px" height="400px"/><br><br></div>
+            <div>
+                <p>일본 > 오사카부 > 오사카<br>
+                    언어 : 일본어<br>
+                    기온<br>
+                    환율<br>
+                    월 추천<br>
+                    항공 1시간 35분<br>
+                </p>
+            </div>
+            <div>
+                <table><h3><br>hotel<br><br></h3>
+                    <tr>
+                        <td><img src="/country/japan/image/<%=files[14]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/japan/image/<%=files[15]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/japan/image/<%=files[16]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">난바 오리엔탈 호텔</a></td>
+                        <td><a href="#">스위소텔 난카이</a></td>
+                        <td><a href="#">칸데오 호텔</a></td>
+                    </tr>
+                    <tr>
+                        <td>오사카 중심지의 이국적인 분위기의 호텔</td>
+                        <td>쇼핑 거리와 가깝고 어느 객실에서나 도시 야경이 보이는 호텔</td>
+                        <td>야경을 보며 온천을 즐길 수 있는 노천탕이 있는 호텔</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>food<br><br></h3>
+                    <tr>
+                        <td><img src="/country/japan/image/<%=files[17]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/japan/image/<%=files[18]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/japan/image/<%=files[19]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">지보 오코노미야끼</a></td>
+                        <td><a href="#">하루코마 본점</a></td>
+                        <td><a href="#">소바도코로 마루에이</a></td>
+                    </tr>
+                    <tr>
+                        <td>오사카에서 소문난 오코노미야끼와 야끼소바 맛있는 곳</td>
+                        <td>현지인들이 많이 가는 오사카 스시 맛집</td>
+                        <td>달달하고 부드러운 장어덮밥과 오로시우동 맛집</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>store<br><br></h3>
+                    <tr>
+                        <td><img src="/country/japan/image/<%=files[20]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/japan/image/<%=files[21]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/japan/image/<%=files[22]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">쿠이다오레</a></td>
+                        <td><a href="#">난바 산리오샵</a></td>
+                        <td><a href="#">타카무라 와인 & 커피 로스터스</a></td>
+                    </tr>
+                    <tr>
+                        <td>특이한 간식과 귀여운 굿즈를 파는 기념품샵</td>
+                        <td>일본의 산리오 캐릭터를 파는 굿즈샵</td>
+                        <td>셀렉션이 풍부한 와인과 커피를 전문적으로 하는 가게</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>spot<br><br></h3>
+                    <tr>
+                        <td><img src="/country/japan/image/<%=files[23]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/japan/image/<%=files[24]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/japan/image/<%=files[25]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">유니버셜 스튜디오</a></td>
+                        <td><a href="#">오사카 성</a></td>
+                        <td><a href="#">우메다 공중정원</a></td>
+                    </tr>
+                    <tr>
+                        <td>아시아 최초의 유니버셜 스튜디오로 디즈니랜드와 쌍벽을 이루는 세계적인 테마 파크</td>
+                        <td>죽기 전에 봐야할 세계 역사유적 중 하나</td>
+                        <td>오사카 시내가 한눈에 보이는 전망대</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+        <%-include("../../default/footer.ejs")%>
+</body>
+</html>

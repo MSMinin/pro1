@@ -3,8 +3,9 @@ const cService = require("../service/country_service");
 
 const fs = require("fs");
 const fileList = fs.readdirSync("./src/image");
-const fileList2 = fs.readdirSync("./src/image/country");
-const fileList3 = fs.readdirSync("./src/views/data1/images");
+const fileList2 = fs.readdirSync("./src/views/data1/images");
+const fileList3 = fs.readdirSync("./src/image/country/korea");
+const fileList4 = fs.readdirSync("./src/image/country/japan");
 
 const view = {
     loginForm : (req, res) => {
@@ -187,63 +188,69 @@ const process  = {
         console.log("req.body : ", req.body);
     }
 }
-const cView ={
+const jView ={
     tokyo : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/tokyo", {username : req.session.username, files : fileList2});
+        res.render("country/japan/tokyo", {username : req.session.username, files : fileList4});
     },
     osaka : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/osaka", {username : req.session.username, files : fileList2});
+        res.render("country/japan/osaka", {username : req.session.username, files : fileList4});
     },
     sapporo : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/sapporo", {username : req.session.username, files : fileList2});
+        res.render("country/japan/sapporo", {username : req.session.username, files : fileList4});
     },
     image : (req, res) => {
-        let filePath = `./src/image/country/${req.params.fileName}`;
+        let filePath = `./src/image/country/japan/${req.params.fileName}`;
         res.download(filePath);
-    },
+    }
+}
+const kView={
     seoul : async(req, res) => {
         //const weather = await cService.getHtml();
         
 
-        res.render("country/seoul", {username : req.session.username, files : fileList2});
+        res.render("country/korea/seoul", {username : req.session.username, files : fileList3});
     },
     daegu : async(req, res) => {
         //const weather = await cService.getHtml();
         
 
-        res.render("country/daegu", {username : req.session.username, files : fileList2});
+        res.render("country/korea/daegu", {username : req.session.username, files : fileList3});
     },
     busan : async(req, res) => {
         //const weather = await cService.getHtml();
         
 
-        res.render("country/busan", {username : req.session.username, files : fileList2});
+        res.render("country/korea/busan", {username : req.session.username, files : fileList3});
     },
     gangneung : async(req, res) => {
         //const weather = await cService.getHtml();
         
 
-        res.render("country/gangneung", {username : req.session.username, files : fileList2});
+        res.render("country/korea/gangneung", {username : req.session.username, files : fileList3});
     },
     gyeongju : async(req, res) => {
         //const weather = await cService.getHtml();
         
 
-        res.render("country/gyeongju", {username : req.session.username, files : fileList2});
+        res.render("country/korea/gyeongju", {username : req.session.username, files : fileList3});
     },
     jeonju : async(req, res) => {
         //const weather = await cService.getHtml();
         
 
-        res.render("country/jeonju", {username : req.session.username, files : fileList2});
+        res.render("country/korea/jeonju", {username : req.session.username, files : fileList3});
     },
+    image : (req, res) => {
+        let filePath = `./src/image/country/korea/${req.params.fileName}`;
+        res.download(filePath);
+    }
 }
 const banner={
     index : (req, res) => {
-        res.render("index", {username : req.session.username,files : fileList3});
+        res.render("index", {username : req.session.username,files : fileList2});
     },
     image : (req, res) => {
         let filePath = `./src/views/data1/images/${req.params.fileName}`;
@@ -251,4 +258,4 @@ const banner={
     }
 }
 
-module.exports = {view, process, cView, banner}
+module.exports = {view, process, kView, jView, banner}
