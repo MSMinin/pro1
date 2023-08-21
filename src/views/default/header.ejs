@@ -39,7 +39,7 @@
 
 <div id="main01">
   <dd id="title">
-      여행사 페이지
+      여행 정보 페이지
   </dd>
   <dd id="login">
       <div class="btn-group"><!--로그인 전 버튼, 로그인 시 토글버튼(세션 if문 작성)-->
@@ -54,7 +54,7 @@
               
           <ul class="dropdown-menu">
             <li><a href="/member/infoChk/<%=username%>">회원정보</a></li>
-            <li><a href="/boardList">자유게시판</a></li>
+            <li><a href="#">자유게시판</a></li>
             <li>체험게시판</li>
             <li>후기게시판</li>
           </ul>
@@ -66,7 +66,7 @@
           </button>
                 
           <ul class="dropdown-menu">
-            <li><a href="/boardList">자유게시판</a></li>
+            <li><a href="#">자유게시판</a></li>
             <li>체험게시판</li>
             <li>후기게시판</li>
           </ul>
@@ -80,28 +80,28 @@
   <div class="container-fluid">
     <li class="nav-item dropdown">
       <button class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        국내패키지
+        국내정보
       </button>
       <ul class="dropdown-content">
         <li>
           <div>
             <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
-                <a href="/country/seoul">서울</a>
+                <a href="/country/korea/seoul">서울</a>
             </button>
             <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
-                <a href="/country/gangneung">강릉</a>
+                <a href="/country/korea/gangneung">강릉</a>
             </button>
             <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
-                <a href="/country/daegu">대구</a>
+                <a href="/country/korea/daegu">대구</a>
             </button>
             <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
-                <a href="/country/gyeongju">경주</a>
+                <a href="/country/korea/gyeongju">경주</a>
             </button>
             <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
-                <a href="/country/jeonju">전주</a>
+                <a href="/country/korea/jeonju">전주</a>
             </button>
             <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
-                <a href="/country/busan">부산</a>
+                <a href="/country/korea/busan">부산</a>
             </button>
           </div>
         </li>
@@ -109,7 +109,7 @@
     </li>
     <li class="nav-item dropdown">
       <button class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        해외패키지
+        해외정보
       </button>
       <ul class="dropdown-content dropdown-content">
           <li>
@@ -120,15 +120,16 @@
               <ul class="dropdown-menu dropdown-menu">
                 <li>
                   <div class="btn">
-                    <a class="dropdown-item" href="/country/tokyo">도쿄</a><hr>
-                    <a class="dropdown-item" href="/country/osaka">오사카</a><hr>
-                    <a class="dropdown-item" href="/country/sapporo">삿포로</a>
+                    <a class="dropdown-item" href="/country/japan/tokyo">도쿄</a><hr>
+                    <a class="dropdown-item" href="/country/japan/osaka">오사카</a><hr>
+                    <a class="dropdown-item" href="/country/japan/sapporo">삿포로</a>
                   </div>
                 </li>
               </ul>
 
             </div>
           </li>
+<<<<<<< HEAD
         <li>
           <div class="btn-group dropend">
             <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown" aria-expanded="false">

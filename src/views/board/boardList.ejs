@@ -1,48 +1,62 @@
-<%-include("../default/header.ejs")%>
-<style>
-    tr {border: solid 1px black; margin: auto;}
-    th {width: 300px; border: solid 1px black; margin: auto;}
-    td {width: 300px; border: solid 1px black; margin: auto;}
-</style>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoardList</title>
+    <link rel="stylesheet" href="/css/css.css">
+    <%-include("../default/header.ejs")%>
+</head>
+<body>
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>게시판</strong>
+            <p>여러분들의 여행후기를 올려주세요!</p>
+        </div>
+        <div class="board_list_wrap">
+            <div class="board_list">
+                <div class="top">
+                    <div class="num">번호</div>
+                    <div class="title">제목</div>
+                    <div class="dates">날짜</div>
+                    <div class="viewcount">조회수</div>
+                    <div class="likes">좋아요</div>
+                </div>
+                <% list.forEach( data => { %>
+                    <div>
+                        <div class="num"><%=data.NUM %></div>
+                        <div class="title"><a href="/content/<%= data.NUM %>"><%= data.TITLE %></a></div>
+                        <div class="dates"><%= data.DATES %></div>
+                        <div class="viewcount"><%= data.VIEWCOUNT %></div>
+                        <div class="likes"><%= data.LIKES %></div>
+                    </div>
+                <% }); 
+                if (list.length == 0) {%>
+                    <div> <b>등록된 글이 없습니다</b> </div>
+                <% } %>
+            </div>
+            <div class="board_page">
+                <% if( start <= 1){ %>
+                    <a href="#" class="bt first"><button disabled><</button></a>
+                <% } else { %>
+                    <a href="/boardList?start=<%=start-1%>" class="bt prev"><</a>
+                <% }for(let i=1 ; i <= page.totPage ; i++ ){ %>
+                    <a href="/boardList?start=<%=i %>" class="num"><%=i %></a>
+                <% }if( start < page.totPage ){%>
+                    <a href="/boardList?start=<%=start+1%>" class="bt next">></a>
+                <% }else{ %>
+                    <a href="#" class="bt last"><button disabled>></button></a>
+                <% } %>
+            </div>
+            <div class="bt_wrap">
+                <%if(username) {%>
+                    <a href="/write_form" class="on">글 등록</a>
+                <%} else {%>
+                    <a href="/member/loginForm">글 등록</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
 
-전체 글 개수 : <%= totalContent %>
-<table border="1">
-    <tr>
-        <th>글 번호</th> <th>제목</th> <th> 등록날짜</th> <th>조회수</th> <th>좋아요</th>
-    </tr>
-
-    <% list.forEach( data => { %>
-        <tr>
-            <td><%=data.NUM %></td>
-            <td>
-                <a href="/content/<%= data.NUM %>"> <%= data.TITLE %></a>
-            </td>
-            <td><%= data.DATES %></td>
-            <td><%= data.VIEWCOUNT %></td>
-            <td><%= data.LIKES %></td>
-        </tr>
-    <% }); 
-    if (list.length == 0) {%>
-        <tr>
-            <td colspan="5"> <b>등록된 글이 없습니다</b> </td>
-        </tr>
-    <% } %>
-    
-    <tr><td colspan="4">
-        <% if( start <= 1){ %>
-            <button disabled>이전</button>
-        <% } else { %>
-            <button type="button" onclick="
-                location.href='/boardList?start=<%=start-1%>'">이전</button>
-        <% }for(let i=1 ; i <= page.totPage ; i++ ){ %>
-            <a href="/boardList?start=<%=i %>"><%=i %></a>
-        <% }if( start < page.totPage ){%>
-            <button type="button" onclick="
-                location.href='/boardList?start=<%=start+1%>'">다음</button>
-        <% }else{ %>
-            <button disabled>다음</button>
-        <% } %>
-    </td>
-    <td><a href="/write_form">글 등록</a></td>
-</table>
-<%-include("../default/footer.ejs")%>

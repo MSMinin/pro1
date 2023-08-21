@@ -3,7 +3,7 @@
 </style>
 <fieldset>
     <legend style="text-align: center;">비밀번호 변경</legend>
-    <form action="/member/chgPwd" method="post">
+    <form action="/member/chgPwd/<%=list.ID%>" method="post">
         <div>
             <div style="display: inline-block; margin-left: 15%;">
                 <table>
@@ -13,7 +13,7 @@
             </div>
             <div style="display: inline-block; margin-left: 30px;">
                 <table>
-                    <tr><td><label><%=list.ID%></label></td></tr>
+                    <tr><td><label name = "id"><%=list.ID%></label></td></tr>
                     <tr><td><input type="password" name="pwd"></td></tr>
                 </table>
             </div>

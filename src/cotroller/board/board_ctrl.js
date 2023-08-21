@@ -16,63 +16,45 @@ const views = {
         res.render("board/write_form", { content: req.params,  username : req.session.username});
     },
     modifyForm : async(req, res) =>{
-        let msg = "", url = "";
-        console.log("ctrl modifyForm: ", req.params);
-        console.log("modifyform이동시 session 확인", req.session.username)
-        const id = await ser.getId(req.params.num);
-        console.log("받아온 id", id);
-        if(id.ID === req.session.username) {
-            const result = await ser.pageRead.content(req.params.num);
-            res.render("board/modify_form", {result, username : req.session.username});
-        }else {
-            msg = "다른 유저의 게시물을 수정할 수 없습니다."
-            url = "/content/"+req.params.num;
-            res.send(message(msg, url));
-        }
-        
+        console.log("ctrl modifyForm: ", req.params.num);
+        const result = await ser.pageRead.content(req.params.num);
+        res.render("board/modify_form", {result, username : req.session.username});
     },
     content : async(req, res)=> {
         console.log("ctrl content: ", req.params.num);
+        console.log("ctrl content22: ", req.session.username);
         const result = await ser.pageRead.content(req.params.num);
-        console.log(result);
-        res.render("board/content", {result, username : req.session.username});
+        const data = await ser.pageRead.likeCk(req.params.num, req.session.username);
+        console.log("ctrl result: ", result);
+        console.log("ctrl data: ", data.rows[0]);
+        res.render("board/content", {result, data: data.rows[0], username : req.session.username});
     }
 }
+
 
 const process  = {
     write : async (req, res) => {
         console.log("ctrl write: ", req.body);
-        const msg = await ser.pageInsert.write(req.body, req.session.username);
+        const msg = await ser.pageInsert.write(req.body);
         res.send(msg);
     },
     modify : async (req, res) => {
-        const msg = await ser.pageModify.modify(req.session.username, req.body);
+        console.log("ctrl modify", req.body);
+        const msg = await ser.pageModify.modify(req.body);
         res.send(msg);
     },
     delete : async (req, res)=> {
-        console.log("ctrl delete", req.params);
-        const id = await ser.getId(req.params.num);
-        console.log("서비스에서 받아온 id : ", id);
-        console.log("서비스에서 받아온 id.ID : ", id.ID);
-        console.log("session 확인용 : ", req.session.username);
-       
-        const msg = await ser.pageDelete.delete(id.ID, req.params.num, req.session.username);
+        console.log("ctrl delete", req.params.num);
+        const msg = await ser.pageDelete.delete(req.params.num);
         res.send(msg);
-        
     },
     likes : async (req, res)=>{
         console.log("ctrl likes", req.body.likes);
+        console.log("ctrl likes", req.session.username);
         console.log("ctrl likes", req.body.num);
-        const msg = await ser.pageUpdate.likes(req.body.num);
+        await ser.pageInsert.likes(req.body.num, req.session.username);
         res.redirect("/content/"+ req.body.num);
     }
-}
-
-const message = (msg, url) => {
-    return `<script>
-                alert('${msg}');
-                location.href = '${url}';
-            </script>`
 }
 
 module.exports = {views, process};

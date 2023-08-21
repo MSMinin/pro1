@@ -3,18 +3,12 @@ const pDAO = require("../../database/board/board_dao");
 
 const pageOperation = (start, totalCount) =>{
     page = {};
-    const pageNum = 10;  // 페이지당 보여줄 글 개수
+    const pageNum = 5;  // 페이지당 보여줄 글 개수
     const num = (totalCount % pageNum === 0)? 0:1;
     page.totPage = parseInt( totalCount / pageNum) + num;
     page.startNum = (start -1) * pageNum + 1;
     page.endNum = start * pageNum;
     return page;
-}
-
-const getId =async (num) => {
-    const result = await pDAO.getId(num);
-        console.log("dao에서 받아온 getId의 result : ",result.rows[0])
-        return result.rows[0];
 }
 
 const pageRead = {
@@ -36,8 +30,15 @@ const pageRead = {
         console.log("ser content: ", num);
         await pageUpdate.upHit(num);
         const data = await pDAO.daoRead.content(num);
-        console.log("ser content : ", data);
+        console.log("ser cont data : ", data.rows[0]);
         return data.rows[0];
+    },
+    likeCk: async (num, id) => {
+        console.log("ser content: ", num);
+        console.log("ser content: ", id);
+        const likeCk = await pDAO.daoRead.likeCk(num,id);
+        console.log("ser cont likeCk : ", likeCk);
+        return likeCk;
     },
     totalContent : async () => {
         const totalContent = await pDAO.daoRead.totalContent();
@@ -48,70 +49,57 @@ const pageRead = {
 
 
 const pageInsert = {
-    write : async (body, session) => {
+    write : async (body) => {
+        const result = await pDAO.daoInsert.write(body);
+        console.log("ser write: ", result);
+
         let msg="", url="";
-        if(session != undefined) {
-            const result = await pDAO.daoInsert.write(body);
-            console.log("ser write: ", result);
-            
-            if (result == 0){
-                msg="문제 발생";
-                url="/write_form";
-            }else {
-                msg="등록되었습니다";
-                url="/boardList";
-            }
+        if (result == 0){
+            msg="문제 발생";
+            url="/write_form";
         }else {
-            msg = "로그인 먼저 해주세요."
-            url = "/member/loginForm"
+            msg="등록되었습니다";
+            url="/boardList";
         }
-        
         return getMessage(msg, url);
+    },
+    likes : async (num, id) => {
+        console.log("ser likes id", id);
+        console.log("ser likes num", num);
+        await pageUpdate.likes(num);
+        await pDAO.daoInsert.likes(num, id);
     }
 }
 
 const pageModify = {
-    modify : async (session, body) => {
+    modify : async (body) => {
+        const result = await pDAO.daoUpdate.modify(body);
+
         let msg="", url="";
-        if(session == undefined) {
-            msg = "세션이 완료되었거나 로그인해주세요,";
-            url = "/member/loginForm";
-        }else{
-            const result = await pDAO.daoUpdate.modify(body);
-            if (result == 0){
-                msg="문제 발생";
-                url="/modify_from?num="+body.num;
-            }else {
-                msg="수정되었습니다";
-                url="/content/"+body.num;
-            }
+        if (result == 0){
+            msg="문제 발생";
+            url="/modify_from?num="+body.num;
+        }else {
+            msg="수정되었습니다";
+            url="/content/"+body.num;
         }
-        
         return getMessage(msg, url);
     }
 }
 
 const pageDelete = {
-    delete : async (id, num, session) => {
+    delete : async (num) => {
+        await pDAO.daoDelete.deleteLike(num);
+        const result = await pDAO.daoDelete.delete(num);
+
         let msg="", url="";
-        if(session == undefined) {
-            msg = "세션이 만료되었거나 로그인해주세요.";
-            url = "/member/loginForm";
-        }else if (id === session){
-           const result = await pDAO.daoDelete.delete(id, num);
-            
-            if (result == 0){
-                msg="문제 발생";
-                url=`"/content/${num}`;
-            }else {
-                msg="삭제되었습니다";
-                url="/boardList";
-            }
+        if (result == 0){
+            msg="문제 발생";
+            url="/content?num="+body.num;
         }else {
-            msg = "다른 유저의 게시물을 삭제할 수 없습니다."
-            url = `/content/${num}`;
+            msg="삭제되었습니다";
+            url="/boardList";
         }
-    
         return getMessage(msg, url);
     }
 }
@@ -120,11 +108,10 @@ const pageUpdate = {
     upHit : async (num)=> {
         await pDAO.daoUpdate.upHit(num);
     },
-    likes : async (num, like)=> {
-        await pDAO.daoUpdate.likes(num, like);
+    likes : async (num)=> {
+        await pDAO.daoUpdate.likes(num);
     }
 }
-
 
 getMessage = (msg, url) => {
     return `<script>
@@ -133,4 +120,4 @@ getMessage = (msg, url) => {
             </script>`
 }
 
-module.exports = {pageRead, pageInsert, pageModify, pageDelete, pageUpdate, getId};
+module.exports = {pageRead, pageInsert, pageModify, pageDelete, pageUpdate};

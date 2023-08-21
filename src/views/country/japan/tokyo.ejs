@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {margin: 0% 20% ;}
+        #country {padding: 5% 20%;}
+        div > table {margin: 0% 20% ; text-align: center;}
+    </style>
+</head>
+<body>
+    <header>
+        <%-include("../../default/header.ejs")%>
+    </header>
+    <section>
+        <div id="country">
+            <div><h3>Tokyo</h3><br></div>
+            <div><img src="/country/japan/image/<%=files[0]%>" width="400px" height="400px"/><br><br></div>
+            <div>
+                <p>일본 > 도쿄도 > 도쿄<br>
+                    언어 : 일본어<br>
+                    기온<br>
+                    환율<br>
+                    10월~11월 추천<br>
+                    항공 2시간 20분<br>
+                </p>
+            </div>
+            <div>
+                <table><h3><br>hotel<br><br></h3>
+                    <tr>
+                        <td><img src="/country/japan/image/<%=files[1]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/japan/image/<%=files[2]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/japan/image/<%=files[3]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">신주쿠 워싱턴 호텔</a></td>
+                        <td><a href="#">게이오 플라자 호텔</a></td>
+                        <td><a href="#">더 프린스 파크 타워</a></td>
+                    </tr>
+                    <tr>
+                        <td>객실에서 도쿄 시내의 멋진 야경을 감상할 수 있는 호텔</td>
+                        <td>쇼핑 거리와 가깝고 헬로키티 테마룸으로 유명한 호텔</td>
+                        <td>큰 창문으로 보이는 도쿄타워 뷰 객실을 자랑하는 호텔</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>food<br><br></h3>
+                    <tr>
+                        <td><img src="/country/japan/image/<%=files[4]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/japan/image/<%=files[5]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/japan/image/<%=files[6]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">우오베이 시부야</a></td>
+                        <td><a href="#">소메타로</a></td>
+                        <td><a href="#">하쿠슈 데판야키</a></td>
+                    </tr>
+                    <tr>
+                        <td>저렴하고 신선한 회전초밥 맛집</td>
+                        <td>오코노미야끼, 몬자야끼 현지인 맛집</td>
+                        <td>눈 앞에서 고베규와 해산물 등을 구워주는 철판요리 전문점</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>store<br><br></h3>
+                    <tr>
+                        <td><img src="/country/japan/image/<%=files[7]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/japan/image/<%=files[8]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/japan/image/<%=files[9]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">프라다 아오야마점</a></td>
+                        <td><a href="#">아케보노 긴자 본점</a></td>
+                        <td><a href="#">마루고토 닛폰</a></td>
+                    </tr>
+                    <tr>
+                        <td>유명 건축가들이 설계해 특색있는 건물 구조로 유명한 프라다 매장</td>
+                        <td>딸기 찹쌀떡로 유명하고 오랜 역사를 가진 디저트가게</td>
+                        <td>아기자기한 상점들이 가득 모여있는 쇼핑몰</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>spot<br><br></h3>
+                    <tr>
+                        <td><img src="/country/japan/image/<%=files[10]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/japan/image/<%=files[11]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/japan/image/<%=files[12]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">도쿄 디즈니랜드</a></td>
+                        <td><a href="#">도쿄 타워</a></td>
+                        <td><a href="#">다케시타 거리</a></td>
+                    </tr>
+                    <tr>
+                        <td>죽기 전에 가봐야 할 곳 중 3위로 미국 다음으로 생긴 디즈니랜드</td>
+                        <td>오랫동안 사람들의 가슴 속에 빛을 밝혀 준 영원한 도쿄의 심볼</td>
+                        <td>귀여운 문화의 발신지로 약간 경사진 골목길에 가득 찬 인파와 상점들</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+        <%-include("../../default/footer.ejs")%>
+</body>
+</html>

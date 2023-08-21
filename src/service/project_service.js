@@ -1,16 +1,5 @@
 const pDAO = require("../database/project_dao");  
 
-getMessage1 = (msg, url, num) => {
-
-    return `<script>
-                alert('${msg}');
-                location.href = '${url}';
-                if(${num} == 1) {
-                    window.close();
-                }
-            </script>`
-}
-
 loginChk = async (body) => {
     let member = await pDAO.loginChk(body.id);
     console.log("로그인시", member);
@@ -42,7 +31,7 @@ register = async (body) => {
         url = ""; 
         num = 1;
     }else{
-        msg = "이미 존재하는 아이디입니다.";
+        msg = "문제가 발생했습니다.";
         url = '/member/registerForm';
         num = 0;
     }
@@ -71,7 +60,7 @@ modifyForm = async (params) => {
 
 modifyM = async (body)=> {
     console.log("컨트롤에서 받아온 body", body);
-    let result = await pDAO.modifyM(body);
+    let result = await pDAO.modify(body);
     let msg = "", url = "";
     if(result ===0) {
         msg = "문제 발생";
@@ -85,16 +74,15 @@ modifyM = async (body)=> {
 
 deleteM = async (body)=> {
     console.log("컨트롤에서 받아온 body", body);
-    let msg ="", url ="";
     const result = await pDAO.deleteM(body);
+    let msg ="", url ="";
     if(result == 0) {
         msg = "문제 발생";
-        url = "/member/infoChk/" + body.id;
+        url = "/member/informationChk/" + body.id;
     }else {
         msg = "삭제 완료";
         url = "/";
     }
-
     return getMessage(msg,url);
 }
 
@@ -111,9 +99,8 @@ chgPassword = async (params) => {
     return result;
 }
 
-chgPwd = async (body) => {
-    console.log("컨트롤에서 받아온 body", body);
-    let result = await pDAO.chgPwd(body);
+chgPwd = async (param, body) => {
+    let result = await pDAO.chgPwd(param, body);
     let msg = "", url = "", num;
     if(result ===0) {
         msg = "문제 발생";
@@ -127,6 +114,17 @@ chgPwd = async (body) => {
     return getMessage1(msg, url, num);
 }
 
+getMessage1 = (msg, url, num) => {
+    return `<script>
+                alert('${msg}');
+                location.href = '${url}';
+                if(${num} == 1) {
+                    window.close();
+                }
+            </script>`
+}
+
+
 const getList = ()=>{
     return pDAO.getList();
 }
@@ -134,3 +132,4 @@ const getList = ()=>{
 
 
 module.exports = {loginChk, register, logout, infoChk, modifyForm, modifyM, deleteM, findId, chgPassword, chgPwd, getList}
+

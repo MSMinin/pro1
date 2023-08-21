@@ -4,7 +4,6 @@ const cService = require("../service/country_service");
 const fs = require("fs");
 const fileList = fs.readdirSync("./src/image");
 const fileList2 = fs.readdirSync("./src/image/country");
-const fileList3 = fs.readdirSync("./src/views/data1/images");
 
 const view = {
     loginForm : (req, res) => {
@@ -73,7 +72,7 @@ const process  = {
     modifyForm : async (req, res) => {
         console.log("req.params : ", req.params); //id받아옴
         const mlist = await pService.modifyForm(req.params);
-        res.render("member/modifyForm", {list : mlist, username : req.session.username,})
+        res.render("member/modifyForm", {list : mlist})
     },
     
     modifyM : async (req, res) => {
@@ -101,8 +100,7 @@ const process  = {
         res.render("member/chgPwdForm", {list : mlist})
     },
     chgPwd : async (req, res) => {
-        console.log("body확인 : ", req.body);
-        const msg = await pService.chgPwd(req.body);
+        const msg = await pService.chgPwd(req.params, req.body);
         res.send(msg);
     },
 
@@ -182,11 +180,38 @@ const process  = {
             res.render("worldcup/result2_4_8", {nlist, files : fileList, username : req.session.username});
         } 
     },
-    banner : (req, res) => {
-        let filePath = `./src/views/data1/images/${req.params.fileName}`;
-        res.download(filePath);
-    }
 
+    loginChk : async (req, res) => {
+        console.log("req.body : ", req.body);
+    },
+    write : async (req, res) => {
+        console.log("ctrl write: ", req.body);
+        const msg = await pService.pageInsert.write(req.body);
+        res.send(msg);
+    },
+    modify : async (req, res) => {
+        console.log("ctrl modify", req.body);
+        const msg = await pService.pageModify.modify(req.body);
+        res.send(msg);
+    },
+    delete : async (req, res)=> {
+        console.log("ctrl delete", req.params.num);
+        const msg = await pService.pageDelete.delete(req.params.num);
+        res.send(msg);
+    },
+    likes : async (req, res)=>{
+        console.log("ctrl likes", req.body.likes);
+        console.log("ctrl likes", req.body.num);
+
+        var like= req.body.like;
+        if(like === "좋아요"){
+            result = 1;
+        }else {
+            result = 0;
+        }
+        const msg = await pService.pageUpdate.likes(req.body.num, result);
+        res.redirect("/content/"+ req.body.num);
+    }
 }
 const cView ={
     tokyo : async(req, res) => {
@@ -204,43 +229,7 @@ const cView ={
     image : (req, res) => {
         let filePath = `./src/image/country/${req.params.fileName}`;
         res.download(filePath);
-    },
-    seoul : async(req, res) => {
-        //const weather = await cService.getHtml();
-        
-
-        res.render("country/seoul", {username : req.session.username, files : fileList2});
-    },
-    daegu : async(req, res) => {
-        //const weather = await cService.getHtml();
-        
-
-        res.render("country/daegu", {username : req.session.username, files : fileList2});
-    },
-    busan : async(req, res) => {
-        //const weather = await cService.getHtml();
-        
-
-        res.render("country/busan", {username : req.session.username, files : fileList2});
-    },
-    gangneung : async(req, res) => {
-        //const weather = await cService.getHtml();
-        
-
-        res.render("country/gangneung", {username : req.session.username, files : fileList2});
-    },
-    gyeongju : async(req, res) => {
-        //const weather = await cService.getHtml();
-        
-
-        res.render("country/gyeongju", {username : req.session.username, files : fileList2});
-    },
-    jeonju : async(req, res) => {
-        //const weather = await cService.getHtml();
-        
-
-        res.render("country/jeonju", {username : req.session.username, files : fileList2});
-    },
+    }
 }
 
 module.exports = {view, process, cView}

@@ -12,7 +12,7 @@ router.get("/logout", pCtrl.process.logout);
 router.get("/infoChk/:username", pCtrl.process.infoChk);
 
 router.get("/modifyForm/:id", pCtrl.process.modifyForm);
-router.post("/modifyM", pCtrl.process.modifyM);
+router.post("/modify", pCtrl.process.modify);
 
 router.get("/delete/:id", pCtrl.process.delete);
 
@@ -20,6 +20,6 @@ router.get("/find", pCtrl.view.find);
 router.post("/findId", pCtrl.process.findId);
 
 router.get("/chgPwdForm/:id", pCtrl.process.chgPwdForm);
-router.post("/chgPwd", pCtrl.process.chgPwd);
+router.post("/chgPwd/:id", pCtrl.process.chgPwd);
 
 module.exports = router;

@@ -3,50 +3,37 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <style>
+
       #wrap { display: flex; width: 100%; height: 100%; margin: auto;}
       #wrap>#banner {margin-left: 60px; width: 70%; height: 50%;}
+
+      img {width: 500px; height: 300px;}
+      section {margin: 0% 20% ;padding: 5% 10%;}
+
     </style>
     <link rel="stylesheet" type="text/css" href="engine1/style.css" />
     <script type="text/javascript" src="engine1/jquery.js"></script>
-
-    <script>
-      var li;
-      window.onload = () => {
-        let img = document.getElementById("wows1_0");
-        li = setInterval(load, 1000);
-      }
-      var cnt = 1;
-
-      const load = () => {
-        if(cnt > 2) {
-          cnt = 0;
-        }
-        console.log("<%=files[1]%>")
-        
-        img.src="/banner/images/<%=files["+ 0 +"]%>";
-        cnt++
-      }
-      console.log(cnt);
-    </script>
 </head>
 <body>
     <%-include("default/header.ejs")%>
-    <div id="wrap">
-      <div id="banner">
-        <div id="wowslider-container1"><!--코드 문제 없음, 이미지 적용-->
-          <div class="ws_images">
-            <ul>
-              <%console.log(files[0])%>
-              <li><img src="/banner/images/<%=files[0]%>" id="wows1_0" width="500px" height="500px"/></li>
-            </ul>
-          </div>
-            <div class="ws_script" style="position:absolute;left:-99%"></div>
-            <div class="ws_shadow"></div>
-        </div>	
-            <script type="text/javascript" src="engine1/wowslider.js"></script>
-            <script type="text/javascript" src="engine1/script.js"></script>
+
+  </header>
+
+  <section>
+    <div id="wowslider-container1">
+      <div class="ws_images">
+        <ul>
+          
+        </ul>
+
       </div>
-    </div>
-    <%-include("default/footer.ejs")%>
+        <div class="ws_script" style="position:absolute;left:-99%"></div>
+      <div class="ws_shadow"></div>
+    </div>	
+    <script type="text/javascript" src="engine1/wowslider.js"></script>
+    <script type="text/javascript" src="engine1/script.js"></script>
+  </section>
+  <%-include("default/footer.ejs")%>
+  
 </body>
 </html>
