@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {margin: 0% 20% ;}
+        #country {padding: 5% 20%;}
+        div > table {margin: 0% 20% ; text-align: center;}
+    </style>
+</head>
+<body>
+    <header>
+        <%-include("../default/header.ejs")%>
+    </header>
+    <section>
+        <div id="country">
+            <div><h3>Tokyo</h3><br></div>
+            <div><img src="/country/image/<%=files[0]%>" width="400px" height="400px"/><br><br></div>
+            <p>일본 > 오사카부 > 오사카<br>
+                언어 : 일본어<br>
+                기온<br>
+                환율<br>
+                월 추천<br>
+                항공 1시간 35분<br>
+            </p>
+            <table>
+                <tr>
+                    <td><img src="#"></td>
+                    <td><img src="#"></td>
+                    <td><img src="#"></td>
+                </tr>
+                <tr>
+                    <td><a href="#">호텔 1</a></td>
+                    <td><a href="#">호텔 2</a></td>
+                    <td><a href="#">호텔 3</a></td>
+                </tr>
+            </table>
+            <hr>
+            <table>
+                <tr>
+                    <td><img src="#"></td>
+                    <td><img src="#"></td>
+                    <td><img src="#"></td>
+                </tr>
+                <tr>
+                    <td><a href="#">맛집 1</a></td>
+                    <td><a href="#">맛집 2</a></td>
+                    <td><a href="#">맛집 3</a></td>
+                </tr>
+            </table>
+            <hr>
+            <table>
+                <tr>
+                    <td><img src="#"></td>
+                    <td><img src="#"></td>
+                    <td><img src="#"></td>
+                </tr>
+                <tr>
+                    <td><a href="#">상점 1</a></td>
+                    <td><a href="#">상점 2</a></td>
+                    <td><a href="#">상점 3</a></td>
+                </tr>
+            </table>
+            <hr>
+            <table>
+                <tr>
+                    <td><img src="#"></td>
+                    <td><img src="#"></td>
+                    <td><img src="#"></td>
+                </tr>
+                <tr>
+                    <td><a href="#">관광지 1</a></td>
+                    <td><a href="#">관광지 2</a></td>
+                    <td><a href="#">관광지 3</a></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+</body>
+</html>

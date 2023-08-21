@@ -14,5 +14,6 @@ module.exports = (app) => {
     app.get("/", pCtrl.banner.index);
     app.get("/:fileName", pCtrl.banner.image);
 
+
     return router;
 }

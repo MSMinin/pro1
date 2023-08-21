@@ -1,9 +1,14 @@
 <style>
+<<<<<<< HEAD
     section {margin: 0% 20% ;padding: 5% 10%;}
+=======
+    #world {margin-left: 25%; border: solid 1px;}
+>>>>>>> 05e840fc27885d601ffb66046f49f251e50c8b57
 </style>
 
 <body>
     <%-include("../default/header.ejs")%>
+<<<<<<< HEAD
     <section>
         <table id="world">
             <tr style="text-align: center;">
@@ -16,6 +21,20 @@
             </tr>
         </table>
     </section>
+=======
+
+    <table border="1" id="world">
+        <tr style="text-align: center; border: solid 1px black;">
+            <th>관광</th>
+            <th>식도락</th>
+        </tr>
+        <tr>
+            <td><a href="/worldcup/start/1/4/<%= nlist[6].N_ID %>"><img src="/worldcup/image/<%=files[6]%>" width="400px" height="400px"/></a></td>
+            <td><a href="/worldcup/start/1/4/<%= nlist[7].N_ID %>"><img src="/worldcup/image/<%=files[7]%>" width="400px" height="400px"/></a></td>
+        </tr>
+    </table>
+
+>>>>>>> 05e840fc27885d601ffb66046f49f251e50c8b57
     <%-include("../default/footer.ejs")%>
 </body>
 </html>
