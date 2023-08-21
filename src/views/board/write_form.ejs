@@ -1,27 +1,40 @@
-<h3>write_form.ejs</h3>
-<script>
-    function readURL(input){
-    console.log(input);
-    const file = input.files[0];
-    console.log(file);
-    
-    if(file != ""){
-        const reader = new FileReader();
-        reader.readAsDataURL( file );
-        reader.onload = (e)=> {
-            console.log( e.target.result );
-            document.querySelector("#preview").src = e.target.result;
-        }
-    }
-}
-</script>
-
-<!--<form action ="/write" method="post" enctype="multipart/form-data">-->
-<form action ="/write" method="post">
-    <input type="hidden" name="id" value="<%= username %>">
-    제목 :<br>
-        <input type="text" name="title" placeholder="input title"><br><br>
-    내용 :<br>
-        <textarea style="resize: none;" rows="20" cols="100" name="content" placeholder="글 작성해주세여"></textarea><br>
-        <input type="submit" value="등록">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <%-include("../default/header.ejs")%>
+    <link rel="stylesheet" href="/css/css.css">
+</head>
+<body>
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>후기 작성</strong>
+            <p>여러분들의 여행후기를 올려주세요!</p>
+        </div>
+        <form action ="/write" method="post">
+            <input type="hidden" name="id" value="<%= username %>">
+            <div class="board_write_wrap">
+                <div class="board_write">
+                    <div class="title">
+                        <dl>
+                            <dt>제목</dt>
+                            <dd><input type="text" name="title" placeholder="제목 입력"></dd>
+                        </dl>
+                    </div>
+                    <div class="cont">
+                        <dl>
+                            <dd><textarea name="content" placeholder="글 작성해주세여"></textarea></dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="bt_wrap">
+                    <button type="submit" class="on">등록</button>
+                    <a href="/BoardList">취소</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

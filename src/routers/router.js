@@ -13,5 +13,6 @@ module.exports = (app) => {
     const pCtrl = require("../../src/cotroller/project_ctrl");
     app.get("/", pCtrl.banner.index);
     app.get("/:fileName", pCtrl.banner.image);
+
     return router;
 }
