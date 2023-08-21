@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>content</title>
+    <link rel="stylesheet" href="/css/css.css">
+    <%-include("../default/header.ejs")%>
+</head>
+<body>
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>게시판</strong>
+            <p>여러분들의 여행후기를 올려주세요!</p>
+        </div>
+        <div class="board_view_wrap">
+            <div class="board_view">
+                <div class="title">
+                    <%= result.TITLE %>
+                </div>
+                <div class="info">
+                    <dl>
+                        <dt>글 번호</dt>
+                        <dd><%= result.NUM %></dd>
+                    </dl>
+                    <dl>
+                        <dt>작성자</dt>
+                        <dd><%= result.ID %></dd>
+                    </dl>
+                    <dl>
+                        <dt>작성일</dt>
+                        <dd><%= result.DATES %></dd>
+                    </dl>
+                    <dl>
+                        <dt>조회수</dt>
+                        <dd><%= result.VIEWCOUNT%></dd>
+                    </dl>
+                    <dl>
+                        <dt>좋아요</dt>
+                        <dd><%= result.LIKES%></dd>
+                    </dl>
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                            <% if(data == undefined) { %>
+                                <div>♡</div>
+                            <% } else { %>
+                                <div>♥</div>
+                            <% } %>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="cont">
+                    <%= result.CONTENT %>
+                </div>
+            </div>
+            <div class="bt_wrap">
+                <form action="/likes" method="post">
+                    <% if(data == undefined) { %>
+                            <input type="hidden" value="<%= result.NUM %>" name="num">
+                            <input type="hidden" value="<%= username %>" name="id">
+                            <button type="submit">좋아요</button>
+                    <% } %>
+
+                    <% if(username == result.ID){ %>
+                        <a href="/modify_form/<%= result.NUM %>" method="get" name="modify">수정</a>
+                        <a href="/delete/<%= result.NUM %>" method="get" name="delete">삭제</a>
+                    <% } %>
+
+                    <a href="/boardList" method="get" class="on">목록으로 돌아가기</a><br>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<style>
+    #infoChk {margin-left: 40%;}
+</style>
+<%-include("../default/header.ejs")%>
+<div id = "infoChk">
+<h2>회원 정보 확인</h2>
+<table border="1">
+    <tr>
+        <td>아이디</td> <td>&nbsp;</td> <td><%=list.ID%></td>
+    </tr>
+    <tr>
+        <td>비밀번호</td> <td>&nbsp;</td> <td><%=list.PWD%></td>
+    </tr>
+    <tr>
+        <td>이름</td> <td>&nbsp;</td> <td><%=list.NAME%></td>
+    </tr>
+    <tr>
+        <td>주소</td> <td>&nbsp;</td> <td><%=list.ADDR%></td>
+    </tr>
+    <tr>
+        <td>전화번호</td> <td>&nbsp;</td> <td><%=list.P_NUMBER%></td>
+    </tr>
+    <tr>
+        <td>생년월일</td> <td>&nbsp;</td> <td><%=list.BIRTH%></td>
+    </tr>
+    <tr>
+        <td><button><a href="/member/modifyForm/<%=list.ID%>">회원정보 수정</a></button></td>
+        <td>&nbsp;</td>
+        <td><button><a href="/member/delete/<%=list.ID%>">회원정보 삭제</a></button></td>
+    </tr>
+</table>
+</div>
+<%-include("../default/footer.ejs")%>
