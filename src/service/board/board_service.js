@@ -3,7 +3,7 @@ const pDAO = require("../../database/board/board_dao");
 
 const pageOperation = (start, totalCount) =>{
     page = {};
-    const pageNum = 10;  // 페이지당 보여줄 글 개수
+    const pageNum = 5;  // 페이지당 보여줄 글 개수
     const num = (totalCount % pageNum === 0)? 0:1;
     page.totPage = parseInt( totalCount / pageNum) + num;
     page.startNum = (start -1) * pageNum + 1;
@@ -30,8 +30,15 @@ const pageRead = {
         console.log("ser content: ", num);
         await pageUpdate.upHit(num);
         const data = await pDAO.daoRead.content(num);
-        console.log("ser content : ", data);
+        console.log("ser cont data : ", data.rows[0]);
         return data.rows[0];
+    },
+    likeCk: async (num, id) => {
+        console.log("ser content: ", num);
+        console.log("ser content: ", id);
+        const likeCk = await pDAO.daoRead.likeCk(num,id);
+        console.log("ser cont likeCk : ", likeCk);
+        return likeCk;
     },
     totalContent : async () => {
         const totalContent = await pDAO.daoRead.totalContent();
@@ -55,6 +62,12 @@ const pageInsert = {
             url="/boardList";
         }
         return getMessage(msg, url);
+    },
+    likes : async (num, id) => {
+        console.log("ser likes id", id);
+        console.log("ser likes num", num);
+        await pageUpdate.likes(num);
+        await pDAO.daoInsert.likes(num, id);
     }
 }
 
@@ -76,6 +89,7 @@ const pageModify = {
 
 const pageDelete = {
     delete : async (num) => {
+        await pDAO.daoDelete.deleteLike(num);
         const result = await pDAO.daoDelete.delete(num);
 
         let msg="", url="";
@@ -94,11 +108,10 @@ const pageUpdate = {
     upHit : async (num)=> {
         await pDAO.daoUpdate.upHit(num);
     },
-    likes : async (num, like)=> {
-        await pDAO.daoUpdate.likes(num, like);
+    likes : async (num)=> {
+        await pDAO.daoUpdate.likes(num);
     }
 }
-
 
 getMessage = (msg, url) => {
     return `<script>

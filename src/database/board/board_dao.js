@@ -19,6 +19,13 @@ const daoRead = {
         const data = await con.execute(sql);
         return data;
     },
+    likeCk : async (num, id) => {
+        const con = await oracledb.getConnection(dbConfig);
+        const sql = `select userid from likes where contnum=${num} and userid='${id}'`;
+        const data = await con.execute(sql);
+        console.log("dao likeCk", data);
+        return data;
+    },
     totalContent : async ()=>{
         const con = await oracledb.getConnection(dbConfig);
         const sql = `select count(*) from proboard`;
@@ -35,6 +42,16 @@ const daoInsert = {
         let result;
         try {
             result = await con.execute(sql, body);
+        }catch (err){
+            console.log(err);
+        }
+    },
+    likes : async (num, id) => {
+        const con = await oracledb.getConnection(dbConfig);
+        const sql = `insert into likes values(${num},'${id}')`;
+        let result;
+        try {
+            result = await con.execute(sql);
         }catch (err){
             console.log(err);
         }
@@ -69,13 +86,17 @@ const daoDelete = {
     delete : async (num) => {
         const con = await oracledb.getConnection(dbConfig);
         const sql = `delete from proboard where num=${num}`;
-
         let result;
         try {
             result = await con.execute(sql);
         } catch (err) {
             console.log(err);
         }
+    },
+    deleteLike : async (num) => {
+        const con = await oracledb.getConnection(dbConfig);
+        const sql = `delete from likes where contnum=${num}`;
+        await con.execute(sql);
     }
 }
 

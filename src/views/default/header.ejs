@@ -85,7 +85,7 @@
               
           <ul class="dropdown-menu">
             <li><a href="/member/infoChk/<%=username%>">회원정보</a></li>
-            <li><a href="/boardList">자유게시판</a></li>
+            <li><a href="#">자유게시판</a></li>
             <li>체험게시판</li>
             <li>후기게시판</li>
           </ul>
@@ -97,7 +97,7 @@
           </button>
                 
           <ul class="dropdown-menu">
-            <li><a href="/boardList">자유게시판</a></li>
+            <li><a href="#">자유게시판</a></li>
             <li>체험게시판</li>
             <li>후기게시판</li>
           </ul>
@@ -157,11 +157,7 @@
           <ul> 
             <li class="dropdown">
               <span class="dropbtn">
-                <%if(username) {%>
                   <a href="/boardList">게시판</a>
-                <%} else {%>
-                  <a href="/member/loginForm">게시판</a>
-                <% } %>
               </span>
           </li>
         </ul>

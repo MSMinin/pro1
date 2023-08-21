@@ -22,11 +22,15 @@ const views = {
     },
     content : async(req, res)=> {
         console.log("ctrl content: ", req.params.num);
+        console.log("ctrl content22: ", req.session.username);
         const result = await ser.pageRead.content(req.params.num);
-        console.log(result);
-        res.render("board/content", {result, username : req.session.username});
+        const data = await ser.pageRead.likeCk(req.params.num, req.session.username);
+        console.log("ctrl result: ", result);
+        console.log("ctrl data: ", data.rows[0]);
+        res.render("board/content", {result, data: data.rows[0], username : req.session.username});
     }
 }
+
 
 const process  = {
     write : async (req, res) => {
@@ -46,8 +50,9 @@ const process  = {
     },
     likes : async (req, res)=>{
         console.log("ctrl likes", req.body.likes);
+        console.log("ctrl likes", req.session.username);
         console.log("ctrl likes", req.body.num);
-        const msg = await ser.pageUpdate.likes(req.body.num);
+        await ser.pageInsert.likes(req.body.num, req.session.username);
         res.redirect("/content/"+ req.body.num);
     }
 }
