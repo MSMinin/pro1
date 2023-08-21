@@ -86,37 +86,16 @@ modifyM = async (body)=> {
 deleteM = async (body)=> {
     console.log("컨트롤에서 받아온 body", body);
     let msg ="", url ="";
-    const d = ddd();
-    if(d) {
-        const result = await pDAO.deleteM(body);
-        if(result == 0) {
-            msg = "문제 발생";
-            url = "/member/infoChk/" + body.id;
-        }else {
-            msg = "삭제 완료";
-            url = "/";
-        }
-    }else {
-        msg = "실행을 취소하셨습니다.";
+    const result = await pDAO.deleteM(body);
+    if(result == 0) {
+        msg = "문제 발생";
         url = "/member/infoChk/" + body.id;
-    }  
-    return getMessage(msg,url);
-}
+    }else {
+        msg = "삭제 완료";
+        url = "/";
+    }
 
-ddd = () => {
-    return `
-    <script>
-    $(document).ready(function(){
-        $(".delete").click(function() {
-            if(confirm("삭제한 정보는 복구할 수 없습니다. 정말 삭제하시겠습니까>")){
-                return true;
-            }else {
-                return false;
-            }
-        })
-    })
-    </script>
-    `;
+    return getMessage(msg,url);
 }
 
 findId = async (body) => {
