@@ -5,57 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BoardList</title>
     <link rel="stylesheet" href="/css/css.css">
-    <%-include("../default/header.ejs")%>
 </head>
 <body>
-    <div class="board_wrap">
-        <div class="board_title">
-            <strong>게시판</strong>
-            <p>여러분들의 여행후기를 올려주세요!</p>
-        </div>
-        <div class="board_list_wrap">
-            <div class="board_list">
-                <div class="top">
-                    <div class="num">번호</div>
-                    <div class="title">제목</div>
-                    <div class="dates">날짜</div>
-                    <div class="viewcount">조회수</div>
-                    <div class="likes">좋아요</div>
-                </div>
-                <% list.forEach( data => { %>
-                    <div>
-                        <div class="num"><%=data.NUM %></div>
-                        <div class="title"><a href="/content/<%= data.NUM %>"><%= data.TITLE %></a></div>
-                        <div class="dates"><%= data.DATES %></div>
-                        <div class="viewcount"><%= data.VIEWCOUNT %></div>
-                        <div class="likes"><%= data.LIKES %></div>
+    <%-include("../default/header.ejs")%>
+    <section>
+        <div class="board_wrap">
+            <div class="board_title">
+                <strong>게시판</strong>
+                <p>여러분들의 여행후기를 올려주세요!</p>
+            </div>
+            <div class="board_list_wrap">
+                <div class="board_list">
+                    <div class="top">
+                        <div class="num">번호</div>
+                        <div class="title">제목</div>
+                        <div class="dates">날짜</div>
+                        <div class="viewcount">조회수</div>
+                        <div class="likes">좋아요</div>
                     </div>
-                <% }); 
-                if (list.length == 0) {%>
-                    <div> <b>등록된 글이 없습니다</b> </div>
-                <% } %>
-            </div>
-            <div class="board_page">
-                <% if( start <= 1){ %>
-                    <a href="#" class="bt first"><button disabled><</button></a>
-                <% } else { %>
-                    <a href="/boardList?start=<%=start-1%>" class="bt prev"><</a>
-                <% }for(let i=1 ; i <= page.totPage ; i++ ){ %>
-                    <a href="/boardList?start=<%=i %>" class="num"><%=i %></a>
-                <% }if( start < page.totPage ){%>
-                    <a href="/boardList?start=<%=start+1%>" class="bt next">></a>
-                <% }else{ %>
-                    <a href="#" class="bt last"><button disabled>></button></a>
-                <% } %>
-            </div>
-            <div class="bt_wrap">
-                <%if(username) {%>
-                    <a href="/write_form" class="on">글 등록</a>
-                <%} else {%>
-                    <a href="/member/loginForm">글 등록</a>
-                <% } %>
+                    <% list.forEach( data => { %>
+                        <div>
+                            <div class="num"><%=data.NUM %></div>
+                            <div class="title"><a href="/content/<%= data.NUM %>"><%= data.TITLE %></a></div>
+                            <div class="dates"><%= data.DATES %></div>
+                            <div class="viewcount"><%= data.VIEWCOUNT %></div>
+                            <div class="likes"><%= data.LIKES %></div>
+                        </div>
+                    <% }); 
+                    if (list.length == 0) {%>
+                        <div> <b>등록된 글이 없습니다</b> </div>
+                    <% } %>
+                </div>
+                <div class="board_page">
+                    <% if( start <= 1){ %>
+                        <a href="#" class="bt first"><button disabled><</button></a>
+                    <% } else { %>
+                        <a href="/boardList?start=<%=start-1%>" class="bt prev"><</a>
+                    <% }for(let i=1 ; i <= page.totPage ; i++ ){ %>
+                        <a href="/boardList?start=<%=i %>" class="num"><%=i %></a>
+                    <% }if( start < page.totPage ){%>
+                        <a href="/boardList?start=<%=start+1%>" class="bt next">></a>
+                    <% }else{ %>
+                        <a href="#" class="bt last"><button disabled>></button></a>
+                    <% } %>
+                </div>
+                <div class="bt_wrap">
+                    <%if(username) {%>
+                        <a href="/write_form" class="on">글 등록</a>
+                    <%} else {%>
+                        <a href="/member/loginForm">글 등록</a>
+                    <% } %>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 </body>
 </html>
