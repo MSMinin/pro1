@@ -1,5 +1,3 @@
-const axios = require("axios");
-const cheerio = require("cheerio");
 const pDAO = require("../database/project_dao")
 
 const getHtml = async(num)=>{

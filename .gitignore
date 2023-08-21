@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-*node_modules/*
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -35,7 +25,7 @@ local.properties
 .settings/
 .loadpath
 .recommenders
-=======
+
 # Logs
 logs
 *.log
@@ -160,4 +150,3 @@ package-lock.json
 
 
 
->>>>>>> minji
