@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        section {margin: 0% 20% ;padding: 3%;}
+    </style>
 </head>
 <body>
     <%-include("../default/header.ejs")%>
-    <form onclick=""><!-- 나라 링크-->
+    <section>
+        <p>
             결과<br>
-            2번, 3번, 6번 선택
-        <img src="#"><!-- 나라 링크-->
-        입니다
-    </form>
+            장거리에서 자연을 선택하셨고, 바다를 고르셨습니다.<br>
+            2번, 3번, 6번 선택<br>
+        </p>
+        <form onclick=""><!-- 나라 링크-->
+            <img src=/worldcup/start/<%= nlist[0].N_ID %>"><img src="/worldcup/image/<%=files[0]%>"><br><!-- 나라 링크-->
+        </form>
+        <p>
+            입니다
+        </p>
+    </section>
     <%-include("../default/footer.ejs")%>
 </body>
 </html>

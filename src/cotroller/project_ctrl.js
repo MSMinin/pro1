@@ -24,9 +24,8 @@ const view = {
         //console.log("nlist : ",nlist);
         res.render("worldcup/worldcup1", {nlist, files : fileList, username : req.session.username});
     },
-
-    worldcup2 : (req, res) => {
-        res.redirect("/worldcup/1");
+    worldcup1 : (req, res) => {
+        res.redirect("/worldcup/start");
     }, 
     main : (req, res)=> {
         res.render("main");

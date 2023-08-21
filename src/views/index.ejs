@@ -5,36 +5,8 @@
     <style>
       img {width: 100%; height: auto;}
       section {margin: 0% 20% ;padding: 1%;}
-      .button{background: skyblue; text-align: right; width: 100%; font-size: small; }
     </style>
-    <script type="text/javascript">
-      x=1;
-      const pic1=()=>{
-        let img=document.getElementById("img01");
-        let msg="배너01.jpg";
-        img.src=msg;
-      }
-      const pic2=()=>{
-        let img=document.getElementById("img01");
-        let msg="배너02.jpg";
-        img.src=msg;
-      }
-      const pic3=()=>{
-        let img=document.getElementById("img01");
-        let msg="배너03.jpg";
-        img.src=msg;
-      }
-      const pic4=()=>{
-        let img=document.getElementById("img01");
-        let msg="배너04.jpg";
-        img.src=msg;
-      }
-      const pic5=()=>{
-        let img=document.getElementById("img01");
-        let msg="배너05.jpg";
-        img.src=msg;
-      }
-    </script>
+    
 </head>
 <body>
   <header>
@@ -42,14 +14,33 @@
   </header>
 
   <section>
-    <img id="img01" src="./data1/images/배너01.jpg" ><br>
-    <h3 class="button">
-    <input type="button" value="1" onclick="pic1()">
-    <input type="button" value="2" onclick="pic2()">
-    <input type="button" value="3" onclick="pic3()">
-    <input type="button" value="4" onclick="pic4()">
-    <input type="button" value="5" onclick="pic5()">
-    </h3>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="배너01.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="배너02.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="배너03.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="배너04.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="배너05.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
   </section>
 
   <%-include("default/footer.ejs")%>
