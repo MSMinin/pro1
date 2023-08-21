@@ -14,5 +14,6 @@ module.exports = (app) => {
     app.get("/", (req, res) => {
         res.render("index", {username : req.session.username});
     });
+    
     return router;
 }
