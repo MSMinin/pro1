@@ -4,6 +4,7 @@ const cService = require("../service/country_service");
 const fs = require("fs");
 const fileList = fs.readdirSync("./src/image");
 const fileList2 = fs.readdirSync("./src/image/country");
+const fileList3 = fs.readdirSync("./src/views/data1/images");
 
 const view = {
     loginForm : (req, res) => {
@@ -181,10 +182,11 @@ const process  = {
             res.render("worldcup/result2_4_8", {nlist, files : fileList, username : req.session.username});
         } 
     },
-
-    loginChk : async (req, res) => {
-        console.log("req.body : ", req.body);
+    banner : (req, res) => {
+        let filePath = `./src/views/data1/images/${req.params.fileName}`;
+        res.download(filePath);
     }
+
 }
 const cView ={
     tokyo : async(req, res) => {

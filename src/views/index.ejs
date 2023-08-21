@@ -10,31 +10,28 @@
     <script type="text/javascript" src="engine1/jquery.js"></script>
 </head>
 <body>
-  <header>
     <%-include("default/header.ejs")%>
-  </header>
+    <div id="wrap">
+        <div id="banner">
+          <fieldset>메인</fieldset>
 
-  <div id="wrap">
-    <div id="banner">
-      <fieldset>메인</fieldset>
+        <hr>
+        <div id="wowslider-container1"><!--코드 문제 없음, 이미지 적용-->
+          <div class="ws_images">
+            <ul>
+              <%console.log(files[0])%>
+              <li><img src="/banner/images/<%=files[0]%>" alt="오로라" id="wows1_0"/></li>
+              <li><img src="data1/images/_1.jpg" alt="다운로드" id="wows1_1"/></li>
+            </ul>
 
-  <hr>
-  <div id="wowslider-container1"><!--코드 문제 없음, 이미지 적용-->
-    <div class="ws_images">
-      <ul>
-        <li><img src="data1/images/_0.jpg" alt="오로라" id="wows1_0"/></li>
-        <li><img src="data1/images/_1.jpg" alt="다운로드" id="wows1_1"/></li>
-      </ul>
-
+          </div>
+           <div class="ws_script" style="position:absolute;left:-99%"></div>
+          <div class="ws_shadow"></div>
+        </div>	
+        <script type="text/javascript" src="engine1/wowslider.js"></script>
+        <script type="text/javascript" src="engine1/script.js"></script>
+      </div>
     </div>
-      <div class="ws_script" style="position:absolute;left:-99%"></div>
-    <div class="ws_shadow"></div>
-  </div>	
-  <script type="text/javascript" src="engine1/wowslider.js"></script>
-  <script type="text/javascript" src="engine1/script.js"></script>
-  <footer>
     <%-include("default/footer.ejs")%>
-  </footer>
-
 </body>
 </html>
