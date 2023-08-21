@@ -11,6 +11,12 @@ const pageOperation = (start, totalCount) =>{
     return page;
 }
 
+const getId =async (num) => {
+    const result = await pDAO.getId(num);
+        console.log("dao에서 받아온 getId의 result : ",result.rows[0])
+        return result.rows[0];
+}
+
 const pageRead = {
     boardList : async (start, total) =>{
         start = (start && start >= 1)? Number(start):1;
@@ -42,50 +48,70 @@ const pageRead = {
 
 
 const pageInsert = {
-    write : async (body) => {
-        const result = await pDAO.daoInsert.write(body);
-        console.log("ser write: ", result);
-
+    write : async (body, session) => {
         let msg="", url="";
-        if (result == 0){
-            msg="문제 발생";
-            url="/write_form";
+        if(session != undefined) {
+            const result = await pDAO.daoInsert.write(body);
+            console.log("ser write: ", result);
+            
+            if (result == 0){
+                msg="문제 발생";
+                url="/write_form";
+            }else {
+                msg="등록되었습니다";
+                url="/boardList";
+            }
         }else {
-            msg="등록되었습니다";
-            url="/boardList";
+            msg = "로그인 먼저 해주세요."
+            url = "/member/loginForm"
         }
+        
         return getMessage(msg, url);
     }
 }
 
 const pageModify = {
-    modify : async (body) => {
-        const result = await pDAO.daoUpdate.modify(body);
-
+    modify : async (session, body) => {
         let msg="", url="";
-        if (result == 0){
-            msg="문제 발생";
-            url="/modify_from?num="+body.num;
-        }else {
-            msg="수정되었습니다";
-            url="/content/"+body.num;
+        if(session == undefined) {
+            msg = "세션이 완료되었거나 로그인해주세요,";
+            url = "/member/loginForm";
+        }else{
+            const result = await pDAO.daoUpdate.modify(body);
+            if (result == 0){
+                msg="문제 발생";
+                url="/modify_from?num="+body.num;
+            }else {
+                msg="수정되었습니다";
+                url="/content/"+body.num;
+            }
         }
+        
         return getMessage(msg, url);
     }
 }
 
 const pageDelete = {
-    delete : async (num) => {
-        const result = await pDAO.daoDelete.delete(num);
-
+    delete : async (id, num, session) => {
         let msg="", url="";
-        if (result == 0){
-            msg="문제 발생";
-            url="/content?num="+body.num;
+        if(session == undefined) {
+            msg = "세션이 만료되었거나 로그인해주세요.";
+            url = "/member/loginForm";
+        }else if (id === session){
+           const result = await pDAO.daoDelete.delete(id, num);
+            
+            if (result == 0){
+                msg="문제 발생";
+                url=`"/content/${num}`;
+            }else {
+                msg="삭제되었습니다";
+                url="/boardList";
+            }
         }else {
-            msg="삭제되었습니다";
-            url="/boardList";
+            msg = "다른 유저의 게시물을 삭제할 수 없습니다."
+            url = `/content/${num}`;
         }
+    
         return getMessage(msg, url);
     }
 }
@@ -107,4 +133,4 @@ getMessage = (msg, url) => {
             </script>`
 }
 
-module.exports = {pageRead, pageInsert, pageModify, pageDelete, pageUpdate};
+module.exports = {pageRead, pageInsert, pageModify, pageDelete, pageUpdate, getId};

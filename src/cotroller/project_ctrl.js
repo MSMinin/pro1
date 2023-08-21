@@ -72,12 +72,12 @@ const process  = {
     modifyForm : async (req, res) => {
         console.log("req.params : ", req.params); //id받아옴
         const mlist = await pService.modifyForm(req.params);
-        res.render("member/modifyForm", {list : mlist})
+        res.render("member/modifyForm", {list : mlist, username : req.session.username,})
     },
     
-    modify : async (req, res) => {
+    modifyM : async (req, res) => {
         console.log("body확인 : ", req.body);
-        const msg = await pService.modify(req.body);
+        const msg = await pService.modifyM(req.body);
         res.send(msg);
     },
 

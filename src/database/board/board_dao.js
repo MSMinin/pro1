@@ -66,17 +66,31 @@ const daoUpdate = {
 }
 
 const daoDelete = {
-    delete : async (num) => {
+    delete : async (id, num) => {
         const con = await oracledb.getConnection(dbConfig);
-        const sql = `delete from proboard where num=${num}`;
+        const sql = `delete from proboard where id='${id}' and num = '${num}'`;
 
         let result;
         try {
             result = await con.execute(sql);
+            console.log(result);
         } catch (err) {
             console.log(err);
         }
     }
+    
 }
+const getId = async (num) => {
+        const con = await oracledb.getConnection(dbConfig);
+        const sql = `select id from proboard where num = '${num}'`;
+        
+        try{
+            console.log("getId에서 보내는 내용 : ",con.execute(sql));
+            return await con.execute(sql);
+            
+        }catch(err) {
+            console.log(err);
+        }
+    }
 
-module.exports = { daoRead, daoInsert, daoDelete, daoUpdate };
+module.exports = { daoRead, daoInsert, daoDelete, daoUpdate, getId };

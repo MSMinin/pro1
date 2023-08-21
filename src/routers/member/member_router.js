@@ -12,7 +12,7 @@ router.get("/logout", pCtrl.process.logout);
 router.get("/infoChk/:username", pCtrl.process.infoChk);
 
 router.get("/modifyForm/:id", pCtrl.process.modifyForm);
-router.post("/modify", pCtrl.process.modify);
+router.post("/modifyM", pCtrl.process.modifyM);
 
 router.get("/delete/:id", pCtrl.process.delete);
 

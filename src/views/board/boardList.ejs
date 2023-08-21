@@ -1,6 +1,9 @@
 <%-include("../default/header.ejs")%>
-
-<h3>boardList.ejs</h3>
+<style>
+    tr {border: solid 1px black; margin: auto;}
+    th {width: 300px; border: solid 1px black; margin: auto;}
+    td {width: 300px; border: solid 1px black; margin: auto;}
+</style>
 
 전체 글 개수 : <%= totalContent %>
 <table border="1">
@@ -41,5 +44,5 @@
         <% } %>
     </td>
     <td><a href="/write_form">글 등록</a></td>
-        
 </table>
+<%-include("../default/footer.ejs")%>

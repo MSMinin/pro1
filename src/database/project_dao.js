@@ -59,7 +59,7 @@ modifyForm = async (params) => {
     return member.rows[0];
 }
 
-modify = async (body) => {
+modifyM = async (body) => {
     const con = await oracledb.getConnection(dbConfig);
     console.log("서비스에서 받아온 body.id : ",body.id);
     const sql = `update proMember set pwd = '${body.pwd}', name = '${body.name}' , addr = '${body.addr}',
@@ -151,6 +151,6 @@ const getHtml = async (num)=>{
 
 
 
-module.exports = {loginChk, register, infoChk,modifyForm, modify, deleteM, findId, chgPassword, chgPwd, getList };
+module.exports = {loginChk, register, infoChk,modifyForm, modifyM, deleteM, findId, chgPassword, chgPwd, getList };
 
 

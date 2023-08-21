@@ -1,28 +1,35 @@
-<h2 style="text-align: center;">회원 정보를 입력해주세요.</h2>
-<div style="margin: 20 85 0 85;">
+
+<fieldset style="border-radius: 10px;"> 
+    <legend style="text-align: center;">회원가입</legend>
     <form action="/member/register" method="post">
-    <table border="1">
-        <tr>
-            <td>아이디</td><td><input type="text" name="id"></td>
-        </tr>
-        <tr>
-            <td>비밀번호</td><td><input type="password" name="pwd"></td>
-        </tr>
-        <tr>
-            <td>이름</td><td><input type="text" name="name"></td>
-        </tr>
-        <tr>
-            <td>주소</td><td><input type="text" name="addr"></td>
-        </tr>
-        <tr>
-            <td>전화번호</td><td><input type="text" name="pNumber" placeholder="010-0000-0000" required pattern="[0][1][0]-\d{4}-\d{4}"></td>
-        </tr>
-        <tr>
-            <td>생년월일</td><td><input type="date" name="birth"></td>
-        </tr>
-        <tr align="center">
-            <td colspan="2"><input type="submit" value="회원가입"><input type="reset" value="초기화"></td>
-        </tr>
-    </table>
-</form>
-</div>
+        <div>
+            <div style="display: inline-block; margin-left: 10%;">
+                <table>
+                    <tr><td><b style="color: red;">* </b>이름</td></tr>
+                    <tr><td><b style="color: red;">* </b>아이디</td></tr>
+                    <tr><td><b style="color: red;">* </b>비밀번호</td></tr>
+                    <tr><td><b style="color: red;">* </b>주소</td></tr>
+                    <tr><td><b style="color: red;">* </b>전화번호</td></tr>
+                    <tr><td><b style="color: red;">* </b>생년월일</td></tr>
+                </table>
+            </div>
+
+            <div style="display: inline-block; margin-left: 30px;">
+                <table>
+                    <tr><td><input type="text" name="name"></td></tr>
+                    <tr><td><input type="text" name="id"></td> </tr>
+                    <tr><td><input type="password" name="pwd"></td></tr>
+                    <tr><td><input type="text" name="addr"></td></tr>
+                    <tr><td><input type="text" name="pNumber" placeholder="010-0000-0000" required pattern="[0][1][0]-\d{4}-\d{4}"></td></tr>
+                    <tr><td><input type="date" name="birth"></td></tr>
+                </table>
+            </div>
+        </div>
+        <div style="float: right;">
+            <input style="border-radius: 5px; margin-right: 3px;" type="submit" value="회원가입">
+            <input style="border-radius: 5px; margin-right: 3px;" type="reset" value="초기화">
+        </div>
+        
+    </form>  
+</fieldset>
+

@@ -1,5 +1,16 @@
 const pDAO = require("../database/project_dao");  
 
+getMessage1 = (msg, url, num) => {
+
+    return `<script>
+                alert('${msg}');
+                location.href = '${url}';
+                if(${num} == 1) {
+                    window.close();
+                }
+            </script>`
+}
+
 loginChk = async (body) => {
     let member = await pDAO.loginChk(body.id);
     console.log("로그인시", member);
@@ -31,11 +42,11 @@ register = async (body) => {
         url = ""; 
         num = 1;
     }else{
-        msg = "문제가 발생했습니다.";
+        msg = "이미 존재하는 아이디입니다.";
         url = '/member/registerForm';
         num = 0;
     }
-    return getMessage(msg, url, num);
+    return getMessage1(msg, url, num);
 }
 
 logout = (req, res) => {
@@ -58,9 +69,9 @@ modifyForm = async (params) => {
     return result;
 }
 
-modify = async (body)=> {
+modifyM = async (body)=> {
     console.log("컨트롤에서 받아온 body", body);
-    let result = await pDAO.modify(body);
+    let result = await pDAO.modifyM(body);
     let msg = "", url = "";
     if(result ===0) {
         msg = "문제 발생";
@@ -74,16 +85,38 @@ modify = async (body)=> {
 
 deleteM = async (body)=> {
     console.log("컨트롤에서 받아온 body", body);
-    const result = await pDAO.deleteM(body);
     let msg ="", url ="";
-    if(result == 0) {
-        msg = "문제 발생";
-        url = "/member/informationChk/" + body.id;
+    const d = ddd();
+    if(d) {
+        const result = await pDAO.deleteM(body);
+        if(result == 0) {
+            msg = "문제 발생";
+            url = "/member/infoChk/" + body.id;
+        }else {
+            msg = "삭제 완료";
+            url = "/";
+        }
     }else {
-        msg = "삭제 완료";
-        url = "/";
-    }
+        msg = "실행을 취소하셨습니다.";
+        url = "/member/infoChk/" + body.id;
+    }  
     return getMessage(msg,url);
+}
+
+ddd = () => {
+    return `
+    <script>
+    $(document).ready(function(){
+        $(".delete").click(function() {
+            if(confirm("삭제한 정보는 복구할 수 없습니다. 정말 삭제하시겠습니까>")){
+                return true;
+            }else {
+                return false;
+            }
+        })
+    })
+    </script>
+    `;
 }
 
 findId = async (body) => {
@@ -112,20 +145,8 @@ chgPwd = async (body) => {
         url = "/member/infoChk/" + body.id;
         num = 1;
     }
-    return getMessage(msg, url, num);
+    return getMessage1(msg, url, num);
 }
-
-getMessage = (msg, url, num) => {
-
-    return `<script>
-                alert('${msg}');
-                location.href = '${url}';
-                if(${num} == 1) {
-                    window.close();
-                }
-            </script>`
-}
-
 
 const getList = ()=>{
     return pDAO.getList();
@@ -133,4 +154,4 @@ const getList = ()=>{
 
 
 
-module.exports = {loginChk, register, logout, infoChk, modifyForm, modify, deleteM, findId, chgPassword, chgPwd, getList}
+module.exports = {loginChk, register, logout, infoChk, modifyForm, modifyM, deleteM, findId, chgPassword, chgPwd, getList}

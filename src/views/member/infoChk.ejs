@@ -1,33 +1,37 @@
 <style>
-    #infoChk {margin-left: 40%;}
+    .line {text-decoration: underline;}
+    #infoDiv { border: solid 1px black; margin: 0 250 0 250;}
+    .naBi {float: right; margin-top: 15px; margin-right: 30px; font-size: 28px;}
+    .infoBtn {float: right; border-radius: 5px; margin-top: 1px; margin-right: 2px;}
+    .mainBorder {border: solid 2px black;}
+    .valueBorder {border-bottom: solid 1px black;}
 </style>
 <%-include("../default/header.ejs")%>
-<div id = "infoChk">
-<h2>회원 정보 확인</h2>
-<table border="1">
-    <tr>
-        <td>아이디</td> <td>&nbsp;</td> <td><%=list.ID%></td>
-    </tr>
-    <tr>
-        <td>비밀번호</td> <td>&nbsp;</td> <td><%=list.PWD%></td>
-    </tr>
-    <tr>
-        <td>이름</td> <td>&nbsp;</td> <td><%=list.NAME%></td>
-    </tr>
-    <tr>
-        <td>주소</td> <td>&nbsp;</td> <td><%=list.ADDR%></td>
-    </tr>
-    <tr>
-        <td>전화번호</td> <td>&nbsp;</td> <td><%=list.P_NUMBER%></td>
-    </tr>
-    <tr>
-        <td>생년월일</td> <td>&nbsp;</td> <td><%=list.BIRTH%></td>
-    </tr>
-    <tr>
-        <td><button><a href="/member/modifyForm/<%=list.ID%>">회원정보 수정</a></button></td>
-        <td>&nbsp;</td>
-        <td><button><a href="/member/delete/<%=list.ID%>">회원정보 삭제</a></button></td>
-    </tr>
-</table>
+
+<div id = "infoDiv"><!-- 전체를 담을 공간-->
+    <div style="border-bottom: solid 1px black; background: rgb(232, 229, 235);"><!-- 아이디, 이름, 생년월일 담는 공간-->
+
+        <span style="margin-left: 25px; font-size: 35px;"><%=list.ID%>님의 회원정보 </span>
+
+        <span class="naBi">생년월일 : <%=list.BIRTH%></span>
+        <span class="naBi">이름 : <%=list.NAME%></span>
+    </div>
+    <div style=" background: rgb(248, 247, 249);"><!-- 비밀번호, 핸드폰 번호, 주소 담는 공간-->
+        <table style="font-size: 28px; margin-left: 35px;">
+            <tr><td>&nbsp;</td></tr>
+            <tr><td class="mainBorder">비밀번호</td><td>&nbsp;</td><td class="valueBorder"><%=list.PWD%></td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td class="mainBorder">전화번호</td><td>&nbsp;</td><td class="valueBorder"><%=list.P_NUMBER%></td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td class="mainBorder">주소</td><td>&nbsp;</td><td class="valueBorder"><%=list.ADDR%></td></tr>
+            <tr><td>&nbsp;</td></tr>
+        </table>
+    </div>
+    <div style="height: 32px; border-top: solid 1px black;">
+        <button class="infoBtn"><a href="/member/modifyForm/<%=list.ID%>">회원정보 수정</a></button>
+        
+        <button class="infoBtn"><a href="/member/delete/<%=list.ID%>" class="delete">회원정보 삭제</a></button>
+    </div><!-- 수정, 삭제 버튼 넣을 공간-->
 </div>
+
 <%-include("../default/footer.ejs")%>
