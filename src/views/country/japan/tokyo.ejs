@@ -8,6 +8,8 @@
         section {margin: 0% 20% ;}
         #country {padding: 5% 20%;}
         div > table {margin: 0% 20% ; text-align: center;}
+        div{ display: flex; flex-flow: row wrap; 
+          text-align: center; justify-content: space-around; }
     </style>
 </head>
 <body>
@@ -16,17 +18,25 @@
     </header>
     <section>
         <div id="country">
-            <div><h3>Tokyo</h3><br></div>
-            <div><img src="/country/japan/image/<%=files[0]%>" width="400px" height="400px"/><br><br></div>
-            <div>
-                <p>일본 > 도쿄도 > 도쿄<br>
-                    언어 : 일본어<br>
-                    기온<br>
-                    환율<br>
-                    10월~11월 추천<br>
-                    항공 2시간 20분<br>
-                </p>
-            </div>
+            <table>
+                <tr><th>
+                    <h1>Tokyo<br><br></h1></th>
+                </tr>
+                <tr><td><img src="/country/japan/image/<%=files[0]%>" width="400px" height="400px"/><br><br>
+                    </td>
+                </tr>
+                <tr><td>
+                    <p>일본 > 도쿄도 > 도쿄<br>
+                        언어 : 일본어<br>
+                        기온<br>
+                        환율<br>
+                        10월~11월 추천<br>
+                        항공 2시간 20분<br>
+                    </p>
+                </td>
+                </tr>
+            </table>
+            
             <div>
                 <table><h3><br>hotel<br><br></h3>
                     <tr>
