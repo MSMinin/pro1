@@ -248,8 +248,15 @@ const kView={
     }
 }
 const banner={
+<<<<<<< HEAD
     index : (req, res) => {
         res.render("index", {username : req.session.username, files : fileList2, logo : fileList2});
+=======
+    index : async (req, res) => {
+        const data = await pService.mainBL();
+        console.log("ctrl: ", data.rows);
+        res.render("index", {data : data.rows, username : req.session.username, files : fileList2, logo : fileList2});
+>>>>>>> origin/mj
     },
     image : (req, res) => {
         let filePath = `./src/views/data1/images/${req.params.fileName}`;
@@ -257,4 +264,8 @@ const banner={
     }
 }
 
+<<<<<<< HEAD
 module.exports = {view, process, kView, jView, banner}
+=======
+module.exports = {view, process, kView, jView, banner}
+>>>>>>> origin/mj

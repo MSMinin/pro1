@@ -108,7 +108,7 @@ button {
 }
 
 .board_list .title {
-    width: 60%;
+    width: 55%;
     text-align: left;
 }
 
@@ -116,8 +116,8 @@ button {
     text-align: center;
 }
 
-.board_list .dates {
-    width: 10%;
+.board_list .id {
+    width: 15%;
 }
 
 .board_list .viewcount {
@@ -166,6 +166,8 @@ button {
     border-left: 1px solid #ddd;
 }
 
+
+
 .board_view {
     width: 100%;
     border-top: 2px solid #000;
@@ -174,13 +176,13 @@ button {
 .board_view .title {
     padding: 20px 15px;
     border-bottom: 1px dashed #ddd;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .board_view .info {
     padding: 15px;
     border-bottom: 1px solid #999;
-    font-size: 0;
+    font-size: 1rem;
 }
 
 .board_view .info dl {

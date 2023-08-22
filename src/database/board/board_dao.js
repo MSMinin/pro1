@@ -37,7 +37,6 @@ const daoRead = {
 const daoInsert = {
     write : async (body) => {
         const con = await oracledb.getConnection(dbConfig);
-        //const sql = `insert into proboard(num, id, title, content, dates, filename) values(proboard_seq.nextval, :id, :title, :content, sysdate, :filename)`;
         const sql = `insert into proboard(num, id, title, content, dates) values(proboard_seq.nextval, :id, :title, :content, sysdate)`;
         let result;
         try {
