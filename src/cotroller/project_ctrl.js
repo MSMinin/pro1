@@ -18,7 +18,7 @@ const view = {
     }, 
     infoChk : async (req, res) => {
         
-        res.render("member/infoChk", {info : undefined, list : undefined,username : req.session.username})
+        res.render("member/infoChk", {info : undefined, list : undefined, username : req.session.username})
     },
 
     find : (req, res) => {
@@ -112,7 +112,7 @@ const process  = {
         console.log("세션 확인", req.session.username);
         const info = await pService.information(req.body, req.session.username);
         const board = await ser.pageRead.myRead(req.session.username);
-        const data = await ser.pageRead.boardList(req.query.start, board, req.session.username);
+        const data = await ser.pageRead.myBoard(req.query.start, board, req.session.username);
         console.log("결과1",info)
         console.log("결과2",data.list)
         res.render("member/infoChk", {info : info, list : data.list, start : data.start, page : data.page, username : req.session.username} )

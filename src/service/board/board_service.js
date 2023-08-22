@@ -37,11 +37,12 @@ const pageRead = {
         data.page = page;
         data.start = start;
         data.list = list.rows;
-        console.log("ser data : ", data);
+        console.log("ser data22 : ", data);
         return data;
     },
     myRead : async (session) =>{
         const myRead = await pDAO.daoRead.myRead(session);
+        console.log("서비스 myRead", myRead.rows[0]['COUNT(*)'] );
         return myRead.rows[0]['COUNT(*)'];
     },
     content : async (num) => {

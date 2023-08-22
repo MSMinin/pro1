@@ -1,6 +1,5 @@
 const oracledb = require("oracledb");
 const dbConfig = require("../../../config/database/db_config");
-const ser = require("../../service/board/board_service");
 oracledb.outFormat = oracledb.OBJECT;
 oracledb.autoCommit = true;
 
@@ -14,11 +13,13 @@ const daoRead = {
         return result;
     },
     myBoard : async (s,e, id) => {
+        console.log("ㅁㄴㅇㅁㄴㅇㅁㅇㅁㄴㅁㄴㅁㅇ",id)
         const con = await oracledb.getConnection(dbConfig);
         const sql = `select B.* from (select rownum rn, A.* from(
                     select *from proboard order by num desc)A)B
                     where rn between  ${s} and ${e} and id = '${id}'`;
         const result = await con.execute(sql);
+        console.log("확인용 myBoard", sql);
         return result;
     },
     content : async (num) =>{
@@ -43,7 +44,6 @@ const daoRead = {
     myRead : async (id)=>{
         const con = await oracledb.getConnection(dbConfig);
         const sql = `select count(*) from proboard where id ='${id}' `;
-        console.log(sql)
         const totalContent = await con.execute(sql);
         return totalContent;
     }
