@@ -130,16 +130,13 @@ const getList = ()=>{
     return pDAO.getList();
 }
 
-<<<<<<< HEAD
-module.exports = {loginChk, register, logout, infoChk, modifyM,deleteM, findId, chgPassword, chgPwd, information, getList}
 
-=======
 const mainBL = async () =>{
     const list = await pDAO.mainBL();
     console.log("ser BL: ", list);
     return list;
 }
 
-module.exports = {loginChk, register, logout, infoChk, modifyForm, modify, deleteM, 
+module.exports = {loginChk, register, logout, infoChk,modifyM, deleteM, 
                 findId, chgPassword, chgPwd, getList, mainBL}
->>>>>>> 1a41c4a99bd76f082301f22cb6296827aca6b9d9
+
