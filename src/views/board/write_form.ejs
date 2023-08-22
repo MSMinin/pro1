@@ -8,34 +8,36 @@
     <link rel="stylesheet" href="/css/css.css">
 </head>
 <body>
-    <div class="board_wrap">
-        <div class="board_title">
-            <strong>후기 작성</strong>
-            <p>여러분들의 여행후기를 올려주세요!</p>
-        </div>
-        <form action ="/write" method="post">
-            <input type="hidden" name="id" value="<%= username %>">
-            <div class="board_write_wrap">
-                <div class="board_write">
-                    <div class="title">
-                        <dl>
-                            <dt>제목</dt>
-                            <dd><input type="text" name="title" placeholder="제목 입력"></dd>
-                        </dl>
-                    </div>
-                    <div class="cont">
-                        <dl>
-                            <dd><textarea name="content" placeholder="글 작성해주세여"></textarea></dd>
-                        </dl>
-                    </div>
-                </div>
-                <div class="bt_wrap">
-                    <button type="submit" class="on">등록</button>
-                    <a href="/BoardList">취소</a>
-                </div>
+    <section>
+        <div class="board_wrap">
+            <div class="board_title">
+                <strong>후기 작성</strong>
+                <p>여러분들의 여행후기를 올려주세요!</p>
             </div>
-        </form>
-    </div>
+            <form action ="/write" method="post">
+                <input type="hidden" name="id" value="<%= username %>">
+                <div class="board_write_wrap">
+                    <div class="board_write">
+                        <div class="title">
+                            <dl>
+                                <dt>제목</dt>
+                                <dd><input type="text" name="title" placeholder="제목 입력"></dd>
+                            </dl>
+                        </div>
+                        <div class="cont">
+                            <dl>
+                                <dd><textarea name="content" placeholder="글 작성해주세여"></textarea></dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="bt_wrap">
+                        <button type="submit" class="on">등록</button>
+                        <a href="/BoardList">취소</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
 </body>
 
 </html>
