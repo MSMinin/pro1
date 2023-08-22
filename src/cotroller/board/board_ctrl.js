@@ -11,9 +11,9 @@ const views = {
             start : data.start, page : data.page, totalContent, username : req.session.username});
     },
     writeForm : (req, res) =>{
-        console.log("ctrl writeForm", req.params);
+        // console.log("ctrl writeForm", req.params);
         console.log("ctrl writeForm", req.session.username);
-        res.render("board/write_form", { content: req.params,  username : req.session.username});
+        res.render("board/write_form", {username : req.session.username});
     },
     modifyForm : async(req, res) =>{
         console.log("ctrl modifyForm: ", req.params.num);

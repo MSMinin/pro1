@@ -3,38 +3,135 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <style>
-      #wrap { display: flex; width: 100%; height: 100%; margin: auto;}
-      #wrap>#banner { background: blue; margin-left: 60px; width: 70%; height: 50%;}
+      img {width: 100%; height: auto;}
+      section {margin: 0% 20% ;padding: 1%;}
+      .button{background: skyblue; text-align: right; width: 100%; font-size: small; }
+
+
+.board_list {
+    width: 100%;
+    border-top: 2px solid #000;
+}
+.board_list > div {
+    border-bottom: 1px solid #ddd;
+    font-size: 0;
+}
+.board_list > div.top {
+    border-bottom: 1px solid #999;
+}
+
+.board_list > div:last-child {
+    border-bottom: 1px solid #000;
+}
+
+.board_list > div > div {
+    display: inline-block;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 1rem;
+}
+.board_list > div.top > div {
+    font-weight: 400;
+}
+
+.board_list .num {
+    width: 15%;
+}
+
+.board_list .title {
+    width: 40%;
+    text-align: left;
+}
+
+.board_list .top .title {
+    text-align: center;
+}
+
+.board_list .id {
+    width: 20%;
+}
+
+.board_list .dates {
+    width: 15%;
+}
+
+.board_list .viewcount {
+    width: 10%;
+}
+
     </style>
-    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
-    <script type="text/javascript" src="engine1/jquery.js"></script>
+    <script type="text/javascript">
+      x=1;
+      const pic1=()=>{
+        let img=document.getElementById("img01");
+        let msg="배너01.jpg";
+        img.src=msg;
+      }
+      const pic2=()=>{
+        let img=document.getElementById("img01");
+        let msg="배너02.jpg";
+        img.src=msg;
+      }
+      const pic3=()=>{
+        let img=document.getElementById("img01");
+        let msg="배너03.jpg";
+        img.src=msg;
+      }
+      const pic4=()=>{
+        let img=document.getElementById("img01");
+        let msg="배너04.jpg";
+        img.src=msg;
+      }
+      const pic5=()=>{
+        let img=document.getElementById("img01");
+        let msg="배너05.jpg";
+        img.src=msg;
+      }
+    </script>
 </head>
 <body>
   <header>
     <%-include("default/header.ejs")%>
   </header>
 
-  <div id="wrap">
-    <div id="banner">
-      <fieldset>메인</fieldset>
+  <section>
+    <img id="img01" src="./data1/images/배너01.jpg" width="300px" height="250px" ><br>
+    <h3 class="button">
+    <input type="button" value="1" onclick="pic1()">
+    <input type="button" value="2" onclick="pic2()">
+    <input type="button" value="3" onclick="pic3()">
+    <input type="button" value="4" onclick="pic4()">
+    <input type="button" value="5" onclick="pic5()">
+    </h3>
+  </section>
+  <section>
+    최근 게시물
+    <div class="board_list_wrap">
+      <div class="board_list">
+          <div class="top">
+              <div class="num">번호</div>
+              <div class="title">제목</div>
+              <div class="id">작성자</div>
+              <div class="dates">등록일</div>
+              <div class="viewcount">조회수</div>
+          </div>
+          <% data.forEach( data => {%>
+              <div class="cont">
+                  <div class="num"><%=data.NUM %></div>
+                  <div class="title"><a href="/content/<%= data.NUM %>"><%= data.TITLE %></a></div>
+                  <div class="id"><%= data.ID %></div>
+                  <div class="dates"><%= data.DATES %></div>
+                  <div class="viewcount"><%= data.VIEWCOUNT %></div>
+              </div>
+          <% }); 
+          if (data.length == 0) {%>
+              <div> <b>등록된 글이 없습니다</b> </div>
+          <% } %>
+          <a href="/boardList">더 보기</a>
+      </div>
+  </section>
 
-  <hr>
-  <div id="wowslider-container1"><!--코드 문제 없음, 이미지 적용-->
-    <div class="ws_images">
-      <ul>
-        <li><img src="data1/images/_0.jpg" alt="오로라" id="wows1_0"/></li>
-        <li><img src="data1/images/_1.jpg" alt="다운로드" id="wows1_1"/></li>
-      </ul>
-
-    </div>
-      <div class="ws_script" style="position:absolute;left:-99%"></div>
-    <div class="ws_shadow"></div>
-  </div>	
-  <script type="text/javascript" src="engine1/wowslider.js"></script>
-  <script type="text/javascript" src="engine1/script.js"></script>
-  <footer>
-    <%-include("default/footer.ejs")%>
-  </footer>
+  <%-include("default/footer.ejs")%>
 
 </body>
 </html>

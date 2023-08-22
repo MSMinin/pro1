@@ -116,6 +116,7 @@ chgPwd = async (body) => {
 }
 
 getMessage = (msg, url, num) => {
+
     return `<script>
                 alert('${msg}');
                 location.href = '${url}';
@@ -130,7 +131,12 @@ const getList = ()=>{
     return pDAO.getList();
 }
 
+const mainBL = async () =>{
+    const list = await pDAO.mainBL();
+    console.log("ser BL: ", list);
+    return list;
+}
 
 
-module.exports = {loginChk, register, logout, infoChk, modifyForm, modify, deleteM, findId, chgPassword, chgPwd, getList}
-
+module.exports = {loginChk, register, logout, infoChk, modifyForm, modify, deleteM, 
+                findId, chgPassword, chgPwd, getList, mainBL}
