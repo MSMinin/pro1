@@ -263,19 +263,19 @@ const banner={
 const eView ={
     uk : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/europe/uk", {username : req.session.username, files : fileList5});
+        res.render("country/europe/uk", {username : req.session.username, files : fileList5, logo : fileList2});
     },
     swiss : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/europe/swiss", {username : req.session.username, files : fileList5});
+        res.render("country/europe/swiss", {username : req.session.username, files : fileList5, logo : fileList2});
     },
     spain : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/europe/spain", {username : req.session.username, files : fileList5});
+        res.render("country/europe/spain", {username : req.session.username, files : fileList5, logo : fileList2});
     },
     italy : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/europe/italy", {username : req.session.username, files : fileList5});
+        res.render("country/europe/italy", {username : req.session.username, files : fileList5, logo : fileList2});
     },
     image : (req, res) => {
         let filePath = `./src/image/country/europe/${req.params.fileName}`;
