@@ -8,7 +8,7 @@
         section {margin: 0% 20% ;}
         #country {padding: 5% 20%;}
         div > table {margin: 0% 20% ; text-align: center;}
-        div{ display: flex; flex-flow: row wrap; 
+        div .info{ display: flex; flex-flow: row wrap; 
           text-align: center; justify-content: space-around; }
     </style>
 </head>
@@ -17,7 +17,7 @@
         <%-include("../../default/header.ejs")%>
     </header>
     <section>
-        <div id="country">
+        <div id="country" class="info">
             <table>
                 <tr><th>
                     <h1>경주<br><br></h1></th>
@@ -32,7 +32,7 @@
                 </td>
                 </tr>
             </table>
-            <div>
+            <div class="info">
                 <table><h3><br>hotel<br><br></h3>
                     <tr>
                         <td><img src="/country/korea/image/<%=files[38]%>" width="200px" height="200px"/></td>
@@ -52,7 +52,7 @@
                 </table>
             </div>
             <hr>
-            <div>
+            <div class="info">
                 <table><h3><br>food<br><br></h3>
                     <tr>
                         <td><img src="/country/korea/image/<%=files[41]%>" width="200px" height="200px"/></td>
@@ -72,7 +72,7 @@
                 </table>
             </div>
             <hr>
-            <div>
+            <div class="info">
                 <table><h3><br>store<br><br></h3>
                     <tr>
                         <td><img src="/country/korea/image/<%=files[44]%>" width="200px" height="200px"/></td>
@@ -89,7 +89,7 @@
                 </table>
             </div>
             <hr>
-            <div>
+            <div class="info">
                 <table><h3><br>spot<br><br></h3>
                     <tr>
                         <td><img src="/country/korea/image/<%=files[46]%>" width="200px" height="200px"/></td>
