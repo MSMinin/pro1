@@ -9,7 +9,7 @@ const fileList4 = fs.readdirSync("./src/image/country/japan");
 
 const view = {
     loginForm : (req, res) => {
-        res.render("member/loginForm", {username : req.session.username});
+        res.render("member/loginForm", {username : req.session.username, logo : fileList2});
     },
 
     registerForm : (req, res) => {
@@ -22,7 +22,7 @@ const view = {
     startWorldCup : async(req, res) => {
         const nlist = await pService.getList();
         //console.log("nlist : ",nlist);
-        res.render("worldcup/worldcup1", {nlist, files : fileList, username : req.session.username});
+        res.render("worldcup/worldcup1", {nlist, files : fileList, username : req.session.username, logo : fileList2});
     },
     worldcup1 : (req, res) => {
         res.redirect("/worldcup/start");
@@ -67,7 +67,7 @@ const process  = {
         console.log("req.parmas : ", req.params);
         const mlist = await pService.infoChk(req.params);
         console.log("서비스에서 받아온 mlist(result) : ",mlist);
-        res.render("member/infoChk", {list : mlist, username : req.session.username})
+        res.render("member/infoChk", {list : mlist, username : req.session.username, logo : fileList2})
     },
     
     modifyForm : async (req, res) => {
@@ -111,9 +111,9 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         if(req.params.id == 1) {
-            res.render("worldcup/worldcup2_1", {nlist, files : fileList, username : req.session.username});
+            res.render("worldcup/worldcup2_1", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 2) {
-            res.render("worldcup/worldcup2_2", {nlist, files : fileList, username : req.session.username});
+            res.render("worldcup/worldcup2_2", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         } 
     },
 
@@ -123,9 +123,9 @@ const process  = {
         const nlist = await pService.getList();
         console.log("w2 : ",nlist);
         if(req.params.id == 3) {
-            res.render("worldcup/worldcup3_1", {nlist, files : fileList, username : req.session.username});
+            res.render("worldcup/worldcup3_1", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 4) {
-            res.render("worldcup/worldcup3_2", {nlist, files : fileList, username : req.session.username});
+            res.render("worldcup/worldcup3_2", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         } 
     },
 
@@ -134,9 +134,9 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         if(req.params.id == 3) {
-            res.render("worldcup/worldcup3_3", {nlist, files : fileList, username : req.session.username});
+            res.render("worldcup/worldcup3_3", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 4) {
-            res.render("worldcup/worldcup3_4", {nlist, files : fileList, username : req.session.username});
+            res.render("worldcup/worldcup3_4", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         } 
     },
 
@@ -145,9 +145,9 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         if(req.params.id == 5) {
-            res.render("worldcup/result1_3_5", {nlist, files : fileList, username : req.session.username});
+            res.render("worldcup/result1_3_5", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 6) {
-            res.render("worldcup/result1_3_6", {nlist, files : fileList, username : req.session.username});
+            res.render("worldcup/result1_3_6", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         } 
     },
     worldcup3_2 : async(req, res) => {
@@ -155,9 +155,9 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         if(req.params.id == 5) {
-            res.render("worldcup/result2_3_5", {nlist, files : fileList, username : req.session.username});
+            res.render("worldcup/result2_3_5", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 6) {
-            res.render("worldcup/result2_3_6", {nlist, files : fileList, username : req.session.username});
+            res.render("worldcup/result2_3_6", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         } 
     },
 
@@ -166,9 +166,9 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         if(req.params.id == 7) {
-            res.render("worldcup/result1_4_7", {nlist, files : fileList, username : req.session.username});
+            res.render("worldcup/result1_4_7", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 8) {
-            res.render("worldcup/result1_4_8", {nlist, files : fileList, username : req.session.username});
+            res.render("worldcup/result1_4_8", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         } 
     },
     
@@ -177,9 +177,9 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         if(req.params.id == 7) {
-            res.render("worldcup/result2_4_7", {nlist, files : fileList, username : req.session.username});
+            res.render("worldcup/result2_4_7", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 8) {
-            res.render("worldcup/result2_4_8", {nlist, files : fileList, username : req.session.username});
+            res.render("worldcup/result2_4_8", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         } 
     },
 
@@ -190,15 +190,15 @@ const process  = {
 const jView ={
     tokyo : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/japan/tokyo", {username : req.session.username, files : fileList4});
+        res.render("country/japan/tokyo", {username : req.session.username, files : fileList4, logo : fileList2});
     },
     osaka : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/japan/osaka", {username : req.session.username, files : fileList4});
+        res.render("country/japan/osaka", {username : req.session.username, files : fileList4, logo : fileList2});
     },
     sapporo : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/japan/sapporo", {username : req.session.username, files : fileList4});
+        res.render("country/japan/sapporo", {username : req.session.username, files : fileList4, logo : fileList2});
     },
     image : (req, res) => {
         let filePath = `./src/image/country/japan/${req.params.fileName}`;
@@ -210,37 +210,37 @@ const kView={
         //const weather = await cService.getHtml();
         
 
-        res.render("country/korea/seoul", {username : req.session.username, files : fileList3});
+        res.render("country/korea/seoul", {username : req.session.username, files : fileList3, logo : fileList2});
     },
     daegu : async(req, res) => {
         //const weather = await cService.getHtml();
         
 
-        res.render("country/korea/daegu", {username : req.session.username, files : fileList3});
+        res.render("country/korea/daegu", {username : req.session.username, files : fileList3, logo : fileList2});
     },
     busan : async(req, res) => {
         //const weather = await cService.getHtml();
         
 
-        res.render("country/korea/busan", {username : req.session.username, files : fileList3});
+        res.render("country/korea/busan", {username : req.session.username, files : fileList3, logo : fileList2});
     },
     gangneung : async(req, res) => {
         //const weather = await cService.getHtml();
         
 
-        res.render("country/korea/gangneung", {username : req.session.username, files : fileList3});
+        res.render("country/korea/gangneung", {username : req.session.username, files : fileList3, logo : fileList2});
     },
     gyeongju : async(req, res) => {
         //const weather = await cService.getHtml();
         
 
-        res.render("country/korea/gyeongju", {username : req.session.username, files : fileList3});
+        res.render("country/korea/gyeongju", {username : req.session.username, files : fileList3, logo : fileList2});
     },
     jeonju : async(req, res) => {
         //const weather = await cService.getHtml();
         
 
-        res.render("country/korea/jeonju", {username : req.session.username, files : fileList3});
+        res.render("country/korea/jeonju", {username : req.session.username, files : fileList3, logo : fileList2});
     },
     image : (req, res) => {
         let filePath = `./src/image/country/korea/${req.params.fileName}`;
@@ -249,7 +249,7 @@ const kView={
 }
 const banner={
     index : (req, res) => {
-        res.render("index", {username : req.session.username,files : fileList2});
+        res.render("index", {username : req.session.username, files : fileList2, logo : fileList2});
     },
     image : (req, res) => {
         let filePath = `./src/views/data1/images/${req.params.fileName}`;
