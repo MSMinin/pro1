@@ -10,10 +10,14 @@ module.exports = (app) => {
     app.use("/country", cRouter);
 
     const router = require("express").Router();
-    const pCtrl = require("../../src/cotroller/project_ctrl");
-    app.get("/", pCtrl.banner.index);
-    app.get("/:fileName", pCtrl.banner.image);
 
+<<<<<<< HEAD
 
+=======
+    app.get("/", (req, res) => {
+        res.render("index", {username : req.session.username});
+    });
+    
+>>>>>>> moonsm
     return router;
 }

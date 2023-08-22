@@ -1,14 +1,34 @@
 <% console.log(list) %>
-<h3>현재 회원가입한 ID리스트입니다.</h3>
 <script>
     sizeUp = () => {
         window.resizeTo(450, 300);
     }
 </script>
-<table border="1">
-    <% for(var i =0; i < list.length; i++) { %>
-        <tr>
-           <td><%= i+1 %>. ID</td> <td><a href="/member/chgPwdForm/<%= list[i].ID %>" onclick="sizeUp()"><%= list[i].ID %></a></td>
-        </tr>
-    <% } %>
-</table>
+
+<style>
+    h2 {text-align: center;}
+    font {font-size: 13px; color: red; text-align: right; display: block;}
+    fieldset {border-radius: 10px;}
+    #fir {font-size: 25px; text-align: center;}
+    #fir a {text-decoration-line: none; color: black;}
+    #sec {text-align: center; font-size: 18px;}
+    #sec a {color: black;}
+</style>
+
+<h2>ID List</h2>
+<font>* 아이디를 클릭하면 비밀번호를 변경할 수 있습니다.</font>
+
+<fieldset>
+    <div id = "fir">
+        <% for(var i =0; i < list.length; i++) { %>
+            <p>
+                <a href="/member/chgPwdForm/<%= list[i].ID %>" onclick="sizeUp()"><%= list[i].ID %></a>
+                <hr>
+            </p>
+            
+        <% } %>
+    </div>   
+</fieldset>
+<div id = "sec">
+    <a href="#top">위로 가기</a>
+</div>

@@ -1,11 +1,10 @@
 const pService = require("../service/project_service");
 const cService = require("../service/country_service");
+const ser = require("../service/board/board_service");
 
 const fs = require("fs");
 const fileList = fs.readdirSync("./src/image");
-const fileList2 = fs.readdirSync("./src/views/data1/images");
-const fileList3 = fs.readdirSync("./src/image/country/korea");
-const fileList4 = fs.readdirSync("./src/image/country/japan");
+const fileList2 = fs.readdirSync("./src/image/country");
 
 const view = {
     loginForm : (req, res) => {
@@ -14,6 +13,10 @@ const view = {
 
     registerForm : (req, res) => {
         res.render("member/registerForm");
+    }, 
+    infoChk : async (req, res) => {
+        
+        res.render("member/infoChk", {info : undefined, list : undefined,username : req.session.username})
     },
 
     find : (req, res) => {
@@ -67,26 +70,22 @@ const process  = {
         console.log("req.parmas : ", req.params);
         const mlist = await pService.infoChk(req.params);
         console.log("서비스에서 받아온 mlist(result) : ",mlist);
-        res.render("member/infoChk", {list : mlist, username : req.session.username})
+        res.render("member/infoChk", {info : mlist, username : req.session.username})
     },
     
-    modifyForm : async (req, res) => {
-        console.log("req.params : ", req.params); //id받아옴
-        const mlist = await pService.modifyForm(req.params);
-        res.render("member/modifyForm", {list : mlist})
-    },
-    
-    modify : async (req, res) => {
+    modifyM : async (req, res) => {
         console.log("body확인 : ", req.body);
-        const msg = await pService.modify(req.body);
+        const msg = await pService.modifyM(req.body);
         res.send(msg);
     },
 
     delete : async (req, res) => {
         console.log("req.params", req.params);
+        // await pService.deleteLike(req.params);
+        // await pService.deleteChild(req.params);
+        const msg = await pService.deleteM(req.params);
         req.session.destroy();
         res.clearCookie("isLogin");
-        const msg = await pService.deleteM(req.params);
         res.send(msg);
     },
     findId : async (req, res) => {
@@ -95,15 +94,26 @@ const process  = {
         console.log("서비스에서 받아온 idList", idList);
         res.render("member/idList", {list : idList});
     },
-    chgPwdForm : async (req, res) => {
+    chgPassword : async (req, res) => {
         console.log("req.params : ", req.params); //id받아옴
         const mlist = await pService.chgPassword(req.params);
         res.render("member/chgPwdForm", {list : mlist})
     },
     chgPwd : async (req, res) => {
-        console.log("body확인 : ", req.body);
-        const msg = await pService.chgPwd(req.body);
+        const msg = await pService.chgPwd(req.params, req.body);
         res.send(msg);
+    },
+    
+    information : async (req, res) => {
+        console.log("비밀번호 확인", req.body);
+        console.log("세션 확인", req.session.username);
+        const info = await pService.information(req.body, req.session.username);
+        const board = await ser.pageRead.myRead(req.session.username);
+        const data = await ser.pageRead.myBoard(req.query.start, board, req.session.username);
+        console.log("결과1",info)
+        console.log("결과2",data.list)
+        res.render("member/infoChk", {info : info, list : data.list, start : data.start, page : data.page, username : req.session.username} )
+
     },
 
     worldcup1 : async(req, res) => {
@@ -181,80 +191,25 @@ const process  = {
         }else if(req.params.id  == 8) {
             res.render("worldcup/result2_4_8", {nlist, files : fileList, username : req.session.username});
         } 
-    },
-
-    loginChk : async (req, res) => {
-        console.log("req.body : ", req.body);
     }
 }
-const jView ={
+const cView ={
     tokyo : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/japan/tokyo", {username : req.session.username, files : fileList4});
+        res.render("country/tokyo", {username : req.session.username, files : fileList2});
     },
     osaka : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/japan/osaka", {username : req.session.username, files : fileList4});
+        res.render("country/osaka", {username : req.session.username, files : fileList2});
     },
     sapporo : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/japan/sapporo", {username : req.session.username, files : fileList4});
+        res.render("country/sapporo", {username : req.session.username, files : fileList2});
     },
     image : (req, res) => {
-        let filePath = `./src/image/country/japan/${req.params.fileName}`;
-        res.download(filePath);
-    }
-}
-const kView={
-    seoul : async(req, res) => {
-        //const weather = await cService.getHtml();
-        
-
-        res.render("country/korea/seoul", {username : req.session.username, files : fileList3});
-    },
-    daegu : async(req, res) => {
-        //const weather = await cService.getHtml();
-        
-
-        res.render("country/korea/daegu", {username : req.session.username, files : fileList3});
-    },
-    busan : async(req, res) => {
-        //const weather = await cService.getHtml();
-        
-
-        res.render("country/korea/busan", {username : req.session.username, files : fileList3});
-    },
-    gangneung : async(req, res) => {
-        //const weather = await cService.getHtml();
-        
-
-        res.render("country/korea/gangneung", {username : req.session.username, files : fileList3});
-    },
-    gyeongju : async(req, res) => {
-        //const weather = await cService.getHtml();
-        
-
-        res.render("country/korea/gyeongju", {username : req.session.username, files : fileList3});
-    },
-    jeonju : async(req, res) => {
-        //const weather = await cService.getHtml();
-        
-
-        res.render("country/korea/jeonju", {username : req.session.username, files : fileList3});
-    },
-    image : (req, res) => {
-        let filePath = `./src/image/country/korea/${req.params.fileName}`;
-        res.download(filePath);
-    }
-}
-const banner={
-    index : (req, res) => {
-        res.render("index", {username : req.session.username,files : fileList2});
-    },
-    image : (req, res) => {
-        let filePath = `./src/views/data1/images/${req.params.fileName}`;
+        let filePath = `./src/image/country/${req.params.fileName}`;
         res.download(filePath);
     }
 }
 
-module.exports = {view, process, kView, jView, banner}
+module.exports = {view, process, cView}

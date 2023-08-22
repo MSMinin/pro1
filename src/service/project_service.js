@@ -35,7 +35,7 @@ register = async (body) => {
         url = '/member/registerForm';
         num = 0;
     }
-    return getMessage(msg, url, num);
+    return getMessage1(msg, url, num);
 }
 
 logout = (req, res) => {
@@ -52,19 +52,13 @@ infoChk = async (params) => {
     return result;
 }
 
-modifyForm = async (params) => {
-    let result = await pDAO.modifyForm(params);
-    console.log("dao에서 받아온 result : ", result);
-    return result;
-}
-
-modify = async (body)=> {
+modifyM = async (body)=> {
     console.log("컨트롤에서 받아온 body", body);
-    let result = await pDAO.modify(body);
+    let result = await pDAO.modifyM(body);
     let msg = "", url = "";
     if(result ===0) {
         msg = "문제 발생";
-        url = "/member/modifyForm/" + body.id;
+        url = "/member/infoChk/" + body.id;
     }else {
         msg = "수정 완료";
         url = "/member/infoChk/" + body.id;
@@ -72,13 +66,21 @@ modify = async (body)=> {
     return getMessage(msg, url);
 }
 
+// deleteLike = async (body) => {
+//     await pDAO.deleteLike(body);
+// }
+
+// deleteChild = async (body) => {
+//     await pDAO.deleteChild(body);
+// }
+
 deleteM = async (body)=> {
     console.log("컨트롤에서 받아온 body", body);
     const result = await pDAO.deleteM(body);
     let msg ="", url ="";
     if(result == 0) {
         msg = "문제 발생";
-        url = "/member/informationChk/" + body.id;
+        url = "/member/infoChk/" + body.id;
     }else {
         msg = "삭제 완료";
         url = "/";
@@ -99,9 +101,8 @@ chgPassword = async (params) => {
     return result;
 }
 
-chgPwd = async (body) => {
-    console.log("컨트롤에서 받아온 body", body);
-    let result = await pDAO.chgPwd(body);
+chgPwd = async (param, body) => {
+    let result = await pDAO.chgPwd(param, body);
     let msg = "", url = "", num;
     if(result ===0) {
         msg = "문제 발생";
@@ -112,11 +113,17 @@ chgPwd = async (body) => {
         url = "/member/infoChk/" + body.id;
         num = 1;
     }
-    return getMessage(msg, url, num);
+    return getMessage1(msg, url, num);
 }
 
-getMessage = (msg, url, num) => {
+information = async (body, session) => {
+    console.log("서비스 비밀번호 ", body.password);
+    console.log("서비스 세션 ", session);
+    let result = await pDAO.information(body.password, session);
+    return result;
+}
 
+getMessage1 = (msg, url, num) => {
     return `<script>
                 alert('${msg}');
                 location.href = '${url}';
@@ -131,6 +138,5 @@ const getList = ()=>{
     return pDAO.getList();
 }
 
+module.exports = {loginChk, register, logout, infoChk, modifyM,deleteM, findId, chgPassword, chgPwd, information, getList}
 
-
-module.exports = {loginChk, register, logout, infoChk, modifyForm, modify, deleteM, findId, chgPassword, chgPwd, getList}
