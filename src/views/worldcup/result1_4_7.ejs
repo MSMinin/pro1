@@ -6,21 +6,26 @@
     <title>Document</title>
     <style>
         section {margin: 0% 20% ;padding: 3%;}
+        div {text-align: center;}
+        img {width: 450px; height: 450px;}
     </style>
 </head>
 <body>
     <%-include("../default/header.ejs")%>
     <section>
         <p>
-            결과<br>
-            근거리에서 도시를 선택하셨고, 관광을 고르셨습니다.<br>
-            1번, 4번, 7번 선택<br>
+            <h3>결과</h3><br>
+            근거리에서 도시를 선택하셨고, 관광을 고르셨습니다.<br><br>
         </p>
-        <form onclick=""><!-- 나라 링크-->
-            <img src="/worldcup/image/<%=files[0]%>"><br><!-- 나라 링크-->
-        </form>
+        <div>
+            <h1>서울<br></h1>
+            <a href="/country/korea/seoul"><img src="/country/korea/image/<%=files[0]%>"></a><br><!-- 나라 링크-->
+        </div>
         <p>
-            입니다
+            <br><br>...<br>
+            ...<br>
+            ...<br>
+            ...<br>
         </p>
     </section>
     <%-include("../default/footer.ejs")%>
