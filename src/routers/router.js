@@ -12,6 +12,7 @@ module.exports = (app) => {
     const router = require("express").Router();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     app.get("/", (req, res) => {
@@ -19,5 +20,7 @@ module.exports = (app) => {
     });
     
 >>>>>>> moonsm
+=======
+>>>>>>> 795717767b7f685a03f2214157a346469de3e22c
     return router;
 }
