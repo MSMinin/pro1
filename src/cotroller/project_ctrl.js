@@ -163,9 +163,9 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         if(req.params.id == 5) {
-            res.render("worldcup/result2_3_5", {nlist, files : fileList4, username : req.session.username, logo : fileList2});
+            res.render("worldcup/result2_3_5", {nlist, files : fileList5, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 6) {
-            res.render("worldcup/result2_3_6", {nlist, files : fileList4, username : req.session.username, logo : fileList2});
+            res.render("worldcup/result2_3_6", {nlist, files : fileList5, username : req.session.username, logo : fileList2});
         } 
     },
 
@@ -185,7 +185,7 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         if(req.params.id == 7) {
-            res.render("worldcup/result2_4_7", {nlist, files : fileList4, username : req.session.username, logo : fileList2});
+            res.render("worldcup/result2_4_7", {nlist, files : fileList5, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 8) {
             res.render("worldcup/result2_4_8", {nlist, files : fileList4, username : req.session.username, logo : fileList2});
         } 

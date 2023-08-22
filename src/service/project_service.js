@@ -137,6 +137,6 @@ const mainBL = async () =>{
     return list;
 }
 
-module.exports = {loginChk, register, logout, infoChk,modifyM, deleteM, 
+module.exports = {loginChk, register, logout, infoChk,modifyM, deleteM, information,
                 findId, chgPassword, chgPwd, getList, mainBL}
 

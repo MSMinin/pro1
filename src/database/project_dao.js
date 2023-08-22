@@ -181,7 +181,7 @@ const mainBL = async () => {
     return result;
 }
 
-module.exports = {loginChk, register, infoChk, modifyM, deleteM, findId, chgPassword, chgPwd, getList, mainBL};
+module.exports = {loginChk, register, infoChk, modifyM, deleteM,information, findId, chgPassword, chgPwd, getList, mainBL};
 
 
 
