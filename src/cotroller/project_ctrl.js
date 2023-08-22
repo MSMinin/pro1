@@ -252,8 +252,15 @@ const kView={
     }
 }
 const banner={
+<<<<<<< HEAD
     index : (req, res) => {
         res.render("index", {username : req.session.username, logo : fileList2});
+=======
+    index : async (req, res) => {
+        const data = await pService.mainBL();
+        console.log("ctrl: ", data.rows);
+        res.render("index", {data : data.rows, username : req.session.username, files : fileList2, logo : fileList2});
+>>>>>>> 1a41c4a99bd76f082301f22cb6296827aca6b9d9
     },
     image : (req, res) => {
         let filePath = `./src/views/data1/images/${req.params.fileName}`;

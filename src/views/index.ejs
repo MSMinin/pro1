@@ -5,14 +5,100 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <style>
+<<<<<<< HEAD
       
       #wrap { display: flex; width: 100%; height: 100%; margin: auto;}
       #wrap>#banner {margin-left: 60px; width: 70%; height: 50%;}
 
       img {width: 500px; height: 300px;}
       section {margin: 0% 20% ;padding: 5% 10%;}
+=======
+      img {width: 100%; height: 300px;}
+      section {margin: 0% 20% ;padding: 1%;}
+      .button{background: skyblue; text-align: right; width: 100%; font-size: small; }
+
+
+.board_list {
+    width: 100%;
+    border-top: 2px solid #000;
+}
+.board_list > div {
+    border-bottom: 1px solid #ddd;
+    font-size: 0;
+}
+.board_list > div.top {
+    border-bottom: 1px solid #999;
+}
+
+.board_list > div:last-child {
+    border-bottom: 1px solid #000;
+}
+
+.board_list > div > div {
+    display: inline-block;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 1rem;
+}
+.board_list > div.top > div {
+    font-weight: 400;
+}
+
+.board_list .num {
+    width: 15%;
+}
+
+.board_list .title {
+    width: 40%;
+    text-align: left;
+}
+
+.board_list .top .title {
+    text-align: center;
+}
+
+.board_list .id {
+    width: 20%;
+}
+
+.board_list .dates {
+    width: 15%;
+}
+
+.board_list .viewcount {
+    width: 10%;
+}
+
+>>>>>>> 1a41c4a99bd76f082301f22cb6296827aca6b9d9
     </style>
-    
+    <script type="text/javascript">
+      x=1;
+      const pic1=()=>{
+        let img=document.getElementById("img01");
+        let msg="배너01.jpg";
+        img.src=msg;
+      }
+      const pic2=()=>{
+        let img=document.getElementById("img01");
+        let msg="배너02.jpg";
+        img.src=msg;
+      }
+      const pic3=()=>{
+        let img=document.getElementById("img01");
+        let msg="배너03.jpg";
+        img.src=msg;
+      }
+      const pic4=()=>{
+        let img=document.getElementById("img01");
+        let msg="배너04.jpg";
+        img.src=msg;
+      }
+      const pic5=()=>{
+        let img=document.getElementById("img01");
+        let msg="배너05.jpg";
+        img.src=msg;
+      }
+    </script>
 </head>
 <body>
     <%-include("default/header.ejs")%>
@@ -49,6 +135,32 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+  </section>
+  <section>
+    최근 게시물
+    <div class="board_list_wrap">
+      <div class="board_list">
+          <div class="top">
+              <div class="num">번호</div>
+              <div class="title">제목</div>
+              <div class="id">작성자</div>
+              <div class="dates">등록일</div>
+              <div class="viewcount">조회수</div>
+          </div>
+          <% data.forEach( data => {%>
+              <div class="cont">
+                  <div class="num"><%=data.NUM %></div>
+                  <div class="title"><a href="/content/<%= data.NUM %>"><%= data.TITLE %></a></div>
+                  <div class="id"><%= data.ID %></div>
+                  <div class="dates"><%= data.DATES %></div>
+                  <div class="viewcount"><%= data.VIEWCOUNT %></div>
+              </div>
+          <% }); 
+          if (data.length == 0) {%>
+              <div> <b>등록된 글이 없습니다</b> </div>
+          <% } %>
+          <a href="/boardList">더 보기</a>
+      </div>
   </section>
 
   <%-include("default/footer.ejs")%>

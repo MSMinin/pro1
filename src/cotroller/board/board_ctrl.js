@@ -1,5 +1,8 @@
 const ser = require("../../service/board/board_service");
 
+const fs = require("fs");
+const fileList2 = fs.readdirSync("./src/views/data1/images");
+
 const views = {
     boardList : async (req, res) => {
         console.log("ctrl start", req.query.start);
@@ -9,18 +12,18 @@ const views = {
         const data = await ser.pageRead.boardList(req.query.start, totalContent);
         console.log(data);
         res.render("board/boardList", { list : data.list, 
-            start : data.start, page : data.page, totalContent, username : req.session.username});
+            start : data.start, page : data.page, totalContent, username : req.session.username, logo : fileList2});
     },
     
     writeForm : (req, res) =>{
-        console.log("ctrl writeForm", req.params);
+        // console.log("ctrl writeForm", req.params);
         console.log("ctrl writeForm", req.session.username);
-        res.render("board/write_form", { content: req.params,  username : req.session.username});
+        res.render("board/write_form", {username : req.session.username, logo : fileList2});
     },
     modifyForm : async(req, res) =>{
         console.log("ctrl modifyForm: ", req.params.num);
         const result = await ser.pageRead.content(req.params.num);
-        res.render("board/modify_form", {result, username : req.session.username});
+        res.render("board/modify_form", {result, username : req.session.username, logo : fileList2});
     },
     content : async(req, res)=> {
         console.log("ctrl content: ", req.params.num);
@@ -29,7 +32,7 @@ const views = {
         const data = await ser.pageRead.likeCk(req.params.num, req.session.username);
         console.log("ctrl result: ", result);
         console.log("ctrl data: ", data.rows[0]);
-        res.render("board/content", {result, data: data.rows[0], username : req.session.username});
+        res.render("board/content", {result, data: data.rows[0], username : req.session.username, logo : fileList2});
     }
 }
 

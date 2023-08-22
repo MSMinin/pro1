@@ -230,38 +230,22 @@ button {
     border-top: 2px solid #000;
 }
 
-.board_write .title,
-.board_write .info {
+.board_write .title {
     padding: 15px;
-}
-
-.board_write .info {
-    border-top: 1px dashed #ddd;
-    border-bottom: 1px solid #000;
-    font-size: 0;
 }
 
 .board_write .title dl {
     font-size: 0;
 }
 
-.board_write .info dl {
-    display: inline-block;
-    width: 50%;
-    vertical-align: middle;
-}
-
 .board_write .title dt,
-.board_write .title dd,
-.board_write .info dt,
-.board_write .info dd {
+.board_write .title dd {
     display: inline-block;
     vertical-align: middle;
-    font-size: 1.4rem;
+    font-size: 1rem;
 }
 
-.board_write .title dt,
-.board_write .info dt {
+.board_write .title dt {
     width: 100px;
 }
 
@@ -269,14 +253,9 @@ button {
     width: calc(100% - 100px);
 }
 
-.board_write .title input[type="text"],
-.board_write .info input[type="text"],
-.board_write .info input[type="password"] {
+.board_write .title input[type="text"]{
     padding: 10px;
     box-sizing: border-box;
-}
-
-.board_write .title input[type="text"] {
     width: 80%;
 }
 
@@ -293,4 +272,8 @@ button {
     box-sizing: border-box;
     border: 0;
     resize: vertical;
+}
+
+.board_write .cont .wr {
+    font-size: 1rem;
 }

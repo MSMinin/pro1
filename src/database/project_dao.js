@@ -172,8 +172,21 @@ const getHtml = async (num)=>{
     return result;
 }
 
+<<<<<<< HEAD
 
 
 module.exports = {loginChk, register, infoChk, modifyM, deleteM, findId, chgPassword, chgPwd, information,getList };
+=======
+const mainBL = async () => {
+    const con = await oracledb.getConnection(dbConfig);
+    const sql = `select rownum, num, title, id, dates, viewcount from proboard where rownum 
+                between 1 and 5 order by rownum desc`;
+    const result = await con.execute(sql);
+    console.log("dao BL", result);
+    return result;
+}
+
+module.exports = {loginChk, register, infoChk,modifyForm, modify, deleteM, findId, chgPassword, chgPwd, getList, mainBL};
+>>>>>>> 1a41c4a99bd76f082301f22cb6296827aca6b9d9
 
 

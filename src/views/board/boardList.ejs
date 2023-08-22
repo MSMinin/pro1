@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="ko">
+<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BoardList</title>
     <link rel="stylesheet" href="/css/css.css">
 
+=======
+    <head class="head">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BoardList</title>
+        <link rel="stylesheet" href="/css/css.css">
+        <%-include("../default/header.ejs")%>
+>>>>>>> 1a41c4a99bd76f082301f22cb6296827aca6b9d9
 </head>
 <body>
-    <%-include("../default/header.ejs")%>
-    <section>
-        <div class="board_wrap">
-            <div class="board_title">
-                <strong>게시판</strong>
-                <p>여러분들의 여행후기를 올려주세요!</p>
-            </div>
-            <div class="board_list_wrap">
-                <div class="board_list">
-                    <div class="top">
-                        <div class="num">번호</div>
-                        <div class="title">제목</div>
-                        <div class="dates">날짜</div>
-                        <div class="viewcount">조회수</div>
-                        <div class="likes">좋아요</div>
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>게시판</strong>
+            <p>여러분들의 여행후기를 올려주세요!</p>
+        </div>
+        <div class="board_list_wrap">
+            <div class="board_list">
+                <div class="top">
+                    <div class="num">번호</div>
+                    <div class="title">제목</div>
+                    <div class="id">작성자</div>
+                    <div class="viewcount">조회수</div>
+                    <div class="likes">좋아요</div>
+                </div>
+                <% list.forEach( data => { %>
+                    <div>
+                        <div class="num"><%=data.NUM %></div>
+                        <div class="title"><a href="/content/<%= data.NUM %>"><%= data.TITLE %></a></div>
+                        <div class="id"><%= data.ID %></div>
+                        <div class="viewcount"><%= data.VIEWCOUNT %></div>
+                        <div class="likes"><%= data.LIKES %></div>
                     </div>
-                    <% list.forEach( data => { %>
-                        <div>
-                            <div class="num"><%=data.NUM %></div>
-                            <div class="title"><a href="/content/<%= data.NUM %>"><%= data.TITLE %></a></div>
-                            <div class="dates"><%= data.DATES %></div>
-                            <div class="viewcount"><%= data.VIEWCOUNT %></div>
-                            <div class="likes"><%= data.LIKES %></div>
-                        </div>
-                    <% }); 
+                <% })
                     if (list.length == 0) {%>
                         <div> <b>등록된 글이 없습니다</b> </div>
                     <% } %>
