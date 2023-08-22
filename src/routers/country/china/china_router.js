@@ -2,7 +2,7 @@ const router = require("express").Router();
 const pCtrl = require("../../../cotroller/project_ctrl");
 
 //router.get("/k", pCtrl);
-router.get("/hondkong", pCtrl.cView.hongkong);
+router.get("/hongkong", pCtrl.cView.hongkong);
 
 
 router.get("/beijing", pCtrl.cView.beijing);
