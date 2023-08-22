@@ -26,6 +26,24 @@ const pageRead = {
         console.log("ser data : ", data);
         return data;
     },
+    myBoard : async (start, total, session) =>{
+        start = (start && start >= 1)? Number(start):1;
+
+        const page = pageOperation(start, total);
+        const list = await pDAO.daoRead.myBoard(page.startNum, page.endNum, session);
+        console.log("ser list: ", list);
+
+        let data = {};
+        data.page = page;
+        data.start = start;
+        data.list = list.rows;
+        console.log("ser data : ", data);
+        return data;
+    },
+    myRead : async (session) =>{
+        const myRead = await pDAO.daoRead.myRead(session);
+        return myRead.rows[0]['COUNT(*)'];
+    },
     content : async (num) => {
         console.log("ser content: ", num);
         await pageUpdate.upHit(num);

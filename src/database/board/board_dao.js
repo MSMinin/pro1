@@ -13,6 +13,14 @@ const daoRead = {
         const result = await con.execute(sql);
         return result;
     },
+    myBoard : async (s,e, id) => {
+        const con = await oracledb.getConnection(dbConfig);
+        const sql = `select B.* from (select rownum rn, A.* from(
+                    select *from proboard order by num desc)A)B
+                    where rn between  ${s} and ${e} and id = '${id}'`;
+        const result = await con.execute(sql);
+        return result;
+    },
     content : async (num) =>{
         const con = await oracledb.getConnection(dbConfig);
         const sql = `select * from proboard where num=${num}`;
@@ -29,6 +37,13 @@ const daoRead = {
     totalContent : async ()=>{
         const con = await oracledb.getConnection(dbConfig);
         const sql = `select count(*) from proboard`;
+        const totalContent = await con.execute(sql);
+        return totalContent;
+    },
+    myRead : async (id)=>{
+        const con = await oracledb.getConnection(dbConfig);
+        const sql = `select count(*) from proboard where id ='${id}' `;
+        console.log(sql)
         const totalContent = await con.execute(sql);
         return totalContent;
     }

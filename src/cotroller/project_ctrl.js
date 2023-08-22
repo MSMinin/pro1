@@ -1,5 +1,6 @@
 const pService = require("../service/project_service");
 const cService = require("../service/country_service");
+const ser = require("../service/board/board_service");
 
 const fs = require("fs");
 const fileList = fs.readdirSync("./src/image");
@@ -12,6 +13,10 @@ const view = {
 
     registerForm : (req, res) => {
         res.render("member/registerForm");
+    }, 
+    infoChk : async (req, res) => {
+        
+        res.render("member/infoChk", {info : undefined, list : undefined,username : req.session.username})
     },
 
     find : (req, res) => {
@@ -66,13 +71,7 @@ const process  = {
         console.log("req.parmas : ", req.params);
         const mlist = await pService.infoChk(req.params);
         console.log("서비스에서 받아온 mlist(result) : ",mlist);
-        res.render("member/infoChk", {list : mlist, username : req.session.username})
-    },
-    
-    modifyForm : async (req, res) => {
-        console.log("req.params : ", req.params); //id받아옴
-        const mlist = await pService.modifyForm(req.params);
-        res.render("member/modifyForm", {list : mlist})
+        res.render("member/infoChk", {info : mlist, username : req.session.username})
     },
     
     modifyM : async (req, res) => {
@@ -83,9 +82,11 @@ const process  = {
 
     delete : async (req, res) => {
         console.log("req.params", req.params);
+        // await pService.deleteLike(req.params);
+        // await pService.deleteChild(req.params);
+        const msg = await pService.deleteM(req.params);
         req.session.destroy();
         res.clearCookie("isLogin");
-        const msg = await pService.deleteM(req.params);
         res.send(msg);
     },
     findId : async (req, res) => {
@@ -94,7 +95,7 @@ const process  = {
         console.log("서비스에서 받아온 idList", idList);
         res.render("member/idList", {list : idList});
     },
-    chgPwdForm : async (req, res) => {
+    chgPassword : async (req, res) => {
         console.log("req.params : ", req.params); //id받아옴
         const mlist = await pService.chgPassword(req.params);
         res.render("member/chgPwdForm", {list : mlist})
@@ -102,6 +103,18 @@ const process  = {
     chgPwd : async (req, res) => {
         const msg = await pService.chgPwd(req.params, req.body);
         res.send(msg);
+    },
+    
+    information : async (req, res) => {
+        console.log("비밀번호 확인", req.body);
+        console.log("세션 확인", req.session.username);
+        const info = await pService.information(req.body, req.session.username);
+        const board = await ser.pageRead.myRead(req.session.username);
+        const data = await ser.pageRead.myBoard(req.query.start, board, req.session.username);
+        console.log("결과1",info)
+        console.log("결과2",data.list)
+        res.render("member/infoChk", {info : info, list : data.list, start : data.start, page : data.page, username : req.session.username} )
+
     },
 
     worldcup1 : async(req, res) => {
@@ -179,38 +192,6 @@ const process  = {
         }else if(req.params.id  == 8) {
             res.render("worldcup/result2_4_8", {nlist, files : fileList, username : req.session.username});
         } 
-    },
-
-    loginChk : async (req, res) => {
-        console.log("req.body : ", req.body);
-    },
-    write : async (req, res) => {
-        console.log("ctrl write: ", req.body);
-        const msg = await pService.pageInsert.write(req.body);
-        res.send(msg);
-    },
-    modify : async (req, res) => {
-        console.log("ctrl modify", req.body);
-        const msg = await pService.pageModify.modify(req.body);
-        res.send(msg);
-    },
-    delete : async (req, res)=> {
-        console.log("ctrl delete", req.params.num);
-        const msg = await pService.pageDelete.delete(req.params.num);
-        res.send(msg);
-    },
-    likes : async (req, res)=>{
-        console.log("ctrl likes", req.body.likes);
-        console.log("ctrl likes", req.body.num);
-
-        var like= req.body.like;
-        if(like === "좋아요"){
-            result = 1;
-        }else {
-            result = 0;
-        }
-        const msg = await pService.pageUpdate.likes(req.body.num, result);
-        res.redirect("/content/"+ req.body.num);
     }
 }
 const cView ={
