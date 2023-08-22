@@ -4,7 +4,9 @@ const ser = require("../service/board/board_service");
 
 const fs = require("fs");
 const fileList = fs.readdirSync("./src/image");
-const fileList2 = fs.readdirSync("./src/image/country");
+const fileList2 = fs.readdirSync("./src/views/data1/images");
+const fileList3 = fs.readdirSync("./src/image/country/korea");
+const fileList4 = fs.readdirSync("./src/image/country/japan");
 
 const view = {
     loginForm : (req, res) => {
@@ -27,8 +29,9 @@ const view = {
         //console.log("nlist : ",nlist);
         res.render("worldcup/worldcup1", {nlist, files : fileList, username : req.session.username});
     },
-    worldcup1 : (req, res) => {
-        res.redirect("/worldcup/start");
+
+    worldcup2 : (req, res) => {
+        res.redirect("/worldcup/1");
     }, 
     main : (req, res)=> {
         res.render("main");
@@ -109,7 +112,7 @@ const process  = {
         console.log("세션 확인", req.session.username);
         const info = await pService.information(req.body, req.session.username);
         const board = await ser.pageRead.myRead(req.session.username);
-        const data = await ser.pageRead.myBoard(req.query.start, board, req.session.username);
+        const data = await ser.pageRead.boardList(req.query.start, board, req.session.username);
         console.log("결과1",info)
         console.log("결과2",data.list)
         res.render("member/infoChk", {info : info, list : data.list, start : data.start, page : data.page, username : req.session.username} )
@@ -193,23 +196,74 @@ const process  = {
         } 
     }
 }
-const cView ={
+const jView ={
     tokyo : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/tokyo", {username : req.session.username, files : fileList2});
+        res.render("country/japan/tokyo", {username : req.session.username, files : fileList4});
     },
     osaka : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/osaka", {username : req.session.username, files : fileList2});
+        res.render("country/japan/osaka", {username : req.session.username, files : fileList4});
     },
     sapporo : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/sapporo", {username : req.session.username, files : fileList2});
+        res.render("country/japan/sapporo", {username : req.session.username, files : fileList4});
     },
     image : (req, res) => {
-        let filePath = `./src/image/country/${req.params.fileName}`;
+        let filePath = `./src/image/country/japan/${req.params.fileName}`;
+        res.download(filePath);
+    }
+}
+const kView={
+    seoul : async(req, res) => {
+        //const weather = await cService.getHtml();
+        
+
+        res.render("country/korea/seoul", {username : req.session.username, files : fileList3});
+    },
+    daegu : async(req, res) => {
+        //const weather = await cService.getHtml();
+        
+
+        res.render("country/korea/daegu", {username : req.session.username, files : fileList3});
+    },
+    busan : async(req, res) => {
+        //const weather = await cService.getHtml();
+        
+
+        res.render("country/korea/busan", {username : req.session.username, files : fileList3});
+    },
+    gangneung : async(req, res) => {
+        //const weather = await cService.getHtml();
+        
+
+        res.render("country/korea/gangneung", {username : req.session.username, files : fileList3});
+    },
+    gyeongju : async(req, res) => {
+        //const weather = await cService.getHtml();
+        
+
+        res.render("country/korea/gyeongju", {username : req.session.username, files : fileList3});
+    },
+    jeonju : async(req, res) => {
+        //const weather = await cService.getHtml();
+        
+
+        res.render("country/korea/jeonju", {username : req.session.username, files : fileList3});
+    },
+    image : (req, res) => {
+        let filePath = `./src/image/country/korea/${req.params.fileName}`;
+        res.download(filePath);
+    }
+}
+const banner={
+    index : (req, res) => {
+        res.render("index", {username : req.session.username,files : fileList2});
+    },
+    image : (req, res) => {
+        let filePath = `./src/views/data1/images/${req.params.fileName}`;
         res.download(filePath);
     }
 }
 
-module.exports = {view, process, cView}
+module.exports = {view, process, jView, kView, banner}

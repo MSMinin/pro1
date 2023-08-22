@@ -66,14 +66,6 @@ modifyM = async (body)=> {
     return getMessage(msg, url);
 }
 
-// deleteLike = async (body) => {
-//     await pDAO.deleteLike(body);
-// }
-
-// deleteChild = async (body) => {
-//     await pDAO.deleteChild(body);
-// }
-
 deleteM = async (body)=> {
     console.log("컨트롤에서 받아온 body", body);
     const result = await pDAO.deleteM(body);

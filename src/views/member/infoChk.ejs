@@ -1,5 +1,5 @@
+<link rel="stylesheet" href="/css/css.css">
 <style>
-
     #tableStyle {width: 70%; margin-top: 8%; margin-left: 15%;}
     #tableStyle {width: 70%; margin-top: 5%; margin-left: 15%;}
 
@@ -81,7 +81,8 @@
                     </tr>
                     <tr>
                         <td id = "tdStyle1"><b>전화번호</b></td>
-                        <td id = "tdStyle2"><b><input type="text" name="pNumber" value="<%=info.P_NUMBER%>" ></b></td>
+                        <td id = "tdStyle2"><b><input type="text" name="pNumber" value="<%=info.P_NUMBER%>"
+                                                    required pattern="[0][1][0]-\d{4}-\d{4}" ></b></td>
                     </tr>
                     <tr>
                         <td id = "tdStyle1"><b>생년월일</b></td>
@@ -105,8 +106,6 @@
         <%}else {%>
             <%if(list == undefined){%>
                 <%}else {%>
-                    <link rel="stylesheet" href="/css/css.css">
-
                     <div class="board_wrap">                         
                         <strong style = "font-size : 25px;">내가 작성한 글</strong>
                     <div class="board_list_wrap">

@@ -1,17 +1,11 @@
 const router = require("express").Router();
-const pCtrl = require("../../cotroller/project_ctrl");
+const kRouter = require("./korea/korea_router");
+const jRouter = require("./japan/japan_router")
 
 //router.get("/k", pCtrl);
 ////router.get("/k", pCtrl);
-//router.get("/k", pCtrl);
-router.get("/tokyo", pCtrl.cView.tokyo);
-router.get("/osaka", pCtrl.cView.osaka);
-router.get("/sapporo", pCtrl.cView.sapporo);
-//router.get("/ch", pCtrl);
-//router.get("/ch", pCtrl);
-//router.get("/fr", pCtrl);
-//router.get("/en", pCtrl);
-//router.get("/us", pCtrl);
-router.get("/image/:fileName", pCtrl.cView.image);
+
+router.use("/korea", kRouter);
+router.use("/japan", jRouter);
 
 module.exports = router
