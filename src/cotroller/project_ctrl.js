@@ -18,7 +18,7 @@ const view = {
     }, 
     infoChk : async (req, res) => {
         
-        res.render("member/infoChk", {info : undefined, list : undefined, username : req.session.username})
+        res.render("member/infoChk", {info : undefined, list : undefined, username : req.session.username, logo : fileList2})
     },
 
     find : (req, res) => {
@@ -192,15 +192,15 @@ const process  = {
 const jView ={
     tokyo : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/tokyo", {username : req.session.username, files : fileList2});
+        res.render("country/japan/tokyo", {username : req.session.username, files : fileList4, logo : fileList2});
     },
     osaka : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/japan/osaka", {username : req.session.username, files : fileList4});
+        res.render("country/japan/osaka", {username : req.session.username, files : fileList4, logo : fileList2});
     },
     sapporo : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/japan/sapporo", {username : req.session.username, files : fileList4});
+        res.render("country/japan/sapporo", {username : req.session.username, files : fileList4, logo : fileList2});
     },
     image : (req, res) => {
         let filePath = `./src/image/country/japan/${req.params.fileName}`;
@@ -212,37 +212,37 @@ const kView={
         //const weather = await cService.getHtml();
         
 
-        res.render("country/korea/seoul", {username : req.session.username, files : fileList3});
+        res.render("country/korea/seoul", {username : req.session.username, files : fileList3, logo : fileList2});
     },
     daegu : async(req, res) => {
         //const weather = await cService.getHtml();
         
 
-        res.render("country/korea/daegu", {username : req.session.username, files : fileList3});
+        res.render("country/korea/daegu", {username : req.session.username, files : fileList3, logo : fileList2});
     },
     busan : async(req, res) => {
         //const weather = await cService.getHtml();
         
 
-        res.render("country/korea/busan", {username : req.session.username, files : fileList3});
+        res.render("country/korea/busan", {username : req.session.username, files : fileList3, logo : fileList2});
     },
     gangneung : async(req, res) => {
         //const weather = await cService.getHtml();
         
 
-        res.render("country/korea/gangneung", {username : req.session.username, files : fileList3});
+        res.render("country/korea/gangneung", {username : req.session.username, files : fileList3, logo : fileList2});
     },
     gyeongju : async(req, res) => {
         //const weather = await cService.getHtml();
         
 
-        res.render("country/korea/gyeongju", {username : req.session.username, files : fileList3});
+        res.render("country/korea/gyeongju", {username : req.session.username, files : fileList3, logo : fileList2});
     },
     jeonju : async(req, res) => {
         //const weather = await cService.getHtml();
         
 
-        res.render("country/korea/jeonju", {username : req.session.username, files : fileList3});
+        res.render("country/korea/jeonju", {username : req.session.username, files : fileList3, logo : fileList2});
     },
     image : (req, res) => {
         let filePath = `./src/image/country/korea/${req.params.fileName}`;
@@ -251,10 +251,10 @@ const kView={
 }
 const banner={
     index : (req, res) => {
-        res.render("index", {username : req.session.username,files : fileList2});
+        res.render("index", {username : req.session.username, logo : fileList2});
     },
     image : (req, res) => {
-        let filePath = `./src/image/country/${req.params.fileName}`;
+        let filePath = `./src/views/data1/images/${req.params.fileName}`;
         res.download(filePath);
     }
 }
