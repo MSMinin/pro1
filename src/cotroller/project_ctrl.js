@@ -6,6 +6,7 @@ const fileList = fs.readdirSync("./src/image");
 const fileList2 = fs.readdirSync("./src/views/data1/images");
 const fileList3 = fs.readdirSync("./src/image/country/korea");
 const fileList4 = fs.readdirSync("./src/image/country/japan");
+const fileList5 = fs.readdirSync("./src/image/country/europe");
 
 const view = {
     loginForm : (req, res) => {
@@ -257,5 +258,26 @@ const banner={
         res.download(filePath);
     }
 }
-
-module.exports = {view, process, kView, jView, banner}
+const eView ={
+    uk : async(req, res) => {
+        //const weather = await cService.getHtml();
+        res.render("country/europe/uk", {username : req.session.username, files : fileList5});
+    },
+    swiss : async(req, res) => {
+        //const weather = await cService.getHtml();
+        res.render("country/europe/swiss", {username : req.session.username, files : fileList5});
+    },
+    spain : async(req, res) => {
+        //const weather = await cService.getHtml();
+        res.render("country/europe/spain", {username : req.session.username, files : fileList5});
+    },
+    italy : async(req, res) => {
+        //const weather = await cService.getHtml();
+        res.render("country/europe/italy", {username : req.session.username, files : fileList5});
+    },
+    image : (req, res) => {
+        let filePath = `./src/image/country/europe/${req.params.fileName}`;
+        res.download(filePath);
+    }
+}
+module.exports = {view, process, kView, jView, banner , eView}
