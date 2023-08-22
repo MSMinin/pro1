@@ -12,7 +12,7 @@
       #main01>#login{width: 20%;}
 
       a { text-decoration: none; color: black;}
-      li {list-style-type: none; font-size: 15px; padding-left: 1px; text-align: left;}
+      li {list-style-type: none; font-size: 15px; padding-left: 15px; text-align: left;}
       nav a {text-decoration: none; color: black;}
       nav label {padding: 0 100px 0 100px; }
 
@@ -29,7 +29,7 @@
       .dropdown-content a{
           display : block;
           flex-flow: row wrap; 
-          width: 100px; height: 20px; 
+          width: 80px; height: 20px; 
           margin: auto;
       }
 
@@ -58,8 +58,6 @@
           <ul class="dropdown-menu">
             <li><a href="/member/infoChk/<%=username%>">회원정보</a></li>
             <li><a href="#">자유게시판</a></li>
-            <li>체험게시판</li>
-            <li>후기게시판</li>
           </ul>
         <%} else {%>
           <button class="btn btn-outline-secondary btn-sm" for="btn-check-2-outlined" type="button" 
@@ -70,8 +68,6 @@
                 
           <ul class="dropdown-menu">
             <li><a href="#">자유게시판</a></li>
-            <li>체험게시판</li>
-            <li>후기게시판</li>
           </ul>
         <% } %>
                     
@@ -83,28 +79,34 @@
 <nav class="navbar navbar-expand-lg navbar-info bg-info" style="padding: 0% 5%;">
   <div class="container-fluid">
     <li class="nav-item dropdown">
-      <button class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      <button style="width: 150px;" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         국내정보
       </button>
       <ul class="dropdown-content">
         <li>
           <div>
-            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
+            <button style="border-radius: 5px; border: solid 1px rgb(163, 163, 163); width: 150px; margin-bottom: 0.5px;" 
+            class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
                 <a href="/country/korea/seoul">서울</a>
             </button>
-            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
+            <button style="border-radius: 5px; border: solid 1px rgb(163, 163, 163);  width: 150px;"  
+            class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
                 <a href="/country/korea/gangneung">강릉</a>
             </button>
-            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
+            <button style="border-radius: 5px; border: solid 1px rgb(163, 163, 163);  width: 150px;"  
+            class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
                 <a href="/country/korea/daegu">대구</a>
             </button>
-            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
+            <button style="border-radius: 5px; border: solid 1px rgb(163, 163, 163);  width: 150px;"  
+            class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
                 <a href="/country/korea/gyeongju">경주</a>
             </button>
-            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
+            <button style="border-radius: 5px; border: solid 1px rgb(163, 163, 163);  width: 150px;"  
+            class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
                 <a href="/country/korea/jeonju">전주</a>
             </button>
-            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
+            <button style="border-radius: 5px; border: solid 1px rgb(163, 163, 163);  width: 150px;"  
+            class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
                 <a href="/country/korea/busan">부산</a>
             </button>
           </div>
@@ -112,21 +114,22 @@
       </ul>
     </li>
     <li class="nav-item dropdown">
-      <button class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      <button style=" width: 150px;" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         해외정보
       </button>
       <ul class="dropdown-content dropdown-content">
           <li>
             <div class="btn-group dropend">
-              <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <button style="border-radius: 5px; border: solid 1px rgb(163, 163, 163);  width: 150px;"  
+              class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 <a class="dropdown-item">일본</a>
               </button>
               <ul class="dropdown-menu dropdown-menu">
-                <li>
+                <li style="border-radius: 5px; text-align: center;">
                   <div class="btn">
-                    <a class="dropdown-item" href="/country/japan/tokyo">도쿄</a><hr>
-                    <a class="dropdown-item" href="/country/japan/osaka">오사카</a><hr>
-                    <a class="dropdown-item" href="/country/japan/sapporo">삿포로</a>
+                    <a style="width: 100px;" href="/country/japan/tokyo">도쿄</a><hr>
+                    <a href="/country/japan/osaka">오사카</a><hr>
+                    <a href="/country/japan/sapporo">삿포로</a>
                   </div>
                 </li>
               </ul>
@@ -136,7 +139,8 @@
 
         <li>
           <div class="btn-group dropend">
-            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <button style="border-radius: 5px; border: solid 1px rgb(163, 163, 163);  width: 150px;"  
+            class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               <a class="dropdown-item">유럽</a>
             </button>
             <ul class="dropdown-menu dropdown-menu">
@@ -153,7 +157,8 @@
         </li>
         <li>
           <div class="btn-group dropend">
-            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <button style="border-radius: 5px; border: solid 1px rgb(163, 163, 163);  width: 150px;"  
+            class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               <a class="dropdown-item">중국</a>
             </button>
             <ul class="dropdown-menu dropdown-menu">
@@ -168,7 +173,8 @@
         </li>
         <li>
           <div class="btn-group dropend">
-            <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <button style="border-radius: 5px; border: solid 1px rgb(163, 163, 163);  width: 150px;"  
+            class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               <a class="dropdown-item">동아시아</a>
             </button>
             <ul class="dropdown-menu dropdown-menu">
@@ -184,17 +190,17 @@
       </ul>
     <li>
     <li>
-      <button class="btn btn-info">
+      <button class="btn btn-info" style="width: 150px; margin-right: 100px;">
         <a href="https://www.koreanair.com/">항공</a>
       </button>
     </li>
     <li>
-      <button class="btn btn-info">
+      <button class="btn btn-info" style="width: 150px;">
         <a href="/worldcup/start">TBTI</a>
       </button>
     </li>
     <li>
-      <button class="btn btn-info">
+      <button class="btn btn-info" style=" width: 150px;">
         <%if(username) {%>
           <a href="/boardList">게시판</a>
         <%} else {%>

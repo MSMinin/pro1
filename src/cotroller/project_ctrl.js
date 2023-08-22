@@ -109,7 +109,8 @@ const process  = {
         const data = await ser.pageRead.myBoard(req.query.start, board, req.session.username);
         console.log("결과1",info)
         console.log("결과2",data.list)
-        res.render("member/infoChk", {info : info, list : data.list, start : data.start, page : data.page, username : req.session.username} )
+        res.render("member/infoChk", {info : info, list : data.list, start : data.start, page : data.page, 
+             logo : fileList2,  username : req.session.username} )
 
     },
 
