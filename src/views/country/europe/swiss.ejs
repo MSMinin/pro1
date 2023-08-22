@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {margin: 0% 20% ;}
+        #country {padding: 5% 20%;}
+        div > table {margin: 0% 20% ; text-align: center;}
+        div{ display: flex; flex-flow: row wrap; 
+          text-align: center; justify-content: space-around; }
+    </style>
+</head>
+<body>
+    <header>
+        <%-include("../../default/header.ejs")%>
+    </header>
+    <section>
+        <div id="country">
+            <table>
+                <tr><th>
+                    <h1>스위스<br><br></h1></th>
+                </tr>
+                <tr><td><img src="/country/europe/image/<%=files[39]%>" width="400px" height="400px"/><br><br>
+                    </td>
+                </tr>
+                
+            </table>
+            <p>유럽 > 남유럽 > 스위스<br>
+                언어 : 라틴어, 독일어, 프랑스어, 이탈리아어, 로만슈어<br>
+                기온<br>
+                환율 1:1,527.16<br>
+                7~8 월 추천<br>
+                항공 12시간 35분<br>
+            </p>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>hotel<br><br></h3>
+                    <tr>
+                        <td><img src="/country/europe/image/<%=files[40]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/europe/image/<%=files[41]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/europe/image/<%=files[42]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://hotel-gletschergarten.ch/en/home/">호텔 글레처가르텐</a></td>
+                        <td><a href="https://www.schweizerhof-luzern.ch/de/">호텔 슈바이처호프 루체른</a></td>
+                        <td><a href="https://swiss-luxury-apartments.ch/">스위스 럭셔리 아파트</a></td>
+                    </tr>
+                    <tr>
+                        <td>가방 보관, 선 테라스, 사우나, 무료 조식 제공, 주차 가능</td>
+                        <td>최고의 위치, 고급스런 시설, 역사와 전통, 아름다운 뷰를 갖춘 루체른의 대표 숙소</td>
+                        <td>좋은 서비스, 무료 조식, 객실에는 게임, 라디오/헤드폰, 매우 편리한 프린터가 있음</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>food<br><br></h3>
+                    <tr>
+                        <td><img src="/country/europe/image/<%=files[43]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/europe/image/<%=files[44]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/europe/image/<%=files[45]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://giardinohotels.ch/ascona/restaurants/restaurant-ecco-ascona/">레스토랑 에코 아스코나</a></td>
+                        <td><a href="https://www.hotelroyalgeneva.com/en/l-aparte.html">라파르테</a></td>
+                        <td><a href="https://richemont-gastro.ch/">리치몬드 가스트로노미에</a></td>
+                    </tr>
+                    <tr>
+                        <td>미슐랭 2스타, 유럽 요리, 지중해 요리를 제공, 호텔안에 있는 레스토랑</td>
+                        <td>미슐랭 1스타 ,아름다운 분위기, 좋은 서비스, 훌륭한 레스토랑</td>
+                        <td>훌륭한 서비스와 많은 종류의 빵, 치즈 및 곡물, 와플 팬케익등이 있는 뷔페</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>store<br><br></h3>
+                    <tr>
+                        <td><img src="/country/europe/image/<%=files[46]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/europe/image/<%=files[47]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/europe/image/<%=files[48]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.myswitzerland.com/ko/experiences/bahnhofstrasse/">반호프거리</a></td>
+                        <td><a href="https://www.foxtown.com/">폭스 타운 팩토리 스토어</a></td>
+                        <td><a href="https://www.im-viadukt.ch/en/home/?lang=set">임 비아둑트</a></td>
+                    </tr>
+                    <tr>
+                        <td>반호프 거리는 명품 숍부터 스위스 시계점, 보석점, 고급 의류점 등 있음</td>
+                        <td>스위스에서 가장 큰 아울렛</td>
+                        <td>기차가 지나가는 36개의 아치에 만든 쇼핑몰, 가구나 의류 외에도 레스토랑과 갤러리, 식재료 등 다양한 종류의 점포가 입점</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>spot<br><br></h3>
+                    <tr>
+                        <td><img src="/country/europe/image/<%=files[49]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/europe/image/<%=files[50]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/europe/image/<%=files[51]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.pilatus.ch/">필라투스 루체른</a></td>
+                        <td><a href="https://www.myswitzerland.com/en/destinations/lake-zurich/">취리히 호수</a></td>
+                        <td><a href="https://www.jungfrau.ch/en-gb/">융프라우</a></td>
+                    </tr>
+                    <tr>
+                        <td>레스토랑과 호텔이 자리하고 멋진 전망이 펼쳐지는 산봉우리에는 케이블카, 곤돌라, 철도를 통해 갈 수 있음</td>
+                        <td>수상버스를 타고 호수와 주위 자연 관광</td>
+                        <td>알프스 산맥의 고봉중 하나, 기차와 케이블카를 타고 꼭대기에 올라가 절경의 감상</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+        <%-include("../../default/footer.ejs")%>
+</body>
+</html>
