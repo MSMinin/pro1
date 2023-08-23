@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {margin: 0% 20% ;}
+        #country {padding: 5% 20%;}
+        div > table {margin: 0% 20% ; text-align: center;}
+        div{ display: flex; flex-flow: row wrap; 
+          text-align: center; justify-content: space-around; }
+    </style>
+</head>
+<body>
+    <header>
+        <%-include("../../default/header.ejs")%>
+    </header>
+    <section>
+        <div id="country">
+            <table>
+                <tr><th>
+                    <h1>베이징<br><br></h1></th>
+                </tr>
+                <tr><td><img src="/country/china/image/<%=files[0]%>" width="400px" height="400px"/><br><br>
+                    </td>
+                </tr>
+                
+            </table>
+            <p>동아시아 > 중국 > 베이징<br>
+                언어 : 중국어<br>
+                기온<br>
+                환율 1:185.94<br>
+                9~10 월 추천<br>
+                항공 2시간 16분<br>
+            </p>
+            </div>
+            <hr>
+            <div>
+                <table><h3><br>hotel<br><br></h3>
+                    <tr>
+                        <td><img src="/country/china/image/<%=files[1]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/china/image/<%=files[2]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/china/image/<%=files[3]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">호텔 에클라 베이징</a></td>
+                        <td><a href="">어포산짓 하우스</a></td>
+                        <td><a href="">샹그릴라 호텔 베이징</a></td>
+                    </tr>
+                    <tr>
+                        <td>중국느낌과 럭셔리함을 다 가지고 있는 인테리어</td>
+                        <td>심플하면서 럭셔리한 인테리어, 매우 많은 편의시설</td>
+                        <td>조식 평가가 매우 좋음, 지하철역과 연결되어 대중교통 이용이 편리함</td>
+                    </tr>
+                </table>
+            </div>
+            <hr> <div>
+                <table><h3><br>food<br><br></h3>
+                    <tr>
+                        <td><img src="/country/china/image/<%=files[4]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/china/image/<%=files[5]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/china/image/<%=files[6]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">킹스조이</a></td>
+                        <td><a href="">징야탕 </a></td>
+                        <td><a href="">초이스 씨푸드 레스토랑</a></td>
+                    </tr>
+                    <tr>
+                        <td>미슐랭 3스타 채식 레스토랑, 신선하고 계절마다 바뀌는 절기 메뉴가 인상적임</td>
+                        <td>미슐랭 1스타 북경오리집, 테이블 앞에서 북경오리를 직접 손질해서 올려줌</td>
+                        <td>호텔 안에 있는 레스토랑, 중국, 아시아 요리를 제공</td>
+                    </tr>
+                </table>
+            </div>
+            <hr> <div>
+                <table><h3><br>store<br><br></h3>
+                    <tr>
+                        <td><img src="/country/china/image/<%=files[7]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/china/image/<%=files[8]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/china/image/<%=files[9]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">왕부정대가</a></td>
+                        <td><a href="">전문대가</a></td>
+                        <td><a href="">수수가</a></td>
+                    </tr>
+                    <tr>
+                        <td>베이징 최고의 쇼핑거리, 대형백화점과 상점이 많음, 간식거리도 유명하고, 세계적인 음식점도 많음</td>
+                        <td>과거와 현재가 공존하는 베이징 전통시장, 100년이상 된 상점들이 자리를 지키고있음</td>
+                        <td>이미테이션 시장으로도 유명한 곳, 의류, 가방, 시계 등 이미테이션이지만 진품과 매우 흡사하고 가격이 저렴함</td>
+                    </tr>
+                </table>
+            </div>
+            <hr> <div>
+                <table><h3><br>spot<br><br></h3>
+                    <tr>
+                        <td><img src="/country/china/image/<%=files[10]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/china/image/<%=files[11]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/china/image/<%=files[12]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">만리장성</a></td>
+                        <td><a href="">고궁박물원</a></td>
+                        <td><a href="">이화원</a></td>
+                    </tr>
+                    <tr>
+                        <td>인류 최대의 성곽 구조물, 케이블카, 하이킹 트레일이 가능</td>
+                        <td>안에 있는 여러 유물들과 고궁들을 보며 중국의 역사를 느낄 수 있음</td>
+                        <td>북경 서부에 위치한 정원 공원이자 궁전, 풍경이 좋고, 넓은 호수와 고궁이 있음</td>
+                    </tr>
+                </table>
+            </div>
+           
+    </section>
+        <%-include("../../default/footer.ejs")%>
+</body>
+</html>
