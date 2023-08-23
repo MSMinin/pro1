@@ -1,11 +1,11 @@
 const pService = require("../service/project_service");
-const cService = require("../service/country_service");
 
 const fs = require("fs");
 const fileList = fs.readdirSync("./src/image");
 const fileList2 = fs.readdirSync("./src/views/data1/images");
 const fileList3 = fs.readdirSync("./src/image/country/korea");
 const fileList4 = fs.readdirSync("./src/image/country/japan");
+const fileList5 = fs.readdirSync("./src/image/country/europe");
 
 const view = {
     loginForm : (req, res) => {
@@ -145,9 +145,9 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         if(req.params.id == 5) {
-            res.render("worldcup/result1_3_5", {nlist, files : fileList, username : req.session.username, logo : fileList2});
+            res.render("worldcup/result1_3_5", {nlist, files : fileList3, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 6) {
-            res.render("worldcup/result1_3_6", {nlist, files : fileList, username : req.session.username, logo : fileList2});
+            res.render("worldcup/result1_3_6", {nlist, files : fileList3, username : req.session.username, logo : fileList2});
         } 
     },
     worldcup3_2 : async(req, res) => {
@@ -155,9 +155,9 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         if(req.params.id == 5) {
-            res.render("worldcup/result2_3_5", {nlist, files : fileList, username : req.session.username, logo : fileList2});
+            res.render("worldcup/result2_3_5", {nlist, files : fileList4, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 6) {
-            res.render("worldcup/result2_3_6", {nlist, files : fileList, username : req.session.username, logo : fileList2});
+            res.render("worldcup/result2_3_6", {nlist, files : fileList4, username : req.session.username, logo : fileList2});
         } 
     },
 
@@ -166,9 +166,9 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         if(req.params.id == 7) {
-            res.render("worldcup/result1_4_7", {nlist, files : fileList, username : req.session.username, logo : fileList2});
+            res.render("worldcup/result1_4_7", {nlist, files : fileList3, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 8) {
-            res.render("worldcup/result1_4_8", {nlist, files : fileList, username : req.session.username, logo : fileList2});
+            res.render("worldcup/result1_4_8", {nlist, files : fileList3, username : req.session.username, logo : fileList2});
         } 
     },
     
@@ -177,9 +177,9 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         if(req.params.id == 7) {
-            res.render("worldcup/result2_4_7", {nlist, files : fileList, username : req.session.username, logo : fileList2});
+            res.render("worldcup/result2_4_7", {nlist, files : fileList4, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 8) {
-            res.render("worldcup/result2_4_8", {nlist, files : fileList, username : req.session.username, logo : fileList2});
+            res.render("worldcup/result2_4_8", {nlist, files : fileList4, username : req.session.username, logo : fileList2});
         } 
     },
 
@@ -189,15 +189,12 @@ const process  = {
 }
 const jView ={
     tokyo : async(req, res) => {
-        //const weather = await cService.getHtml();
         res.render("country/japan/tokyo", {username : req.session.username, files : fileList4, logo : fileList2});
     },
     osaka : async(req, res) => {
-        //const weather = await cService.getHtml();
         res.render("country/japan/osaka", {username : req.session.username, files : fileList4, logo : fileList2});
     },
     sapporo : async(req, res) => {
-        //const weather = await cService.getHtml();
         res.render("country/japan/sapporo", {username : req.session.username, files : fileList4, logo : fileList2});
     },
     image : (req, res) => {
@@ -207,39 +204,21 @@ const jView ={
 }
 const kView={
     seoul : async(req, res) => {
-        //const weather = await cService.getHtml();
-        
-
         res.render("country/korea/seoul", {username : req.session.username, files : fileList3, logo : fileList2});
     },
     daegu : async(req, res) => {
-        //const weather = await cService.getHtml();
-        
-
         res.render("country/korea/daegu", {username : req.session.username, files : fileList3, logo : fileList2});
     },
     busan : async(req, res) => {
-        //const weather = await cService.getHtml();
-        
-
         res.render("country/korea/busan", {username : req.session.username, files : fileList3, logo : fileList2});
     },
     gangneung : async(req, res) => {
-        //const weather = await cService.getHtml();
-        
-
         res.render("country/korea/gangneung", {username : req.session.username, files : fileList3, logo : fileList2});
     },
     gyeongju : async(req, res) => {
-        //const weather = await cService.getHtml();
-        
-
-        res.render("country/korea/gyeongju", {username : req.session.username, files : fileList3, logo : fileList2});
+         res.render("country/korea/gyeongju", {username : req.session.username, files : fileList3, logo : fileList2});
     },
     jeonju : async(req, res) => {
-        //const weather = await cService.getHtml();
-        
-
         res.render("country/korea/jeonju", {username : req.session.username, files : fileList3, logo : fileList2});
     },
     image : (req, res) => {
@@ -258,5 +237,26 @@ const banner={
         res.download(filePath);
     }
 }
-
-module.exports = {view, process, kView, jView, banner}
+const eView ={
+    uk : async(req, res) => {
+        //const weather = await cService.getHtml();
+        res.render("country/europe/uk", {username : req.session.username, files : fileList5, logo : fileList2});
+    },
+    swiss : async(req, res) => {
+        //const weather = await cService.getHtml();
+        res.render("country/europe/swiss", {username : req.session.username, files : fileList5, logo : fileList2});
+    },
+    spain : async(req, res) => {
+        //const weather = await cService.getHtml();
+        res.render("country/europe/spain", {username : req.session.username, files : fileList5, logo : fileList2});
+    },
+    italy : async(req, res) => {
+        //const weather = await cService.getHtml();
+        res.render("country/europe/italy", {username : req.session.username, files : fileList5, logo : fileList2});
+    },
+    image : (req, res) => {
+        let filePath = `./src/image/country/europe/${req.params.fileName}`;
+        res.download(filePath);
+    }
+}
+module.exports = {view, process, kView, jView, banner , eView}

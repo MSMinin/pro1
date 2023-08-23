@@ -104,11 +104,11 @@ button {
 }
 
 .board_list .num {
-    width: 10%;
+    width: 15%;
 }
 
 .board_list .title {
-    width: 60%;
+    width: 50%;
     text-align: left;
 }
 
@@ -116,8 +116,8 @@ button {
     text-align: center;
 }
 
-.board_list .dates {
-    width: 10%;
+.board_list .id {
+    width: 15%;
 }
 
 .board_list .viewcount {

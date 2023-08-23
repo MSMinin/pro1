@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {margin: 0% 20% ;}
+        #country {padding: 5% 20%;}
+        div > table {margin: 0% 20% ; text-align: center;}
+        div .info{ display: flex; flex-flow: row wrap; 
+          text-align: center; justify-content: space-around; }
+    </style>
+</head>
+<body>
+    <header>
+        <%-include("../../default/header.ejs")%>
+    </header>
+    <section>
+        <div id="country" class="info">
+            <table>
+                <tr><th>
+                    <h1>영국<br><br></h1></th>
+                </tr>
+                <tr><td><img src="/country/europe/image/<%=files[0]%>" width="400px" height="400px"/><br><br>
+                    </td>
+                </tr>
+                
+            </table>
+            <p>유럽 > 서유럽 > 영국<br>
+                언어 : 영어<br>
+                기온<br>
+                환율 1:1,461.45<br>
+                9~10 월 추천<br>
+                항공 12시간 58분<br>
+            </p>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>hotel<br><br></h3>
+                    <tr>
+                        <td><img src="/country/europe/image/<%=files[1]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/europe/image/<%=files[2]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/europe/image/<%=files[3]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.ihg.com/holidayinnexpress/hotels/us/en/munhall/pitwf/hoteldetail">홀리데이 인 익스프레스 워터프런트</a></td>
+                        <td><a href="https://theriversidelodgehotel.co.uk/">리버사이드 로지 호텔</a></td>
+                        <td><a href="https://www.jurysinns.com/hotels/swindon">주리스 인 스윈던</a></td>
+                    </tr>
+                    <tr>
+                        <td>현대적인 라운지, 세련된 바 및 온종일 식사를 즐기실 수 있고, 에든버러 공항과 가까움</td>
+                        <td>객실 내부는 우드톤, 넓은 부지에 자리한 호텔은 그린 투어리즘 어워드를 수상했으며 9홀 주니어 골프 코스를 갖추고 있음, 프레스트윅 공항과 가까움</td>
+                        <td>스윈던의 비즈니스 파크 및 중심 산업 지역에 이상적으로 위치함, 구내에 무료 주차장이 마련되어 있음</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>food<br><br></h3>
+                    <tr>
+                        <td><img src="/country/europe/image/<%=files[4]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/europe/image/<%=files[5]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/europe/image/<%=files[6]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.corebyclaresmyth.com/">코어 바이 클레어 스미스</a></td>
+                        <td><a href="https://chicagorestaurant.co.uk/">시카고 아메리칸 바 앤 그릴</a></td>
+                        <td><a href="https://flatironsteak.co.uk/">플랫 아이언</a></td>
+                    </tr>
+                    <tr>
+                        <td>미슐랭 3스타, 프랑스 요리, 유럽 요리, 영국 요리를 제공</td>
+                        <td>신선한 샐러드, 홈메이드 피자, 버거, 치킨, 생선, 진짜 숯불 그릴에서 만든 육즙이 풍부한 스테이크</td>
+                        <td>최상급 쇠고기의 2차 부위로 만든 스테이크의 체인점</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>store<br><br></h3>
+                    <tr>
+                        <td><img src="/country/europe/image/<%=files[7]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/europe/image/<%=files[8]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/europe/image/<%=files[9]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="www.oxfordstreet.co.uk">옥스퍼드 스트리트</a></td>
+                        <td><a href="www.portobellomarket.org">포토벨로 마켓</a></td>
+                        <td><a href="www.regentstreetonline.com">리전트 스트리트</a></td>
+                    </tr>
+                    <tr>
+                        <td>마블 아치 역에서부터 옥스퍼드 서커스 역까지 이어지는 거리, 백화점, 자라, H&M 등 캐주얼 브랜드도 자리함, 교통편도 좋아서 편리하게 이용가능 </td>
+                        <td>영화 ‘노팅힐’의 촬영지로 유명한 곳, 골동품부터 각종 과일이나 식료품, 빈티지한 소품들로 가득한 마켓</td>
+                        <td>이 거리에 모든 건물들은 곡선으로 이루어져 있어서 건축적으로도 의미가 있음, 아름다운 쇼핑가로 유명함</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>spot<br><br></h3>
+                    <tr>
+                        <td><img src="/country/europe/image/<%=files[10]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/europe/image/<%=files[11]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/europe/image/<%=files[12]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.hrp.org.uk/tower-of-london/#gs.43tv3s">런던 탑</a></td>
+                        <td><a href="https://www.londoneye.com/">런던 아이</a></td>
+                        <td><a href="https://www.ox.ac.uk/">옥스퍼드 대학</a></td>
+                    </tr>
+                    <tr>
+                        <td>런던탑은 유서깊은 성이자 궁전, 정식 명칭은 국왕 폐하의 궁전이자 요새인 런던탑</td>
+                        <td>런던을 한눈에 볼 수 있는 관람차</td>
+                        <td>영미권에서 가장 오래된 대학, 해리포터의 촬영지였으며, 영국의 역사를  간직하고 있음</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+        <%-include("../../default/footer.ejs")%>
+</body>
+</html>

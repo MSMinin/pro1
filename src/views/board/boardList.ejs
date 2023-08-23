@@ -52,7 +52,12 @@
                     <%if(username) {%>
                         <a href="/write_form" class="on">글 등록</a>
                     <%} else {%>
-                        <a href="/member/loginForm">글 등록</a>
+                        <a href="/member/loginForm" onclick="msg()">글 등록</a>
+                        <script>
+                            function msg () {
+                                alert('로그인 후 사용가능합니다');
+                            }
+                        </script>
                     <% } %>
                 </div>
             </div>

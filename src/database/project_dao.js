@@ -151,8 +151,9 @@ const getHtml = async (num)=>{
 
 const mainBL = async () => {
     const con = await oracledb.getConnection(dbConfig);
-    const sql = `select rownum, num, title, id, dates, viewcount from proboard where rownum 
-                between 1 and 5 order by rownum desc`;
+    const sql = `select B.* from (select rownum rn, A.* from (
+                select * from proboard order by num desc ) A )B
+                where rn between 1 and 5`;
     const result = await con.execute(sql);
     console.log("dao BL", result);
     return result;
