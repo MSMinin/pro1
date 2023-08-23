@@ -263,15 +263,15 @@ const eView ={
 const cView ={
     macau : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/china/macau", {username : req.session.username, files : fileList6});
+        res.render("country/china/macau", {username : req.session.username, files : fileList6, logo : fileList2});
     },
     hongkong : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/china/hongkong", {username : req.session.username, files : fileList6});
+        res.render("country/china/hongkong", {username : req.session.username, files : fileList6, logo : fileList2});
     },
     beijing : async(req, res) => {
         //const weather = await cService.getHtml();
-        res.render("country/china/beijing", {username : req.session.username, files : fileList6});
+        res.render("country/china/beijing", {username : req.session.username, files : fileList6, logo : fileList2});
     },
     image : (req, res) => {
         let filePath = `./src/image/country/china/${req.params.fileName}`;
