@@ -12,26 +12,28 @@
       font-style: normal;
   }
         section {margin: 0% 10% ;padding: 5%;}
-        #world {margin : 0 10%; padding: 0 15%;}
+        .div {display:flex; flex-flow:row; }
+        div > .div01 {order:1; text-align: center; width: 40%; height: 40%;}
+        div > .div02 {order:2; text-align: center; width: 20%; height: 40%;}
+        div > .div03 {order:3; text-align: center; width: 40%; height: 40%;}
+        .wcimg {width: 100%; height: 100%;}
+        h2 {padding: 7% 0;}
     </style>
-
+</head>
 <body>
     <%-include("../default/header.ejs")%>
     <section>
-        <table id="world">
-            <tr style="text-align: center;">
-                <th>국내</th>
-                <th></th>
-                <th>해외</th>
-            </tr>
-            <tr>
-                <td><a href="/worldcup/start/<%= nlist[0].N_ID %>"><img src="/worldcup/image/<%=files[0]%>" width="400px" height="400px"/></a></td>
-                <td><img src="/worldcup/image/<%=files[9]%>" width="200px" height="200px"/></td>
-                <td><a href="/worldcup/start/<%= nlist[1].N_ID %>"><img src="/worldcup/image/<%=files[1]%>" width="400px" height="400px"/></a></td>
-            </tr>
-        </table>
+        <div class="div" style="text-align: center; font-family: 'omyu_pretty'; font-size: 20px;">
+            <div class="div01"><h2>국내</h2></div>
+            <div class="div02"></div>
+            <div class="div03"><h2>해외</h2></div>
+        </div>
+        <div class="div">
+            <div class="div01"><a href="/worldcup/start/<%= nlist[0].N_ID %>"><img class="wcimg" src="/worldcup/image/<%=files[0]%>"/></a></div>
+            <div class="div02"><img class="wcimg" src="/worldcup/image/<%=files[9]%>"/></div>
+            <div class="div03"><a href="/worldcup/start/<%= nlist[1].N_ID %>"><img class="wcimg" src="/worldcup/image/<%=files[0]%>"/></a></div>
+        </div>
     </section>
-
 
     <%-include("../default/footer.ejs")%>
 </body>
