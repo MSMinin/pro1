@@ -11,7 +11,7 @@
       font-weight: normal;
       font-style: normal;
   }
-        section {margin: 0% 20% ;padding: 3%;}
+        section {margin: 0% 20% ;padding: 3%; font-family: 'omyu_pretty';}
         div .info{text-align: center;}
         img {width: 450px; height: 450px;}
     </style>
@@ -20,11 +20,11 @@
     <%-include("../default/header.ejs")%>
     <section>
         <p>
-            <h3>결과</h3><br>
-            장거리에서 자연을 선택하셨고, 산을 고르셨습니다.<br><br>
+            <h1>결과</h1><br>
+            <h3>장거리에서 자연을 선택하셨고, 산을 고르셨습니다.<br><br></h3>
         </p>
-        <div class="info">
-            <h1>스위스<br></h1>
+        <div class="info" style="text-align: center;">
+            <p style="font-size: 60px; text-align: center;">스위스<br></p>
             <a href="/country/europe/swiss"><img src="/country/europe/image/<%=files[39]%>"></a><br>
         </div>
         <p>

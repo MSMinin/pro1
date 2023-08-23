@@ -24,6 +24,7 @@ button {
 .board_wrap {
     width: 1000px;
     margin: 100px auto;
+    font-family: 'omyu_pretty';
 }
 
 .board_title {
