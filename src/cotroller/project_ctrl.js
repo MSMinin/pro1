@@ -11,6 +11,7 @@ const fileList2 = fs.readdirSync("./src/views/data1/images");
 const fileList3 = fs.readdirSync("./src/image/country/korea");
 const fileList4 = fs.readdirSync("./src/image/country/japan");
 const fileList5 = fs.readdirSync("./src/image/country/europe");
+const fileList6 = fs.readdirSync("./src/image/country/china");
 
 const view = {
     loginForm : (req, res) => {
@@ -133,10 +134,11 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         console.log("w2 : ",nlist);
+        console.log("pic : ",fileList);
         if(req.params.id == 3) {
             res.render("worldcup/worldcup3_1", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 4) {
-            res.render("worldcup/worldcup3_2", {nlist, files : fileList, username : req.session.username, logo : fileList2});
+            res.render("worldcup/worldcup4_1", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         } 
     },
 
@@ -145,9 +147,9 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         if(req.params.id == 3) {
-            res.render("worldcup/worldcup3_3", {nlist, files : fileList, username : req.session.username, logo : fileList2});
+            res.render("worldcup/worldcup3_2", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 4) {
-            res.render("worldcup/worldcup3_4", {nlist, files : fileList, username : req.session.username, logo : fileList2});
+            res.render("worldcup/worldcup4_2", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         } 
     },
 
@@ -166,9 +168,9 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         if(req.params.id == 5) {
-            res.render("worldcup/result2_3_5", {nlist, files : fileList4, username : req.session.username, logo : fileList2});
+            res.render("worldcup/result2_3_5", {nlist, files : fileList5, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 6) {
-            res.render("worldcup/result2_3_6", {nlist, files : fileList4, username : req.session.username, logo : fileList2});
+            res.render("worldcup/result2_3_6", {nlist, files : fileList5, username : req.session.username, logo : fileList2});
         } 
     },
 
@@ -272,5 +274,27 @@ const eView ={
         res.download(filePath);
     }
 }
+<<<<<<< HEAD
 module.exports = {view, process, kView, jView, banner , eView}
 
+=======
+const cView ={
+    macau : async(req, res) => {
+        //const weather = await cService.getHtml();
+        res.render("country/china/macau", {username : req.session.username, files : fileList6, logo : fileList2});
+    },
+    hongkong : async(req, res) => {
+        //const weather = await cService.getHtml();
+        res.render("country/china/hongkong", {username : req.session.username, files : fileList6, logo : fileList2});
+    },
+    beijing : async(req, res) => {
+        //const weather = await cService.getHtml();
+        res.render("country/china/beijing", {username : req.session.username, files : fileList6, logo : fileList2});
+    },
+    image : (req, res) => {
+        let filePath = `./src/image/country/china/${req.params.fileName}`;
+        res.download(filePath);
+    }
+}
+module.exports = {view, process, kView, jView, banner , eView, cView}
+>>>>>>> be6a67a9084e23634869f041567a7c4c6ac1c75e

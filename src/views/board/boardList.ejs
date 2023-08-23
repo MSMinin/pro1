@@ -13,6 +13,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BoardList</title>
         <link rel="stylesheet" href="/css/css.css">
+        <style>
+            @font-face {
+      font-family: 'omyu_pretty';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+  }
+        </style>
+        
         <%-include("../default/header.ejs")%>
 >>>>>>> 1a41c4a99bd76f082301f22cb6296827aca6b9d9
 </head>
@@ -61,7 +70,12 @@
                     <%if(username) {%>
                         <a href="/write_form" class="on">글 등록</a>
                     <%} else {%>
-                        <a href="/member/loginForm">글 등록</a>
+                        <a href="/member/loginForm" onclick="msg()">글 등록</a>
+                        <script>
+                            function msg () {
+                                alert('로그인 후 사용가능합니다');
+                            }
+                        </script>
                     <% } %>
                 </div>
             </div>

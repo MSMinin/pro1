@@ -1,23 +1,39 @@
-<style>
-    section {margin: 0% 10% ;padding: 5%;}
-    #world {margin : 0 10%; padding: 0 15%;}
-</style>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+      font-family: 'omyu_pretty';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+  }
+        section {margin: 0% 10% ;padding: 5%;}
+        .div {display:flex; flex-flow:row; }
+        div > .div01 {order:1; text-align: center; width: 40%; height: 40%;}
+        div > .div02 {order:2; text-align: center; width: 20%; height: 40%;}
+        div > .div03 {order:3; text-align: center; width: 40%; height: 40%;}
+        .wcimg {width: 100%; height: 100%;}
+        h2 {padding: 7% 0;}
+    </style>
+</head>
 <body>
     <%-include("../default/header.ejs")%>
 
     <section>
-        <table id="world">
-            <tr style="text-align: center;">
-                <th>관광</th>
-                <th>식도락</th>
-            </tr>
-            <tr>
-                <td><a href="/worldcup/start/2/4/<%= nlist[6].N_ID %>"><img src="/worldcup/image/<%=files[6]%>" width="400px" height="400px"/></a></td>
-                <td><img src="/worldcup/image/<%=files[9]%>" width="200px" height="200px"/></td>
-                <td><a href="/worldcup/start/2/4/<%= nlist[7].N_ID %>"><img src="/worldcup/image/<%=files[7]%>" width="400px" height="400px"/></a></td>
-            </tr>
-        </table>
+        <div class="div" style="text-align: center; font-family: 'omyu_pretty'; font-size: 20px;">
+            <div class="div01"><h2>관광</h2></div>
+            <div class="div02"></div>
+            <div class="div03"><h2>식도락</h2></div>
+        </div>
+        <div class="div">
+            <div class="div01"><a href="/worldcup/start/2/4/<%= nlist[6].N_ID %>"><img class="wcimg" src="/worldcup/image/<%=files[6]%>"/></a></div>
+            <div class="div02"><img class="wcimg" src="/worldcup/image/<%=files[9]%>"/></div>
+            <div class="div03"><a href="/worldcup/start/2/4/<%= nlist[7].N_ID %>"><img class="wcimg" src="/worldcup/image/<%=files[7]%>"/></a></div>
+        </div>
     </section>
 
     <%-include("../default/footer.ejs")%>

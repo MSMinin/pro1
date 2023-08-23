@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        section {margin: 0% 20% ;padding: 3%;}
+        @font-face {
+      font-family: 'omyu_pretty';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+  }
+        section {margin: 0% 20% ;padding: 3%; font-family: 'omyu_pretty';}
         div .info{text-align: center;}
         img {width: 450px; height: 450px;}
     </style>
@@ -14,12 +20,12 @@
     <%-include("../default/header.ejs")%>
     <section>
         <p>
-            <h3>결과</h3><br>
-            장거리에서 자연을 선택하셨고, 바다를 고르셨습니다.<br><br>
+            <h1>결과</h1><br>
+            <h3>장거리에서 자연을 선택하셨고, 바다를 고르셨습니다.<br><br></h3>
         </p>
-        <div class="info">
-            <h1>오사카<br></h1><!--수정-->
-            <a href="/country/japan/osaka"><img src="/country/japan/image/<%=files[13]%>"></a><br><!-- 나라 링크-->
+        <div class="info" style="text-align: center;">
+            <p style="font-size: 60px; text-align: center;">이탈리아<br></p>
+            <a href="/country/europe/italy"><img src="/country/europe/image/<%=files[13]%>"></a><br>
         </div>
         <p>
             <br><br>...<br>

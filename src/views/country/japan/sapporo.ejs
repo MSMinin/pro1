@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        section {margin: 0% 20% ;}
+        @font-face {
+      font-family: 'omyu_pretty';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+  }
+        section {margin: 0% 20%; font-family: 'omyu_pretty';}
         #country {padding: 5% 20%;}
         div > table {margin: 0% 20% ; text-align: center;}
         div .info{ display: flex; flex-flow: row wrap; 
@@ -17,25 +23,28 @@
         <%-include("../../default/header.ejs")%>
     </header>
     <section>
-        <div id="country" class="info">
-            <table>
-                <tr><th>
-                    <h1>SAPPORO<br><br></h1></th>
-                </tr>
-                <tr><td><img src="/country/japan/image/<%=files[26]%>" width="400px" height="400px"/><br><br>
+        <div id="country">
+            <div class="info">
+                <table>
+                    <tr>
+                        <th style="font-size: 60px; font-weight: normal;">SAPPORO</th>
+                    </tr>
+                    <tr><td><br><br><img src="/country/japan/image/<%=files[26]%>" width="400px" height="400px"/><br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 23px; font-weight: normal;">
+                        <p>일본 > 홋카이도 > 삿포로<br>
+                            언어 : 일본어<br>
+                            기온<br>
+                            환율<br>
+                            7~8월 추천<br>
+                            항공 2시간 30분<br>
+                        </p>
                     </td>
-                </tr>
-                <tr><td>
-                    <p>일본 > 홋카이도 > 삿포로<br>
-                        언어 : 일본어<br>
-                        기온<br>
-                        환율<br>
-                        7~8월 추천<br>
-                        항공 2시간 30분<br>
-                    </p>
-                </td>
-                </tr>
-            </table>
+                    </tr>
+                </table>
+            </div>
             
             <div class="info">
                 <table><h3><br>hotel<br><br></h3>
@@ -45,14 +54,14 @@
                         <td><img src="/country/japan/image/<%=files[29]%>" width="200px" height="200px"/></td>
                     </tr>
                     <tr>
-                        <td><a href="#">로이톤 삿포로 호텔</a></td>
-                        <td><a href="#">게이오 프렐리아 호텔 삿포로</a></td>
-                        <td><a href="#">조잔케이 온센 유라쿠소안</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="#">로이톤 삿포로 호텔</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="#">게이오 프렐리아 호텔</a></td>
+                        <td style="font-size: 23px; font-weight: normal;"><a href="#">조잔케이 온센 유라쿠소안</a></td>
                     </tr>
                     <tr>
-                        <td>삿포로 야경이 가장 잘 보이는 호텔 </td>
-                        <td>삿포로 역 앞에 있어 교통이 편리한 호텔</td>
-                        <td>객실에 히노끼탕이 있는 온천마을 료칸</td>
+                        <td style="font-size: 20px; font-weight: normal;">삿포로 야경이 잘 보이는 호텔 </td>
+                        <td style="font-size: 20px; font-weight: normal;">삿포로 역 앞에 있어 교통이 편리한 호텔</td>
+                        <td style="font-size: 20px; font-weight: normal;">객실에 히노끼탕이 있는<br> 온천마을 료칸</td>
                     </tr>
                 </table>
             </div>
@@ -65,14 +74,14 @@
                         <td><img src="/country/japan/image/<%=files[32]%>" width="200px" height="200px"/></td>
                     </tr>
                     <tr>
-                        <td><a href="#">스아게 본점</a></td>
-                        <td><a href="#">다루마 본점</a></td>
-                        <td><a href="#">카니쇼군</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="#">스아게 본점</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="#">다루마 본점</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="#">카니쇼군</a></td>
                     </tr>
                     <tr>
-                        <td>다양한 재료의 삿포로 스프카레 맛집</td>
-                        <td>한번쯤 가봐야하는 전통 양고기 맛집</td>
-                        <td>홋카이도의 특산물인 털게 코스요리</td>
+                        <td style="font-size: 20px; font-weight: normal;">다양한 재료의 스프카레 맛집</td>
+                        <td style="font-size: 20px; font-weight: normal;">한번쯤 가봐야하는<br> 전통 양고기 맛집</td>
+                        <td style="font-size: 20px; font-weight: normal;">홋카이도의 특산물인<br> 털게 코스요리</td>
                     </tr>
                 </table>
             </div>
@@ -85,14 +94,14 @@
                         <td><img src="/country/japan/image/<%=files[35]%>" width="200px" height="200px"/></td>
                     </tr>
                     <tr>
-                        <td><a href="#">오타루 오르골당</a></td>
-                        <td><a href="#">르타오 본점</a></td>
-                        <td><a href="#">이카타로 혼포</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="#">오타루 오르골당</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="#">르타오 본점</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="#">이카타로 혼포</a></td>
                     </tr>
                     <tr>
-                        <td>아기자기한 오르골들과 2층의 오르골박물관 등 볼거리가 다양한 상점</td>
-                        <td>유제품으로 유명한 홋카이도의 디저트샵</td>
-                        <td>다양한 건어물과 오징어구이로 유명한 상점</td>
+                        <td style="font-size: 20px; font-weight: normal;">아기자기한 오르골들과<br> 2층의 오르골박물관 등<br> 볼거리가 다양한 상점</td>
+                        <td style="font-size: 20px; font-weight: normal;">유제품으로 유명한<br> 홋카이도의 디저트샵</td>
+                        <td style="font-size: 20px; font-weight: normal;">다양한 건어물과 오징어구이로 유명한 상점</td>
                     </tr>
                 </table>
             </div>
@@ -105,14 +114,14 @@
                         <td><img src="/country/japan/image/<%=files[38]%>" width="200px" height="200px"/></td>
                     </tr>
                     <tr>
-                        <td><a href="#">삿포로 비어가든</a></td>
-                        <td><a href="#">오타루 사카이마치</a></td>
-                        <td><a href="#">시로이 코이비토 파크</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="#">삿포로 비어가든</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="#">오타루 사카이마치</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="#">시로이 코이비토 파크</a></td>
                     </tr>
                     <tr>
-                        <td>삿포로 맥주를 만드는 과정을 볼 수 있고 직접 시음할 수 있는 곳</td>
-                        <td>영롱한 유리공예와 맑은 소리의 유리풍경이 가득한 거리</td>
-                        <td>고급 쿠크다스인 시로이 코이비토를 만들고 파는 테마파크</td>
+                        <td style="font-size: 20px; font-weight: normal;">삿포로 맥주를 만드는 과정을<br> 볼 수 있고 직접 시음할 수<br> 있는 박물관</td>
+                        <td style="font-size: 20px; font-weight: normal;">영롱한 유리공예와 맑은 소리의 유리풍경이 가득한 거리</td>
+                        <td style="font-size: 20px; font-weight: normal;">고급 쿠크다스인 시로이 코이비토를 만들고 파는 테마파크</td>
                     </tr>
                 </table>
             </div>

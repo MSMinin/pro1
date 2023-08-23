@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+      font-family: 'omyu_pretty';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+  }
+        section {margin: 0% 20%; font-family: 'omyu_pretty';}
+        #country {padding: 5% 20%;}
+        div > table {margin: 0% 20% ; text-align: center;}
+        div .info{ display: flex; flex-flow: row wrap; 
+          text-align: center; justify-content: space-around; }
+    </style>
+</head>
+<body>
+    <header>
+        <%-include("../../default/header.ejs")%>
+    </header>
+    <section>
+        <div id="country">
+            <div class="info">
+                <table>
+                    <tr>
+                        <th style="font-size: 60px; font-weight: normal;">홍콩</th>
+                    </tr>
+                    <tr><td><br><br><img src="/country/china/image/<%=files[26]%>" width="400px" height="400px"/><br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 23px; font-weight: normal;">
+                            <p>동아시아 > 중국 > 홍콩<br>
+                                언어 : 중국어, 영어<br>
+                                기온<br>
+                                환율 1:170.49<br>
+                                11~12 월 추천<br>
+                                항공 3시간 53분<br>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>hotel<br><br></h3>
+                    <tr>
+                        <td><img src="/country/china/image/<%=files[27]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/china/image/<%=files[28]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/china/image/<%=files[29]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">더 리츠 칼튼, 홍콩</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">디 어퍼 하우스</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">더 세인트 레지스 홍콩</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px; font-weight: normal;">국제상업센터의 102~118층에 위치, 고층이라 내려다보는 경관이 매우 좋음</td>
+                        <td style="font-size: 20px; font-weight: normal;">지하철역과 가깝고, 객실도<br> 세련되고, 고층이라<br> 전망도 매우 좋음</td>
+                        <td style="font-size: 20px; font-weight: normal;">항구가 보이는 객실, 컨벤션 센터와 페리터미널이 가까움, 로비부터 세련된 5성급 호텔</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>food<br><br></h3>
+                    <tr>
+                        <td><img src="/country/china/image/<%=files[30]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/china/image/<%=files[31]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/china/image/<%=files[32]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">크루즈 레스토랑 & 바</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">틴 렁 힌(Tin Lung Heen)</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">더 오이스터 하우스</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px; font-weight: normal;">옥상에서 즐기는 루프탑 레스토랑과 바, 항구와 구룡 스카이라인의 전망을 볼 수 있음</td>
+                        <td style="font-size: 20px; font-weight: normal;">호텔 100층에 위치, 전경을 보면서 중국 , 아시아 요리를 즐길 수 있음, 미슐랭 2스타</td>
+                        <td style="font-size: 20px; font-weight: normal;">굴 레스토랑으로 유명, 해산물과 스테이크를 판매중</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>store<br><br></h3>
+                    <tr>
+                        <td><img src="/country/china/image/<%=files[33]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/china/image/<%=files[34]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/china/image/<%=files[35]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">타임스퀘어</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">하버시티</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">랜드마크</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px; font-weight: normal;">중간 가격대의 230여 개의 패션, 액세서리, 전자제품과 완구, 백화점, 슈퍼마켓, 통합 웰니스 여행지 등을 갖추고 있음</td>
+                        <td style="font-size: 20px; font-weight: normal;">쇼핑객을 위해 450개 이상의 상점, 약 70여 개의 레스토랑 3개의 호텔, 미술관, 전망대 갑판으로 이루어짐</td>
+                        <td style="font-size: 20px; font-weight: normal;">홍콩의 중심지인 센트럴에 있는 쇼핑센터, 세계 각지의 명품 브랜드 매장들이 입주</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>spot<br><br></h3>
+                    <tr>
+                        <td><img src="/country/china/image/<%=files[36]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/china/image/<%=files[37]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/china/image/<%=files[38]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">빅토리아 피크</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">빅 부다</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">스타 페리</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px; font-weight: normal;">트랩을 타고 올라가서 전망대에서 보는 홍콩 아경이 매우 좋은 경관</td>
+                        <td style="font-size: 20px; font-weight: normal;">세계 최대의 청동 불상, 옹핑 케이블카 타고 들어와서 계단을 올라가야함, 높은곳에서 보는 전경이 좋음</td>
+                        <td style="font-size: 20px; font-weight: normal;">구룡반도와 홍콩섬을 이동할때 사용하는 페리, 홍콩이 한눈에 보이고, 한적한 여유를 즐길 수 있음</td>
+                    </tr>
+                </table>
+            </div>
+           
+    </section>
+        <%-include("../../default/footer.ejs")%>
+</body>
+</html>
