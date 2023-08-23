@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        section {margin: 0% 20% ;}
+        @font-face {
+      font-family: 'omyu_pretty';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+  }
+        section {margin: 0% 20%; font-family: 'omyu_pretty';}
         #country {padding: 5% 20%;}
         div > table {margin: 0% 20% ; text-align: center;}
         div .info{ display: flex; flex-flow: row wrap; 
@@ -17,19 +23,22 @@
         <%-include("../../default/header.ejs")%>
     </header>
     <section>
-        <div id="country" class="info">
-            <table>
-                <tr><th>
-                    <h1>부산<br><br></h1></th>
-                </tr>
-                <tr><td><img src="/country/korea/image/<%=files[60]%>" width="400px" height="400px"/><br><br>
-                    </td>
-                </tr>
-                <tr><td>
-                    대한민국의 제2의 도시이자 최대의 해양 도시이며, 부산항을 중심으로 해상 무역과 물류 산업이 발달함
-                </td>
-                </tr>
-            </table>
+        <div id="country">
+            <div class="info">
+                <table>
+                    <tr>
+                        <th style="font-size: 60px; font-weight: normal;">부산</th>
+                    </tr>
+                    <tr><td><br><br><img src="/country/korea/image/<%=files[60]%>" width="400px" height="400px"/><br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 23px; font-weight: normal;">
+                            대한민국의 제2의 도시이자 최대의 해양 도시이며, 부산항을 중심으로 해상 무역과 물류 산업이 발달함
+                        </td>
+                    </tr>
+                </table>
+        </div>
             <hr>
             <div class="info">
                 <table><h3><br>hotel<br><br></h3>
@@ -39,14 +48,14 @@
                         <td><img src="/country/korea/image/<%=files[63]%>" width="200px" height="200px"/></td>
                     </tr>
                     <tr>
-                        <td><a href="https://www.agoda.com/ko-kr/signiel-busan/hotel/busan-kr.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1891442&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2023-08-27&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=KRW&isFreeOccSearch=false&tag=fdc94f04-aedd-be5e-ed05-44d5ba273c0d&isCityHaveAsq=false&los=1&searchrequestid=79dc4017-161f-4149-8ebf-87d017b9ea46">시그니엘 부산호텔</a></td>
-                        <td><a href="https://www.agoda.com/ko-kr/hotel-aqua-palace/hotel/busan-kr.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1891442&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2023-08-27&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=KRW&isFreeOccSearch=false&tag=fdc94f04-aedd-be5e-ed05-44d5ba273c0d&isCityHaveAsq=false&los=1&searchrequestid=79dc4017-161f-4149-8ebf-87d017b9ea46">아쿠아펠리스</a></td>
-                        <td><a href="https://www.agoda.com/ko-kr/lotte-hotel-busan/hotel/busan-kr.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1891442&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2023-08-27&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=KRW&isFreeOccSearch=false&tag=fdc94f04-aedd-be5e-ed05-44d5ba273c0d&isCityHaveAsq=false&los=1&searchrequestid=79dc4017-161f-4149-8ebf-87d017b9ea46">롯데 호텔 부산</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="https://www.agoda.com/ko-kr/signiel-busan/hotel/busan-kr.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1891442&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2023-08-27&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=KRW&isFreeOccSearch=false&tag=fdc94f04-aedd-be5e-ed05-44d5ba273c0d&isCityHaveAsq=false&los=1&searchrequestid=79dc4017-161f-4149-8ebf-87d017b9ea46">시그니엘 부산호텔</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="https://www.agoda.com/ko-kr/hotel-aqua-palace/hotel/busan-kr.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1891442&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2023-08-27&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=KRW&isFreeOccSearch=false&tag=fdc94f04-aedd-be5e-ed05-44d5ba273c0d&isCityHaveAsq=false&los=1&searchrequestid=79dc4017-161f-4149-8ebf-87d017b9ea46">아쿠아펠리스</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="https://www.agoda.com/ko-kr/lotte-hotel-busan/hotel/busan-kr.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1891442&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2023-08-27&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=KRW&isFreeOccSearch=false&tag=fdc94f04-aedd-be5e-ed05-44d5ba273c0d&isCityHaveAsq=false&los=1&searchrequestid=79dc4017-161f-4149-8ebf-87d017b9ea46">롯데 호텔 부산</a></td>
                     </tr>
                     <tr>
-                        <td>엘시티(LCT) 타워 3층부터 19층까지 자리하고 있는 럭셔리 호텔, 해운대 걸어서 10분, 400평 규모의 인피니티 풀, 오션뷰</td>
-                        <td>38도 천연해수온천사우나, 24시간 운영하는 통창 오션뷰 찜질방과 실내 워터파크 보유</td>
-                        <td>사계절 온수풀 야외수영장과 풀카페 앤 바, 부산의 중심지이자 번화가인 서면에 위치, 롯데 면세점 이용가능</td>
+                        <td style="font-size: 20px; font-weight: normal;">엘시티(LCT) 타워 3층부터 19층까지 자리하고 있는 럭셔리 호텔, 해운대 걸어서 10분, 400평 규모의 인피니티 풀, 오션뷰</td>
+                        <td style="font-size: 20px; font-weight: normal;">38도 천연해수온천사우나, 24시간 운영하는 통창 오션뷰 찜질방과 실내 워터파크 보유</td>
+                        <td style="font-size: 20px; font-weight: normal;">사계절 온수풀 야외수영장과 풀카페 앤 바, 부산의 중심지이자 번화가인 서면에 위치, 롯데 면세점 이용가능</td>
                     </tr>
                 </table>
             </div>
@@ -59,14 +68,14 @@
                         <td><img src="/country/korea/image/<%=files[66]%>" width="200px" height="200px"/></td>
                     </tr>
                     <tr>
-                        <td><a href="https://www.tripadvisor.co.kr/Restaurant_Review-g297884-d4033780-Reviews-Anga-Busan.html">안가</a></td>
-                        <td><a href="https://www.tripadvisor.co.kr/Restaurant_Review-g297884-d8076966-Reviews-Miryang_Sundae_Dwaeji_Gukbap-Busan.html">밀양순대 돼지국밥</a></td>
-                        <td><a href="https://www.tripadvisor.co.kr/Restaurant_Review-g297884-d9239878-Reviews-Soup_Je_Wheat_Noodles-Busan.html">국제밀면</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="https://www.tripadvisor.co.kr/Restaurant_Review-g297884-d4033780-Reviews-Anga-Busan.html">안가</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="https://www.tripadvisor.co.kr/Restaurant_Review-g297884-d8076966-Reviews-Miryang_Sundae_Dwaeji_Gukbap-Busan.html">밀양순대 돼지국밥</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="https://www.tripadvisor.co.kr/Restaurant_Review-g297884-d9239878-Reviews-Soup_Je_Wheat_Noodles-Busan.html">국제밀면</a></td>
                     </tr>
                     <tr>
-                        <td>돼지고기 맛집, 특수부위, 숯불구이가 유명함.</td>
-                        <td>해운대에 위치한 3층까지 있는 부산 돼지국밥집</td>
-                        <td>5시간 이상 숙성시킨 반죽을 사용해 쫄깃하고 소사골육수라 육수가 깔끔한 밀면집</td>
+                        <td style="font-size: 20px; font-weight: normal;">돼지고기 맛집, 특수부위, 숯불구이가 유명함.</td>
+                        <td style="font-size: 20px; font-weight: normal;">해운대에 위치한 3층까지 있는 부산 돼지국밥집</td>
+                        <td style="font-size: 20px; font-weight: normal;">5시간 이상 숙성시킨 반죽을 사용해 쫄깃하고 소사골육수라 육수가 깔끔한 밀면집</td>
                     </tr>
                 </table>
             </div>
@@ -78,12 +87,12 @@
                         <td><img src="/country/korea/image/<%=files[68]%>" width="200px" height="200px"/></td>
                     </tr>
                     <tr>
-                        <td><a href="https://www.bisco.or.kr/jagalchimarket/">자갈치 시장</a></td>
-                        <td><a href="https://www.bisco.or.kr/undershop/">서면 지하도상가</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="https://www.bisco.or.kr/jagalchimarket/">자갈치 시장</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="https://www.bisco.or.kr/undershop/">서면 지하도상가</a></td>
                     </tr>
                     <tr>
-                        <td>중구 남포동과 충무동에 걸쳐 있는 해안통으로 도심과 접하고 있어 시장기능과 위락기능을 겸하고 있는 부산의 성격을 잘 보여주는 시장</td>
-                        <td>여러 브랜드 매장들이 있는 곳으로 부산에서 활기 넘치는곳, 젊은층들이 많음</td>
+                        <td style="font-size: 20px; font-weight: normal;">중구 남포동과 충무동에 걸쳐 있는 해안통으로 도심과 접하고 있어 시장기능과 위락기능을 겸하고 있는 부산의 성격을 잘 보여주는 시장</td>
+                        <td style="font-size: 20px; font-weight: normal;">여러 브랜드 매장들이 있는 곳으로 부산에서 활기 넘치는곳, 젊은층들이 많음</td>
                     </tr>
                 </table>
             </div>
@@ -96,14 +105,14 @@
                         <td><img src="/country/korea/image/<%=files[71]%>" width="200px" height="200px"/></td>
                     </tr>
                     <tr>
-                        <td><a href="https://www.gamcheon.or.kr/">감천 문화마을</a></td>
-                        <td><a href="https://www.haeundae.go.kr/tour/index.do?menuCd=DOM_000000302000000000">해운대</a></td>
-                        <td><a href="https://www.bisco.or.kr/gwanganbridge/">광안대교</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="https://www.gamcheon.or.kr/">감천 문화마을</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="https://www.haeundae.go.kr/tour/index.do?menuCd=DOM_000000302000000000">해운대</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="https://www.bisco.or.kr/gwanganbridge/">광안대교</a></td>
                     </tr>
                     <tr>
-                        <td>산자락을 따라 질서정연하게 늘어선 계단식 집단 주거형태와 골목길이 마을미술 프로젝트로 문화마을로 탄생</td>
-                        <td>부산광역시 해운대구에 있는 해수욕장. 광안대교와 더불어 외지인들에게 가장 유명한 부산광역시의 양대 랜드마크</td>
-                        <td>부산의 명물. 부산광역시 남구 대연동 49호 광장에서 출발하여 해운대구 우동 센텀시티에서 끝나는 교량</td>
+                        <td style="font-size: 20px; font-weight: normal;">산자락을 따라 질서정연하게 늘어선 계단식 집단 주거형태와 골목길이 마을미술 프로젝트로 문화마을로 탄생</td>
+                        <td style="font-size: 20px; font-weight: normal;">부산광역시 해운대구에 있는 해수욕장. 광안대교와 더불어 외지인들에게 가장 유명한 부산광역시의 양대 랜드마크</td>
+                        <td style="font-size: 20px; font-weight: normal;">부산의 명물. 부산광역시 남구 대연동 49호 광장에서 출발하여 해운대구 우동 센텀시티에서 끝나는 교량</td>
                     </tr>
                 </table>
             </div>

@@ -6,7 +6,13 @@
       img {width: 100%; height: 300px;}
       section {margin: 0% 20% ;padding: 1%;}
       .button{background: skyblue; text-align: right; width: 100%; font-size: small; }
-
+      .board {font-family: 'omyu_pretty';}
+      @font-face {
+      font-family: 'omyu_pretty';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+  }
 
 .board_list {
     width: 100%;
@@ -39,7 +45,7 @@
 }
 
 .board_list .title {
-    width: 40%;
+    width: 35%;
     text-align: left;
 }
 
@@ -95,11 +101,11 @@
       </button>
     </div>
   </section>
-  <section>
+  <section class="board" style="font-size: 20px;">
     최근 게시물
     <div class="board_list_wrap">
       <div class="board_list">
-          <div class="top">
+          <div class="top" style="font-size: 20px;">
               <div class="num">번호</div>
               <div class="title">제목</div>
               <div class="id">작성자</div>
