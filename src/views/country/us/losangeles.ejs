@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+      font-family: 'omyu_pretty';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+  }
+        section {margin: 0% 20%; font-family: 'omyu_pretty';}
+        #country {padding: 5% 20%;}
+        div > table {margin: 0% 20% ; text-align: center;}
+        div .info{ display: flex; flex-flow: row wrap; 
+          text-align: center; justify-content: space-around; }
+    </style>
+</head>
+<body>
+    <header>
+        <%-include("../../default/header.ejs")%>
+    </header>
+    <section>
+        <div id="country">
+            <div class="info">
+                <table>
+                    <tr>
+                        <th style="font-size: 60px; font-weight: normal;">뉴욕</th>
+                    </tr>
+                    <tr><td><br><br><img src="/country/us/image/<%=files[0]%>" width="400px" height="400px"/><br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 23px; font-weight: normal;">
+                            <p>북아메리카 > 미국 > 로스앤젤레스<br>
+                                언어 : 영어<br>
+                                기온<br>
+                                환율 1:1,338.52<br>
+                                9~10 월 추천<br>
+                                항공 13시간 16분<br>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>hotel<br><br></h3>
+                    <tr>
+                        <td><img src="/country/us/image/<%=files[1]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[2]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[3]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">더 프로스펙트 할리우드</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">페어몬트 센츄리 플라자</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">피게로아 호텔</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px; font-weight: normal;">예술적인 인테리어, 좋은 전망을 보유하고, 할리우드 메인 스팟을 도보로 이용가능</td>
+                        <td style="font-size: 20px; font-weight: normal;">현대적이고 세련된 인테리어, 전용 테라스, 옥상 수영장 이용 가능</td>
+                        <td style="font-size: 20px; font-weight: normal;">스페인 식민지 시대 양식으로 건설되어 디자인과 디테일이 독특함, 예술적인 분위기</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>food<br><br></h3>
+                    <tr>
+                        <td><img src="/country/us/image/<%=files[4]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[5]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[6]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">러셀스</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">보아 스테이크하우스</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">엔/나카</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px; font-weight: normal;">유명한 브런치 식당, 프렌치 토스트, 샐러드, 와플, 파스타 등 미국 요리를 제공함</td>
+                        <td style="font-size: 20px; font-weight: normal;">LA 3대 스테이크집, 해산물 메뉴도 있고, 해산물과 스테이크 둘다 좋음</td>
+                        <td style="font-size: 20px; font-weight: normal;">미슐랭 2스타 스시집, 전형적인 스시집이 아닌 여러 코스요리가 있음 </td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>store<br><br></h3>
+                    <tr>
+                        <td><img src="/country/us/image/<%=files[7]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[8]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[9]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">베벌리 센터</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">더 그로브</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">사우스 코스트 플라자</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 19px; font-weight: normal;">8층 건물에 총 100개 이상의 브랜드 상점과 레스토랑이 있고, 캐쥬얼 브랜드가 많아 젊은층에게 인기가 많음</td>
+                        <td style="font-size: 19px; font-weight: normal;">녹지와 분수대, 푸른 하늘이 보이는 야외에 자리 잡은 쇼핑몰, 트롤리도 무료로 이용가능</td>
+                        <td style="font-size: 19px; font-weight: normal;">300여 개의 매장, 5개의 백화점이 있음, 이 쇼핑몰은 호화로운 전문 매장으로 유명함</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>spot<br><br></h3>
+                    <tr>
+                        <td><img src="/country/us/image/<%=files[10]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[11]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[12]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">유니버셜 스튜디오 할리우드</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">할리우드 명예의 거리</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">그리피스 천문대</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px; font-weight: normal;">세계 최대의 영화 및 TV 촬영 스튜디오이자 테마파크, 스튜디오 투어라는 이곳만의 어트랙션이 존재함</td>
+                        <td style="font-size: 20px; font-weight: normal;">산책을 하면서 할리우드 스타의 흔적들을 찾아가는 재미가 있음</td>
+                        <td style="font-size: 20px; font-weight: normal;">라라랜드의 촬영지, 천문대 내부에서 은하수쇼 관람도 가능하고 야경스팟으로 좋음</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+        <%-include("../../default/footer.ejs")%>
+</body>
+</html>

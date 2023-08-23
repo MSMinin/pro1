@@ -165,13 +165,14 @@
         <li>
           <div class="btn-group dropend">
             <button class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px; border: solid 3px rgb(3, 171, 255);">
-              <a class="dropdown-item" href="#">동아시아</a>
+              <a class="dropdown-item" href="#">북아메리카</a>
             </button>
             <ul class="dropdown-menu dropdown-menu">
               <li>
                 <div class="btn">
-                  <a class="dropdown-item" href="/country/tokyo">1</a><hr>
-                    <a class="dropdown-item" href="/country/osaka">2</a>
+                  <a class="dropdown-item" href="/country/us/newyork">뉴욕</a><hr>
+                  <a class="dropdown-item" href="/country/us/lasvegas">라스베이거스</a><hr>
+                  <a class="dropdown-item" href="/country/us/losangeles">로스엔젤레스</a>
                 </div>
               </li>
             </ul>
@@ -191,11 +192,7 @@
     </li>
     <li>
       <button class="btn btn-info" style="font-size: 24px;">
-        <%if(username) {%>
           <a href="/boardList">게시판</a>
-        <%}else{%>
-          <a href="/member/loginForm">게시판</a>
-        <%}%>
       </button>
     </li>
   </div>
