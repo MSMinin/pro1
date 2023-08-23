@@ -60,28 +60,14 @@
               style="background-color: white; color: black;"><%=username%></label>
         <label class="btn btn-outline-secondary btn-sm" for="btn-check-2-outlined" type="button" 
               style="background-color: white; color: black;"><a href="/member/logout">로그아웃</a></label>
-        <button class="btn btn-sm dropdown-toggle" for="option6" type="button" data-bs-toggle="dropdown"
-                aria-expanded="false" style="background-color: white; color: black;">
-        </button>
-            
-        <ul class="dropdown-menu">
-          <li><a href="/member/infoChk/<%=username%>">회원정보</a></li>
-          <li><a href="#">자유게시판</a></li>
-          <li>체험게시판</li>
-          <li>후기게시판</li>
-        </ul>
+        <label class="btn btn-outline-secondary btn-sm" for="btn-check-2-outlined" type="button" 
+              style="background-color: white; color: black;"><a href="/member/infoChk/<%=username%>">회원정보</a></label>
+       
       <%} else {%>
         <button class="btn btn-outline-secondary btn-sm" for="btn-check-2-outlined" type="button" 
                     style="background-color: white; color: black;"><a href="/member/loginForm">login</a></button>
-        <button class="btn btn-sm dropdown-toggle" for="option6" type="button" data-bs-toggle="dropdown"
-                   aria-expanded="false" style="background-color: white; color: black;">
-        </button>
-              
-        <ul class="dropdown-menu">
-          <li><a href="#">자유게시판</a></li>
-          <li>체험게시판</li>
-          <li>후기게시판</li>
-        </ul>
+        <label class="btn btn-outline-secondary btn-sm" for="btn-check-2-outlined" type="button" 
+                    style="background-color: white; color: black;"><a href="/member/loginForm">회원정보</a></label>
       <% } %>
                   
     </div>
@@ -98,23 +84,23 @@
     <ul class="dropdown-content">
       <li>
         <div>
-          <button style="border: solid 1px rgb(164, 164, 164);"
+          <button style="border: solid 1px rgb(0, 53, 212);"
           class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
               <a href="/country/korea/seoul">서울</a>
           </button>
-          <button style="border: solid 1px rgb(164, 164, 164);"
+          <button style="border: solid 1px rgba(0, 164, 197, 0.592);"
           class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
               <a href="/country/korea/gangneung">강릉</a>
           </button>
-          <button style="border: solid 1px rgb(164, 164, 164);"
+          <button style="border: solid 1px rgb(1, 113, 147);"
           class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
               <a href="/country/korea/daegu">대구</a>
           </button>
-          <button style="border: solid 1px rgb(164, 164, 164);"
+          <button style="border: solid 1px rgb(49, 99, 157);"
            class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
               <a href="/country/korea/gyeongju">경주</a>
           </button>
-          <button style="border: solid 1px rgb(164, 164, 164);"
+          <button style="border: solid 1px rgb(106, 152, 187);"
            class="btn btn-info dropdown-center-toggle" data-bs-toggle="dropdown-item" aria-expanded="false">
               <a href="/country/korea/jeonju">전주</a>
           </button>

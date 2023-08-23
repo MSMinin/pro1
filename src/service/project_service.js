@@ -31,7 +31,7 @@ register = async (body) => {
         url = ""; 
         num = 1;
     }else{
-        msg = "문제가 발생했습니다.";
+        msg = "이미 존재하는 ID입니다.";
         url = '/member/registerForm';
         num = 0;
     }

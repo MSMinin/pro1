@@ -60,30 +60,6 @@ modifyM = async (body) => {
     return result;
 }
 
-// deleteLike = async (body) => {
-//     const con = await oracledb.getConnection(dbConfig);
-//     console.log("deleteLike", body)
-//         const sql = ` delete from likes where USERID = :id `;
-//         console.log(sql)
-//         try {
-//             await con.execute(sql, body);
-//         } catch (err) {
-//             console.log(err);
-//         }
-// }
-
-// deleteChild = async (body) => {
-//     const con = await oracledb.getConnection(dbConfig);
-//     console.log("deleteChild", body)
-//         const sql = ` delete from proboard where id = :id `;
-//         console.log(sql)
-//         try {
-//             await con.execute(sql, body);
-//         } catch (err) {
-//             console.log(err);
-//         }
-// }
-
 deleteM = async (body) => {
     const con = await oracledb.getConnection(dbConfig);
     const sql = ` delete from proMember where id = :id`;
@@ -96,6 +72,7 @@ deleteM = async (body) => {
     }
     return result;
 }
+
 findId = async (body) => {
     const con = await oracledb.getConnection(dbConfig);
     const sql = `select id from proMember where name = '${body.name}' and p_number = '${body.pNumber}'`;
@@ -182,6 +159,3 @@ const mainBL = async () => {
 }
 
 module.exports = {loginChk, register, infoChk, modifyM, deleteM,information, findId, chgPassword, chgPwd, getList, mainBL};
-
-
-

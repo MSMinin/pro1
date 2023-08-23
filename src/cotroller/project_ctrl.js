@@ -133,7 +133,7 @@ const process  = {
         if(req.params.id == 3) {
             res.render("worldcup/worldcup3_1", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 4) {
-            res.render("worldcup/worldcup3_2", {nlist, files : fileList, username : req.session.username, logo : fileList2});
+            res.render("worldcup/worldcup4_1", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         } 
     },
 
@@ -142,9 +142,9 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         if(req.params.id == 3) {
-            res.render("worldcup/worldcup3_3", {nlist, files : fileList, username : req.session.username, logo : fileList2});
+            res.render("worldcup/worldcup3_2", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 4) {
-            res.render("worldcup/worldcup3_4", {nlist, files : fileList, username : req.session.username, logo : fileList2});
+            res.render("worldcup/worldcup4_2", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         } 
     },
 

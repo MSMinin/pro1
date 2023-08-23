@@ -52,7 +52,6 @@
             </div>
         <%}%>`;
         chk.innerHTML = msg;
-
     }
 
     modify = () => {
@@ -82,7 +81,7 @@
                     <tr>
                         <td id = "tdStyle1"><b>전화번호</b></td>
                         <td id = "tdStyle2"><b><input type="text" name="pNumber" value="<%=info.P_NUMBER%>"
-                                                    required pattern="[0][1][0]-\d{4}-\d{4}" ></b></td>
+                                                    required pattern="[0][1][0]-\\d{4}-\\d{4}" ></b></td>
                     </tr>
                     <tr>
                         <td id = "tdStyle1"><b>생년월일</b></td>
@@ -105,7 +104,7 @@
             
         <%}else {%>
             <%if(list == undefined){%>
-                <%}else {%>
+            <%}else {%>
                     <div class="board_wrap">                         
                         <strong style = "font-size : 25px;">내가 작성한 글</strong>
                     <div class="board_list_wrap">
@@ -126,10 +125,12 @@
                                 <div class="viewcount"><%= data.VIEWCOUNT %></div>
                                 <div class="likes"><%= data.LIKES %></div>
                             </div>
-                        <% }); 
-                            if (list.length == 0) {%>
-                                <div> <b>등록된 글이 없습니다</b> </div>
-                            <% } %>
+                        <% }); %>
+
+                        <%if (list.length == 0) {%>
+                            <div> <b>등록된 글이 없습니다</b> </div>
+                        <% } %>
+
                     </div>
 
                     <div class="board_page">
@@ -210,8 +211,7 @@
                 </div>
             </div>    
         </div>
-    <%}%>
-    
+    <%}%>  
 </div>
 
 <%-include("../default/footer.ejs")%>
