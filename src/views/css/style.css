@@ -23,12 +23,8 @@ button {
 
 .board_wrap {
     width: 1000px;
-<<<<<<< HEAD
-    margin: 30px auto;
-=======
     margin: 100px auto;
     font-family: 'omyu_pretty';
->>>>>>> be6a67a9084e23634869f041567a7c4c6ac1c75e
 }
 
 .board_title {

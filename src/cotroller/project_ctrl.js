@@ -237,7 +237,8 @@ const banner={
     index : async (req, res) => {
         const data = await pService.mainBL();
         console.log("ctrl: ", data.rows);
-        res.render("index", {data : data.rows, username : req.session.username, files : fileList2, logo : fileList2});
+        res.render("index", {data : data.rows, username : req.session.username, files : fileList2, logo : fileList2
+                                ,kFile : fileList3, jFile : fileList4, eFile : fileList5 });
     },
     image : (req, res) => {
         let filePath = `./src/views/data1/images/${req.params.fileName}`;
