@@ -1,18 +1,24 @@
-<h1 style="text-align: center;">비밀번호 찾기</h1>
-<div style="margin: 0 20 0 20;">
+<script>
+    resize = () => {
+        window.resizeTo(500, 400);
+    }
+</script>
+<fieldset style="height: 150; border-radius: 10px;">
+    <legend style="text-align: center;">아이디 찾기</legend>
     <form action="/member/findId" method="post">
-        <table>
+        <table style="margin-left: 10%; margin-top: 5%;">
             <tr>
                 <td>이름</td><td><input type="text" name="name"> </td>
             </tr>
+            <tr><td>&nbsp;</td></tr>
             <tr>
                 <td>전화번호</td><td><input type="text" name="pNumber" placeholder="010-0000-0000" required pattern="[0][1][0]-\d{4}-\d{4}"> </td>
             </tr>
-            <tr>
-                <td colspan="2" align="center"><input type="submit" value="찾기"></td>
-            </tr>
-        </table>
+        </table>  
+        <div style="float: right; margin-top: 3%; margin-right: 11%;">
+            <input style="border-radius: 5px;" type="submit" value="찾기"onclick="resize()">
+        </div>  
     </form>
-</div>
+</fieldset>
 
 

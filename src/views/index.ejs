@@ -1,3 +1,4 @@
+<%console.log(jFile)%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,19 +77,28 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="배너01.jpg" class="d-block w-100" alt="...">
+          <img src="01서울.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="배너02.jpg" class="d-block w-100" alt="...">
+          <img src="02대구.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="배너03.jpg" class="d-block w-100" alt="...">
+          <img src="03오사카.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="배너04.jpg" class="d-block w-100" alt="...">
+          <img src="04중국.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="배너05.jpg" class="d-block w-100" alt="...">
+          <img src="05영국.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="06이탈리아.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="07스위스.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="08캐나다.jpg" class="d-block w-100" alt="...">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -101,6 +111,30 @@
       </button>
     </div>
   </section>
+
+  <section style="font-size: 25px; font-family: 'omyu_pretty';">
+    <div class="container text-center">
+      <div style="border-bottom: solid 1px rgb(175, 167, 167);">추천 여행지</div>
+      <div class="row">
+        <div class="col">
+          <div>서울</div>
+          <a href="/country/korea/seoul"><img src="/country/korea/image/<%=kFile[72]%>"/></a>
+        </div>
+
+        <div class="col">
+          <div>도쿄</div>
+          <a href="/country/japan/tokyo"><img src="/country/japan/image/<%=jFile[39]%>"/></a>
+        </div>
+
+        <div class="col">
+          <div>영국</div>
+          <a href="/country/europe/uk"><img src="/country/europe/image/<%=eFile[52]%>"/></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <section class="board" style="font-size: 20px;">
     최근 게시물
     <div class="board_list_wrap">

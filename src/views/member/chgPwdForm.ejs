@@ -1,14 +1,25 @@
-<h3>찾은 아이디와 비밀번호를 변경하는 곳입니다.</h3>
-<form action="/member/chgPwd" method="post">
-    <table>
-        <tr>
-            <td>아이디</td><td><input type="text" readonly name="id" value="<%=list.ID%>"></td>
-        </tr>
-        <tr>
-            <td>비밀번호</td><td><input type="password" name="pwd" value="<%=list.PWD%>"></td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="비밀번호 변경하기"></td>
-        </tr>
-    </table>
-</form>
+<style>
+    fieldset {border-radius: 10px;}
+</style>
+<fieldset>
+    <legend style="text-align: center;">비밀번호 변경</legend>
+    <form action="/member/chgPwd/<%=list.ID%>" method="post">
+        <div>
+            <div style="display: inline-block; margin-left: 15%;">
+                <table>
+                    <tr><td>아이디</td></td></tr>
+                    <tr><td>비밀번호</td><td></td></tr>
+                </table>
+            </div>
+            <div style="display: inline-block; margin-left: 30px;">
+                <table>
+                    <tr><td><label name = "id"><%=list.ID%></label></td></tr>
+                    <tr><td><input type="password" name="pwd"></td></tr>
+                </table>
+            </div>
+        </div>
+        <div style="float: right; margin-right: 50px;">
+            <input style="border-radius: 5px;" type="submit" value="변경하기">
+        </div>
+    </form>
+</fieldset>

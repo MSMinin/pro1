@@ -1,6 +1,5 @@
 const oracledb = require("oracledb");
 const dbConfig = require("../../config/database/db_config");
-const { chgPwdForm } = require("../service/project_service");
 
 oracledb.outFormat = oracledb.OBJECT;
 oracledb.autoCommit = true;
@@ -45,21 +44,7 @@ infoChk = async (params) => {
     return member.rows[0];
 }
 
-modifyForm = async (params) => {
-    const con = await oracledb.getConnection(dbConfig);
-    console.log("서비스에서 받아온 params의 id",params.id);
-    const sql = `select * from proMember where id = '${params.id}'`;
-    let member;
-    try{
-        member = await con.execute(sql);
-    }catch(err) {
-        console.log(err);
-    }
-    console.log(member);
-    return member.rows[0];
-}
-
-modify = async (body) => {
+modifyM = async (body) => {
     const con = await oracledb.getConnection(dbConfig);
     console.log("서비스에서 받아온 body.id : ",body.id);
     const sql = `update proMember set pwd = '${body.pwd}', name = '${body.name}' , addr = '${body.addr}',
@@ -87,6 +72,7 @@ deleteM = async (body) => {
     }
     return result;
 }
+
 findId = async (body) => {
     const con = await oracledb.getConnection(dbConfig);
     const sql = `select id from proMember where name = '${body.name}' and p_number = '${body.pNumber}'`;
@@ -115,10 +101,11 @@ chgPassword = async (params) => {
     return member.rows[0];
 }
 
-chgPwd = async (body) => {
+chgPwd = async (param,body) => {
     const con = await oracledb.getConnection(dbConfig);
-    console.log("서비스에서 받아온 body.id : ",body.id);
-    const sql = `update proMember set pwd = '${body.pwd}' where id = '${body.id}'`;
+    console.log("서비스에서 받아온 param.id : ",param.id);
+    console.log("서비스에서 받아온 body.pwd : ",body.pwd);
+    const sql = `update proMember set pwd = '${body.pwd}' where id = '${param.id}'`;
     console.log(sql);
     let result = 0;
     try{
@@ -128,6 +115,19 @@ chgPwd = async (body) => {
     }
     console.log(result);
     return result;
+}
+
+information = async (pwd, id) => {
+    const con = await oracledb.getConnection(dbConfig);
+    const sql = `select * from promember where id = '${id}' and pwd = '${pwd}'`;
+    console.log(sql);
+    try{
+        member = await con.execute(sql);
+    }catch(err) {
+        console.log(err);
+    }
+    console.log(member);
+    return member.rows[0];
 }
 
 const getList = async ()=>{
@@ -158,6 +158,4 @@ const mainBL = async () => {
     return result;
 }
 
-module.exports = {loginChk, register, infoChk,modifyForm, modify, deleteM, findId, chgPassword, chgPwd, getList, mainBL};
-
-
+module.exports = {loginChk, register, infoChk, modifyM, deleteM,information, findId, chgPassword, chgPwd, getList, mainBL};
