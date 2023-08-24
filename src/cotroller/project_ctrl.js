@@ -123,6 +123,7 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         console.log("w2 : ",nlist);
+        console.log("pic : ",fileList);
         if(req.params.id == 3) {
             res.render("worldcup/worldcup3_1", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 4) {
