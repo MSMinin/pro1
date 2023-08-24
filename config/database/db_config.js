@@ -1,5 +1,7 @@
 const dbConfig = {
-    user : "C##java",
+
+    user : "java",
+
     password : "1234",
     connectString : "localhost:1521/xe"
 }

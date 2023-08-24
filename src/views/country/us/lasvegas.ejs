@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+      font-family: 'omyu_pretty';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+  }
+        section {margin: 0% 20%; font-family: 'omyu_pretty';}
+        #country {padding: 5% 20%;}
+        div > table {margin: 0% 20% ; text-align: center;}
+        div .info{ display: flex; flex-flow: row wrap; 
+          text-align: center; justify-content: space-around; }
+    </style>
+</head>
+<body>
+    <header>
+        <%-include("../../default/header.ejs")%>
+    </header>
+    <section>
+        <div id="country">
+            <div class="info">
+                <table>
+                    <tr>
+                        <th style="font-size: 60px; font-weight: normal;">라스베이거스</th>
+                    </tr>
+                    <tr><td><br><br><img src="/country/us/image/<%=files[13]%>" width="400px" height="400px"/><br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 23px; font-weight: normal;">
+                            <p>북아메리카 > 미국 > 라스베이거스<br>
+                                언어 : 영어<br>
+                                기온<br>
+                                환율 1:1,338.52<br>
+                                10~11 월 추천<br>
+                                항공 11시간 28분<br>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>hotel<br><br></h3>
+                    <tr>
+                        <td><img src="/country/us/image/<%=files[14]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[15]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[16]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">아리아 리조트 앤드 카지노 앳 시티센터</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">포시즌스 라스베이거스</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">스카이로프츠 앳 MGM 그랜드</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px; font-weight: normal;">명품샵과 카지노가 있고, 로맨틱한 분위기에 시티뷰인 라스베이거스의 화려한 야경을 즐길 수 있음</td>
+                        <td style="font-size: 20px; font-weight: normal;">호텔안에 카지노가 없어서 조용하고 편안하게 휴식 가능, 통유리창으로 시티뷰가 좋음</td>
+                        <td style="font-size: 20px; font-weight: normal;">대규모 카지노를 보유하고 있고, 나이트클럽, 라이브 엔터등 편의시설을 보유</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>food<br><br></h3>
+                    <tr>
+                        <td><img src="/country/us/image/<%=files[17]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[18]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[19]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">프라이멀 스테이크하우스</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">프레스코 이탈리아노</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">위라 타이 레스토랑</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px; font-weight: normal;">분위기 좋은 라스베이거스 스테이크 맛집</td>
+                        <td style="font-size: 20px; font-weight: normal;">웨스트게이트 리조트 안에 있는 레스토랑, 창의적인 이탈리아 음식을 제공함</td>
+                        <td style="font-size: 20px; font-weight: normal;">라스베이거스의 태국음식 맛집, 화려한 양식에서 벗어나 아시아 요리가 먹고싶다면 추천</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>store<br><br></h3>
+                    <tr>
+                        <td><img src="/country/us/image/<%=files[20]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[21]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[22]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">패션쇼몰</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">라스베가스 노스 프리미엄 아웃렛</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">베네시안 리조트 그랜드 캐널 숍스</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 19px; font-weight: normal;">스트립 중심에 위치하고 있어 접근성이 좋은 쇼핑몰, 250여 개의 숍들이 입점해 있음</td>
+                        <td style="font-size: 19px; font-weight: normal;">여러 브랜드 매장이 있어서, 저렴한 가격에 폭 넓은 쇼핑을 즐기기 좋음</td>
+                        <td style="font-size: 19px; font-weight: normal;">이탈리아 베네치아 거리를 재현한 쇼핑몰, 여러 공예품과 악세서리를 팔아서 기념품 쇼핑하기 좋음</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>spot<br><br></h3>
+                    <tr>
+                        <td><img src="/country/us/image/<%=files[23]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[24]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[25]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">라스베이거스 스트립</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">프리몬트 스트립</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">레드 록 캐니언 국립 보존 지구</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px; font-weight: normal;">산책을 하면서 라스베이거스의 화려함을 구경할 수 있는 메인거리</td>
+                        <td style="font-size: 20px; font-weight: normal;">라스베가스의 구 시가지로, lg의 천장 조명이 유명함, 화려하지만 메인스트립과는 다른 느낌</td>
+                        <td style="font-size: 20px; font-weight: normal;">자연의 아름다움을 느낄 수 있음, 전망대가 설치되어 드라이브하기 좋고, 하이킹도 가능함</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+        <%-include("../../default/footer.ejs")%>
+</body>
+</html>
