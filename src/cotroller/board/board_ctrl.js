@@ -10,9 +10,11 @@ const views = {
         // console.log("ctrl list", list);
         const totalContent = await ser.pageRead.totalContent();
         const data = await ser.pageRead.boardList(req.query.start, totalContent);
+        console.log(data);
         res.render("board/boardList", { list : data.list, 
             start : data.start, page : data.page, totalContent, username : req.session.username, logo : fileList2});
     },
+    
     writeForm : (req, res) =>{
         // console.log("ctrl writeForm", req.params);
         console.log("ctrl writeForm", req.session.username);

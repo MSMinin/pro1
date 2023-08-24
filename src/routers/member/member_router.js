@@ -9,17 +9,17 @@ router.post("/register", pCtrl.process.register);
 
 router.get("/logout", pCtrl.process.logout);
 
-router.get("/infoChk/:username", pCtrl.process.infoChk);
+router.get("/infoChk/:username", pCtrl.view.infoChk);
+router.post("/memberInfo", pCtrl.process.information);
 
-router.get("/modifyForm/:id", pCtrl.process.modifyForm);
-router.post("/modify", pCtrl.process.modify);
+router.post("/modifyM", pCtrl.process.modifyM);
 
 router.get("/delete/:id", pCtrl.process.delete);
 
 router.get("/find", pCtrl.view.find);
 router.post("/findId", pCtrl.process.findId);
 
-router.get("/chgPwdForm/:id", pCtrl.process.chgPwdForm);
-router.post("/chgPwd", pCtrl.process.chgPwd);
+router.get("/chgPwdForm/:id", pCtrl.process.chgPassword);
+router.post("/chgPwd/:id", pCtrl.process.chgPwd);
 
 module.exports = router;

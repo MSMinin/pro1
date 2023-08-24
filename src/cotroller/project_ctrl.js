@@ -1,4 +1,6 @@
 const pService = require("../service/project_service");
+const ser = require("../service/board/board_service");
+
 
 const fs = require("fs");
 const fileList = fs.readdirSync("./src/image");
@@ -15,6 +17,10 @@ const view = {
 
     registerForm : (req, res) => {
         res.render("member/registerForm");
+    }, 
+    infoChk : async (req, res) => {
+        
+        res.render("member/infoChk", {info : undefined, list : undefined, username : req.session.username, logo : fileList2})
     },
 
     find : (req, res) => {
@@ -25,8 +31,9 @@ const view = {
         //console.log("nlist : ",nlist);
         res.render("worldcup/worldcup1", {nlist, files : fileList, username : req.session.username, logo : fileList2});
     },
-    worldcup1 : (req, res) => {
-        res.redirect("/worldcup/start");
+
+    worldcup2 : (req, res) => {
+        res.redirect("/worldcup/1");
     }, 
     main : (req, res)=> {
         res.render("main");
@@ -64,30 +71,19 @@ const process  = {
         res.send(msg);
     },
     
-    infoChk : async (req, res) => {
-        console.log("req.parmas : ", req.params);
-        const mlist = await pService.infoChk(req.params);
-        console.log("서비스에서 받아온 mlist(result) : ",mlist);
-        res.render("member/infoChk", {list : mlist, username : req.session.username, logo : fileList2})
-    },
-    
-    modifyForm : async (req, res) => {
-        console.log("req.params : ", req.params); //id받아옴
-        const mlist = await pService.modifyForm(req.params);
-        res.render("member/modifyForm", {list : mlist})
-    },
-    
-    modify : async (req, res) => {
+    modifyM : async (req, res) => {
         console.log("body확인 : ", req.body);
-        const msg = await pService.modify(req.body);
+        const msg = await pService.modifyM(req.body);
         res.send(msg);
     },
 
     delete : async (req, res) => {
         console.log("req.params", req.params);
+        // await pService.deleteLike(req.params);
+        // await pService.deleteChild(req.params);
+        const msg = await pService.deleteM(req.params);
         req.session.destroy();
         res.clearCookie("isLogin");
-        const msg = await pService.deleteM(req.params);
         res.send(msg);
     },
     findId : async (req, res) => {
@@ -96,15 +92,27 @@ const process  = {
         console.log("서비스에서 받아온 idList", idList);
         res.render("member/idList", {list : idList});
     },
-    chgPwdForm : async (req, res) => {
+    chgPassword : async (req, res) => {
         console.log("req.params : ", req.params); //id받아옴
         const mlist = await pService.chgPassword(req.params);
         res.render("member/chgPwdForm", {list : mlist})
     },
     chgPwd : async (req, res) => {
-        console.log("body확인 : ", req.body);
-        const msg = await pService.chgPwd(req.body);
+        const msg = await pService.chgPwd(req.params, req.body);
         res.send(msg);
+    },
+    
+    information : async (req, res) => {
+        console.log("비밀번호 확인", req.body);
+        console.log("세션 확인", req.session.username);
+        const info = await pService.information(req.body, req.session.username);
+        const board = await ser.pageRead.myRead(req.session.username);
+        const data = await ser.pageRead.myBoard(req.query.start, board, req.session.username);
+        console.log("결과1",info)
+        console.log("결과2",data.list)
+        res.render("member/infoChk", {info : info, list : data.list, start : data.start, page : data.page, 
+             logo : fileList2,  username : req.session.username} )
+
     },
 
     worldcup1 : async(req, res) => {
@@ -183,10 +191,6 @@ const process  = {
         }else if(req.params.id  == 8) {
             res.render("worldcup/result2_4_8", {nlist, files : fileList4, username : req.session.username, logo : fileList2});
         } 
-    },
-
-    loginChk : async (req, res) => {
-        console.log("req.body : ", req.body);
     }
 }
 const jView ={
@@ -229,16 +233,19 @@ const kView={
     }
 }
 const banner={
+
     index : async (req, res) => {
         const data = await pService.mainBL();
         console.log("ctrl: ", data.rows);
-        res.render("index", {data : data.rows, username : req.session.username, files : fileList2, logo : fileList2});
+        res.render("index", {data : data.rows, username : req.session.username, files : fileList2, logo : fileList2
+                                ,kFile : fileList3, jFile : fileList4, eFile : fileList5 });
     },
     image : (req, res) => {
         let filePath = `./src/views/data1/images/${req.params.fileName}`;
         res.download(filePath);
     }
 }
+
 const eView ={
     uk : async(req, res) => {
         //const weather = await cService.getHtml();
@@ -280,3 +287,4 @@ const cView ={
     }
 }
 module.exports = {view, process, kView, jView, banner , eView, cView}
+

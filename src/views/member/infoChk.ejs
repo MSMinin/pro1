@@ -1,33 +1,217 @@
+<link rel="stylesheet" href="/css/css.css">
 <style>
-    #infoChk {margin-left: 40%;}
+    #tableStyle {width: 70%; margin-top: 8%; margin-left: 15%;}
+    #tableStyle {width: 70%; margin-top: 5%; margin-left: 15%;}
+
+    #tdStyle1 {border-top: solid 1px rgb(204, 194, 194); border-bottom : solid 1px rgb(204, 194, 194); 
+                background: rgb(172, 250, 250); width: 35%; height: 50px;padding-left: 5px;}
+
+    #tdStyle2 {border-top: solid 1px rgb(204, 194, 194); border-bottom : solid 1px rgb(204, 194, 194);
+                padding-left: 5px;  width: 65%; }
 </style>
+
+<script>
+    nomodify = () => {
+        alert("아이디는 수정불가능합니다.")
+    }
+
+    chk = () => {
+        const chk = document.getElementById("chkmodify");
+        let msg = `
+        <%console.log(info)%>
+        <%if(info == undefined) {%>
+            
+        <%}else {%>
+            <div>
+                <table id = "tableStyle">
+                    <tr>
+                        <td id = "tdStyle1"><b>아이디</b></td>
+                        <td id = "tdStyle2"><b><%=info.ID%></b></td>
+                    </tr>
+                    <tr>
+                        <td id = "tdStyle1"><b>이름</b></td>
+                        <td id = "tdStyle2"><b><%=info.NAME%></b></td>
+                    </tr>
+                    <tr>
+                        <td id = "tdStyle1"><b>주소</b></td>
+                        <td id = "tdStyle2"><b><%=info.ADDR%></b></td>
+                    </tr>
+                    <tr>
+                        <td id = "tdStyle1"><b>전화번호</b></td>
+                        <td id = "tdStyle2"><b><%=info.P_NUMBER%></b></td>
+                    </tr>
+                    <tr>
+                        <td id = "tdStyle1"><b>생년월일</b></td>
+                        <td id = "tdStyle2"><b><%=info.BIRTH%></b></td>
+                    </tr>
+                </table>
+                <div style="float: right; margin-right: 150px; margin-top: 10px;">
+                    <b style = "color : red; font-size : 12px;">* 회원정보 삭제시 모든 게시글이 삭제됩니다.</b>
+                    <button type="button" style="border-radius: 5px;"><a href="/member/delete/<%=info.ID%>">회원정보 삭제</a></button>
+                </div>
+            </div>
+        <%}%>`;
+        chk.innerHTML = msg;
+    }
+
+    modify = () => {
+        const modi = document.getElementById("chkmodify");
+        let msg = `<%if(info == undefined) {%>
+            
+            <%}else {%>
+                <div>
+                <form action="/member/modifyM" method="post">
+                <table id = "tableStyle">
+                    <tr>
+                        <td id = "tdStyle1"><b>아이디</b></td>
+                        <td id = "tdStyle2"><b><input type="text" value="<%=info.ID%>" name="id" onclick="nomodify()" readonly></b></td>
+                    </tr>
+                    <tr>
+                        <td id = "tdStyle1"><b>비밀번호</b></td>
+                        <td id = "tdStyle2"><b><input type="password" name="pwd" value="<%=info.PWD%>" ></b></td>
+                    </tr>
+                    <tr>
+                        <td id = "tdStyle1"><b>이름</b></td>
+                        <td id = "tdStyle2"><b><input type="text" name="name" value="<%=info.NAME%>" ></b></td>
+                    </tr>
+                    <tr>
+                        <td id = "tdStyle1"><b>주소</b></td>
+                        <td id = "tdStyle2"><b><input type="text" name="addr" value="<%=info.ADDR%>" ></b></td>
+                    </tr>
+                    <tr>
+                        <td id = "tdStyle1"><b>전화번호</b></td>
+                        <td id = "tdStyle2"><b><input type="text" name="pNumber" value="<%=info.P_NUMBER%>"
+                                                    required pattern="[0][1][0]-\\d{4}-\\d{4}" ></b></td>
+                    </tr>
+                    <tr>
+                        <td id = "tdStyle1"><b>생년월일</b></td>
+                        <td id = "tdStyle2"><b><input type="date" name="birth" value="<%=info.BIRTH%>" ></b></td>
+                    </tr>
+                </table>
+                    <div style="float: right; margin-right: 150px; margin-top: 10px;">
+                        <input type="submit" style="border-radius: 5px;" value="회원정보 수정">
+                    </div>
+                </form>
+                </div>
+            <%}%>`;
+        modi.innerHTML = msg;
+    }
+
+    myWrite = () => {
+        const modi = document.getElementById("chkmodify");
+        let msg = `
+        <%if(info == undefined) {%>
+            
+        <%}else {%>
+            <%if(list == undefined){%>
+            <%}else {%>
+                    <div class="board_wrap">                         
+                        <strong style = "font-size : 25px;">내가 작성한 글</strong>
+                    <div class="board_list_wrap">
+
+                    <div class="board_list">
+                        <div class="top">
+                            <div class="num">번호</div>
+                            <div class="title">제목</div>
+                            <div class="dates">날짜</div>
+                            <div class="viewcount">조회수</div>
+                            <div class="likes">좋아요</div>
+                        </div>
+                        <% list.forEach( data => { %>
+                            <div>
+                                <div class="num"><%=data.NUM %></div>
+                                <div class="title"><a href="/content/<%= data.NUM %>"><%= data.TITLE %></a></div>
+                                <div class="dates"><%= data.DATES %></div>
+                                <div class="viewcount"><%= data.VIEWCOUNT %></div>
+                                <div class="likes"><%= data.LIKES %></div>
+                            </div>
+                        <% }); %>
+
+                        <%if (list.length == 0) {%>
+                            <div> <b>등록된 글이 없습니다</b> </div>
+                        <% } %>
+
+                    </div>
+
+                    <div class="board_page">
+                        <% if( start <= 1){ %>
+                            <a href="#" class="bt first"><button disabled><</button></a>
+                        <% } else { %>
+                            <a href="/boardList?start=<%=start-1%>" class="bt prev"><</a>
+                        <% }for(let i=1 ; i <= page.totPage ; i++ ){ %>
+                            <a href="/boardList?start=<%=i %>" class="num"><%=i %></a>
+                        <% }if( start < page.totPage ){%>
+                            <a href="/boardList?start=<%=start+1%>" class="bt next">></a>
+                        <% }else{ %>
+                            <a href="#" class="bt last"><button disabled>></button></a>
+                        <% } %>
+                    </div>
+            <%}%>
+        <%}%>`;
+        modi.innerHTML = msg;
+    }
+</script>
 <%-include("../default/header.ejs")%>
-<div id = "infoChk">
-<h2>회원 정보 확인</h2>
-<table border="1">
-    <tr>
-        <td>아이디</td> <td>&nbsp;</td> <td><%=list.ID%></td>
-    </tr>
-    <tr>
-        <td>비밀번호</td> <td>&nbsp;</td> <td><%=list.PWD%></td>
-    </tr>
-    <tr>
-        <td>이름</td> <td>&nbsp;</td> <td><%=list.NAME%></td>
-    </tr>
-    <tr>
-        <td>주소</td> <td>&nbsp;</td> <td><%=list.ADDR%></td>
-    </tr>
-    <tr>
-        <td>전화번호</td> <td>&nbsp;</td> <td><%=list.P_NUMBER%></td>
-    </tr>
-    <tr>
-        <td>생년월일</td> <td>&nbsp;</td> <td><%=list.BIRTH%></td>
-    </tr>
-    <tr>
-        <td><button><a href="/member/modifyForm/<%=list.ID%>">회원정보 수정</a></button></td>
-        <td>&nbsp;</td>
-        <td><button><a href="/member/delete/<%=list.ID%>">회원정보 삭제</a></button></td>
-    </tr>
-</table>
+
+<div style="margin-left: 30px; margin: 0 250 0 250;" >
+
+    <div style="display: inline; margin-left: 10px;">
+        <button type="button" onclick="chk()" style="border-radius: 5px;">회원 정보</button>
+    </div>
+    <div style="display: inline;">
+        <button type="button" onclick="modify()" style="border-radius: 5px;">정보 수정</button>
+    </div>
+    <div style="display: inline;">
+        <button type="button" onclick="myWrite()" style="border-radius: 5px;">작성한 글 보기</button>
+    </div>
+    
+
+    <%console.log("info", info)%>
+    <%if(info == undefined) {%>
+        <div style="border: solid 1px black; border-radius: 5px;  height: 50%;">
+        <form action="/member/memberInfo" method="post">
+            <table style="margin-top: 15%; margin-left: 35%;">
+                <tr>
+                    <td>비밀번호</td><td><input type="password" name="password"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;"><input type="submit" value="확인"></td>
+                </tr>
+            </table>
+        </form>
+        </div>
+    <%}else {%>
+        <div id="chkmodify" style="border: solid 1px black; border-radius: 5px;  height: 60%;">    
+            <div>
+                <table id = "tableStyle">
+                    <tr>
+                        <td id = "tdStyle1"><b>아이디</b></td>
+                        <td id = "tdStyle2"><b><%=info.ID%></b></td>
+                    </tr>
+                    <tr>
+                        <td id = "tdStyle1"><b>이름</b></td>
+                        <td id = "tdStyle2"><b><%=info.NAME%></b></td>
+                    </tr>
+                    <tr>
+                        <td id = "tdStyle1"><b>주소</b></td>
+                        <td id = "tdStyle2"><b><%=info.ADDR%></b></td>
+                    </tr>
+                    <tr>
+                        <td id = "tdStyle1"><b>전화번호</b></td>
+                        <td id = "tdStyle2"><b><%=info.P_NUMBER%></b></td>
+                    </tr>
+                    <tr>
+                        <td id = "tdStyle1"><b>생년월일</b></td>
+                        <td id = "tdStyle2"><b><%=info.BIRTH%></b></td>
+                    </tr>
+                </table>
+                <div style="float: right; margin-right: 150px; margin-top: 10px;">
+                    <b style = "color : red; font-size : 12px;">* 회원정보 삭제시 모든 게시글이 삭제됩니다.</b>
+                    <button type="button" style="border-radius: 5px;"><a href="/member/delete/<%=info.ID%>">회원정보 삭제</a></button>
+                </div>
+            </div>    
+        </div>
+    <%}%>  
 </div>
+
 <%-include("../default/footer.ejs")%>
