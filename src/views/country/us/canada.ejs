@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+      font-family: 'omyu_pretty';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+  }
+        section {margin: 0% 20%; font-family: 'omyu_pretty';}
+        #country {padding: 5% 20%;}
+        div > table {margin: 0% 20% ; text-align: center;}
+        div .info{ display: flex; flex-flow: row wrap; 
+          text-align: center; justify-content: space-around; }
+    </style>
+</head>
+<body>
+    <header>
+        <%-include("../../default/header.ejs")%>
+    </header>
+    <section>
+        <div id="country">
+            <div class="info">
+                <table>
+                    <tr>
+                        <th style="font-size: 60px; font-weight: normal;">캐나다</th>
+                    </tr>
+                    <tr><td><br><br><img src="/country/us/image/<%=files[38]%>" width="400px" height="400px"/><br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 23px; font-weight: normal;">
+                            <p>북아메리카 > 캐나다<br>
+                                언어 : 영어<br>
+                                기온<br>
+                                환율 1:976.87<br>
+                                7~8 월 추천<br>
+                                항공 11시간 30분<br>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>hotel<br><br></h3>
+                    <tr>
+                        <td><img src="/country/us/image/<%=files[39]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[40]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[41]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">스털링 인 앤드 스파 - 온타리오 파이니스트 인</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">호텔 플레이스 다름</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">픽스 호텔 앤 스위트</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px; font-weight: normal;">관광지와 걸어가도 될 정도로 가까움, 엔틱하고 깔끔한 인테리어, 벽난로난방이고 스파가 훌륭함</td>
+                        <td style="font-size: 20px; font-weight: normal;">관광지와 가까움, 신고전주의 풍 건물로 깔끔함, 시내 셔틀 무료 제공</td>
+                        <td style="font-size: 20px; font-weight: normal;">밴프 국립공원 내에 위치한 호텔, 깔끔하고 세련됨, 스키 시설들이 가까이 있음</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>food<br><br></h3>
+                    <tr>
+                        <td><img src="/country/us/image/<%=files[42]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[43]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[44]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">프라임 스테이크하우스 나이아가라 폭포</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">가스파르 브라세리 프랑세즈</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">밴프 푸틴</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px; font-weight: normal;">나이아가라 폭포를 전망을 보며, 스테이크를 즐길 수 있는 맛집</td>
+                        <td style="font-size: 20px; font-weight: normal;">라이브 재즈바, 좋은 분위기와 식사를 즐길 수 있음</td>
+                        <td style="font-size: 20px; font-weight: normal;">정통 몬트리올 스타일의 현지음식 맛집</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>store<br><br></h3>
+                    <tr>
+                        <td><img src="/country/us/image/<%=files[45]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[46]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[47]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">세인트로렌스 시장</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">토론토 프리미엄 아웃렛</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">웨스트 에드먼턴 몰</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 19px; font-weight: normal;">다양한 식료품을 취급하는 재래시장, 토론토의 부엌이라고도 불림</td>
+                        <td style="font-size: 19px; font-weight: normal;">130개가 넘는 브랜드를 25~65% 할인된 금액에 구매가능</td>
+                        <td style="font-size: 19px; font-weight: normal;">캐나다에서 가장 큰 쇼핑몰, 안에 놀이공원, 워터파크, 스케이트장 등 놀거리도 가득함</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>spot<br><br></h3>
+                    <tr>
+                        <td><img src="/country/us/image/<%=files[48]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[49]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[50]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">나이아가라 폭포</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">노트르담 성당 (바실리카 노트르담)</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">밴프 국립공원</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px; font-weight: normal;">북아메리카에서 가장 큰 폭포, 배, 헬기 등을 이용한 투어도 있고, 걸어가서 보는 전망대도 있음</td>
+                        <td style="font-size: 20px; font-weight: normal;">캐나다을 대표하는 건축물로 고딕양식으로 지어진 성당, 라이트쇼를 진행하는데 매우 화려함</td>
+                        <td style="font-size: 20px; font-weight: normal;">하이킹, 스키, 드라이브, 트레킹 등 로키산맥의 장엄한 자연을 즐길 수 있음</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+        <%-include("../../default/footer.ejs")%>
+</body>
+</html>

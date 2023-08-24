@@ -292,6 +292,14 @@ const uView ={
         //const weather = await cService.getHtml();
         res.render("country/us/losangeles", {username : req.session.username, files : fileList7, logo : fileList2});
     },
+    canada : async(req, res) => {
+        //const weather = await cService.getHtml();
+        res.render("country/us/canada", {username : req.session.username, files : fileList7, logo : fileList2});
+    },
+    hawai : async(req, res) => {
+        //const weather = await cService.getHtml();
+        res.render("country/us/hawai", {username : req.session.username, files : fileList7, logo : fileList2});
+    },
     image : (req, res) => {
         let filePath = `./src/image/country/us/${req.params.fileName}`;
         res.download(filePath);

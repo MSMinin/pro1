@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+      font-family: 'omyu_pretty';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+  }
+        section {margin: 0% 20%; font-family: 'omyu_pretty';}
+        #country {padding: 5% 20%;}
+        div > table {margin: 0% 20% ; text-align: center;}
+        div .info{ display: flex; flex-flow: row wrap; 
+          text-align: center; justify-content: space-around; }
+    </style>
+</head>
+<body>
+    <header>
+        <%-include("../../default/header.ejs")%>
+    </header>
+    <section>
+        <div id="country">
+            <div class="info">
+                <table>
+                    <tr>
+                        <th style="font-size: 60px; font-weight: normal;">하와이</th>
+                    </tr>
+                    <tr><td><br><br><img src="/country/us/image/<%=files[51]%>" width="400px" height="400px"/><br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 23px; font-weight: normal;">
+                            <p>북아메리카 > 미국 > 하와이<br>
+                                언어 : 영어<br>
+                                기온<br>
+                                환율 1:1,320.86<br>
+                                12~1 월 추천<br>
+                                항공 8시간 38분<br>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>hotel<br><br></h3>
+                    <tr>
+                        <td><img src="/country/us/image/<%=files[52]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[53]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[54]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">아웃리거 와이키키 온 더 비치</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">윈덤 콜로아 랜딩 앳 포이푸 비치</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">할레쿨라니</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px; font-weight: normal;">해변과 가까움, 아름다운 오션뷰, 무료 트램 운행</td>
+                        <td style="font-size: 20px; font-weight: normal;">해변과 가까움, 매우 훌륭한 수영장, 예쁜 인테리어</td>
+                        <td style="font-size: 20px; font-weight: normal;">해변과 가까움, 아름다운 오션뷰, 프라이빗 비치가 있음</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>food<br><br></h3>
+                    <tr>
+                        <td><img src="/country/us/image/<%=files[55]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[56]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[57]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">타이드풀스</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">듀크 와이키키</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">헬라나 하와이안 푸드</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px; font-weight: normal;">석호 위에 초가지붕 오두막에서 먹는 낭만적인 해산물과 스테이크</td>
+                        <td style="font-size: 20px; font-weight: normal;">오션뷰를 즐기며 먹는 식사, 미국요리를 파는곳으로 브런치먹기 좋음</td>
+                        <td style="font-size: 20px; font-weight: normal;">하와이언 가정식 느낌의 식당, 하와이 전통음식을 기대하는 분들에게 추천</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>store<br><br></h3>
+                    <tr>
+                        <td><img src="/country/us/image/<%=files[58]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[59]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[60]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">알라 모아나 센터</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">로얄 하와이안 센터</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">T 갤러리아 DFS 하와이</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 19px; font-weight: normal;">하와이 최대의 쇼핑몰로 쇼핑, 엔터테인먼트, 레스토랑 등 모든 것을 갖춘 곳</td>
+                        <td style="font-size: 19px; font-weight: normal;">와이키키 중심에 위치한 대규모 쇼핑센터, 100여 개의 매장과 레스토랑, 와이키키 최대의 야외 정원이 있음</td>
+                        <td style="font-size: 19px; font-weight: normal;">하와이 유일의 면세점(여권지참), 한국어가 가능한 직원이 많아 의사소통이 쉬운 곳</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="info">
+                <table><h3><br>spot<br><br></h3>
+                    <tr>
+                        <td><img src="/country/us/image/<%=files[61]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[62]%>" width="200px" height="200px"/></td>
+                        <td><img src="/country/us/image/<%=files[63]%>" width="200px" height="200px"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">하와이 볼케이노 내셔널파크</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">와이키키 비치</a></td>
+                        <td style="font-size: 24px; font-weight: normal;"><a href="">카아나팔리 비치</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px; font-weight: normal;">화산지대를 볼 수 있음, 광활한 풍경과, 용암의 흔적, 분화구 등 대자연을 느낄 수 있음</td>
+                        <td style="font-size: 20px; font-weight: normal;">하와이의 대표적인 해변, 에메랄드 빛 바다로 유명함, 불꽃놀이도 매우 이쁨</td>
+                        <td style="font-size: 20px; font-weight: normal;">상대적으로 한적함, 서핑과 스노클링을 즐길 수 있음, 넓은 해변과 고운 모래로 이루어진 모래사장이 있음</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+        <%-include("../../default/footer.ejs")%>
+</body>
+</html>
