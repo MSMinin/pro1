@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        section {margin: 0% 20% ;padding: 3%;}
-        div .info {text-align: center;}
+        @font-face {
+      font-family: 'omyu_pretty';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+  }
+        section {margin: 0% 20% ;padding: 3%; font-family: 'omyu_pretty';}
+        div .info{text-align: center;}
         img {width: 450px; height: 450px;}
     </style>
 </head>
@@ -14,13 +20,13 @@
     <%-include("../default/header.ejs")%>
     <section>
         <p>
-            <h3>결과</h3><br>
-            근거리에서 자연을 선택하셨고, 산을 고르셨습니다.<br><br>
+            <h1>결과</h1><br>
+            <h3>근거리에서 자연을 선택하셨고, 산을 고르셨습니다.<br><br></h3>
         </p>
 
-        <div class="info">
-            <h1>강릉<br></h1>
-            <a href="/country/korea/gangneung"><img src="/country/korea/image/<%=files[13]%>"></a><br><!-- 나라 링크-->
+        <div class="info" style="text-align: center;">
+            <p style="font-size: 60px; text-align: center;">강릉<br></p>
+            <a href="/country/korea/gangneung"><img src="/country/korea/image/<%=files[13]%>"></a><br>
         </div>
         <p>
             <br><br>...<br>
@@ -28,7 +34,6 @@
             ...<br>
             ...<br>
         </p>
-
     </section>
     <%-include("../default/footer.ejs")%>
 </body>

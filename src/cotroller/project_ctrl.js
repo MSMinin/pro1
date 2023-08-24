@@ -8,6 +8,7 @@ const fileList2 = fs.readdirSync("./src/views/data1/images");
 const fileList3 = fs.readdirSync("./src/image/country/korea");
 const fileList4 = fs.readdirSync("./src/image/country/japan");
 const fileList5 = fs.readdirSync("./src/image/country/europe");
+const fileList6 = fs.readdirSync("./src/image/country/china");
 
 const view = {
     loginForm : (req, res) => {
@@ -130,6 +131,7 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         console.log("w2 : ",nlist);
+        console.log("pic : ",fileList);
         if(req.params.id == 3) {
             res.render("worldcup/worldcup3_1", {nlist, files : fileList, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 4) {
@@ -265,5 +267,23 @@ const eView ={
         res.download(filePath);
     }
 }
-module.exports = {view, process, kView, jView, banner , eView}
+const cView ={
+    macau : async(req, res) => {
+        //const weather = await cService.getHtml();
+        res.render("country/china/macau", {username : req.session.username, files : fileList6, logo : fileList2});
+    },
+    hongkong : async(req, res) => {
+        //const weather = await cService.getHtml();
+        res.render("country/china/hongkong", {username : req.session.username, files : fileList6, logo : fileList2});
+    },
+    beijing : async(req, res) => {
+        //const weather = await cService.getHtml();
+        res.render("country/china/beijing", {username : req.session.username, files : fileList6, logo : fileList2});
+    },
+    image : (req, res) => {
+        let filePath = `./src/image/country/china/${req.params.fileName}`;
+        res.download(filePath);
+    }
+}
+module.exports = {view, process, kView, jView, banner , eView, cView}
 
