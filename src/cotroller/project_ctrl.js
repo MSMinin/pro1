@@ -179,7 +179,7 @@ const process  = {
         list.NUM1 = req.params["id"];
         const nlist = await pService.getList();
         if(req.params.id == 7) {
-            res.render("worldcup/result2_4_7", {nlist, files : fileList4, username : req.session.username, logo : fileList2});
+            res.render("worldcup/result2_4_7", {nlist, files : fileList6, username : req.session.username, logo : fileList2});
         }else if(req.params.id  == 8) {
             res.render("worldcup/result2_4_8", {nlist, files : fileList4, username : req.session.username, logo : fileList2});
         } 
