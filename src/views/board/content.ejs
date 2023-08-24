@@ -8,6 +8,13 @@
     <%-include("../default/header.ejs")%>
 </head>
 <body>
+    <script>
+        var text = document.getElementById("textarea");
+        console.log("123", text)
+        text = text.replaceAll("<br>", "\r\n");
+        console.log("123", text)
+        document.getElementById("textarea") = text;
+    </script>
     <div class="board_wrap">
         <div class="board_title">
             <strong>게시판</strong>
@@ -50,8 +57,8 @@
                         </dd>
                     </dl>
                 </div>
-                <div class="cont">
-                    <%= result.CONTENT %>
+                <div id="textarea" class="cont">
+                    <pre><%= result.CONTENT %></pre>
                 </div>
             </div>
             <div class="bt_wrap">

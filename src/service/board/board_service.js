@@ -31,6 +31,7 @@ const pageRead = {
         await pageUpdate.upHit(num);
         const data = await pDAO.daoRead.content(num);
         console.log("ser cont data : ", data.rows[0]);
+        
         return data.rows[0];
     },
     likeCk: async (num, id) => {
@@ -50,6 +51,7 @@ const pageRead = {
 
 const pageInsert = {
     write : async (body) => {
+        console.log("ser wirte", body);
         const result = await pDAO.daoInsert.write(body);
         console.log("ser write: ", result);
 
