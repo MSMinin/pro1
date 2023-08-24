@@ -60,7 +60,6 @@ const daoInsert = {
 const daoUpdate = {
     modify : async (body) => {
         const con = await oracledb.getConnection(dbConfig);
-        //const sql = `update proboard set title='${body.title}', content='${body.content}, filename='${body.filename}' where num='${body.num}`;
         const sql = `update proboard set title='${body.title}', content='${body.content}' where num='${body.num}'`;
         let result;
         try{

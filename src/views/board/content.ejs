@@ -8,13 +8,7 @@
     <%-include("../default/header.ejs")%>
 </head>
 <body>
-    <script>
-        var text = document.getElementById("textarea");
-        console.log("123", text)
-        text = text.replaceAll("<br>", "\r\n");
-        console.log("123", text)
-        document.getElementById("textarea") = text;
-    </script>
+
     <div class="board_wrap">
         <div class="board_title">
             <strong>게시판</strong>
@@ -23,7 +17,7 @@
         <div class="board_view_wrap">
             <div class="board_view">
                 <div class="title">
-                    <%= result.TITLE %>
+                    <strong><%= result.TITLE %></strong>
                 </div>
                 <div class="info">
                     <dl>
@@ -57,7 +51,7 @@
                         </dd>
                     </dl>
                 </div>
-                <div id="textarea" class="cont">
+                <div class="cont">
                     <pre><%= result.CONTENT %></pre>
                 </div>
             </div>
@@ -79,6 +73,6 @@
             </div>
         </div>
     </div>
-    <%-include("../../default/footer.ejs")%>
+    <%-include("../default/footer.ejs")%>
 </body>
 </html>

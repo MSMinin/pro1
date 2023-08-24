@@ -32,7 +32,7 @@ button {
 }
 
 .board_title strong {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 .board_title p {
@@ -175,12 +175,11 @@ button {
 .board_view .title {
     padding: 20px 15px;
     border-bottom: 1px dashed #ddd;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 .board_view .info {
-    padding: 15px;
-    border-bottom: 1px solid #999;
+    padding: 20px 15px;
     font-size: 0;
 }
 
@@ -220,11 +219,14 @@ button {
     color: #777;
 }
 
-.board_view .cont {
+.board_view .cont pre{
     padding: 15px;
+    margin-top: -25px;
+    border-top: 1px solid #999;
     border-bottom: 1px solid #000;
     line-height: 160%;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-family: 'omyu_pretty';
 }
 
 .board_write {
@@ -276,5 +278,6 @@ button {
 }
 
 .board_write .cont .wr {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-family: 'omyu_pretty';
 }
