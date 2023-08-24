@@ -6,30 +6,30 @@ const fileList2 = fs.readdirSync("./src/views/data1/images");
 const views = {
     boardList : async (req, res) => {
         console.log("ctrl start", req.query.start);
-        // const list = await ser.pageRead.boardList();
-        // console.log("ctrl list", list);
         const totalContent = await ser.pageRead.totalContent();
+        console.log("ctrl totalcont", totalContent);
+
         const data = await ser.pageRead.boardList(req.query.start, totalContent);
+        console.log("ctrl all", data);
         res.render("board/boardList", { list : data.list, 
             start : data.start, page : data.page, totalContent, username : req.session.username, logo : fileList2});
     },
     writeForm : (req, res) =>{
-        // console.log("ctrl writeForm", req.params);
         console.log("ctrl writeForm", req.session.username);
         res.render("board/write_form", {username : req.session.username, logo : fileList2});
     },
     modifyForm : async(req, res) =>{
-        console.log("ctrl modifyForm: ", req.params.num);
+        console.log("ctrl modifyForm", req.params.num);
         const result = await ser.pageRead.content(req.params.num);
         res.render("board/modify_form", {result, username : req.session.username, logo : fileList2});
     },
     content : async(req, res)=> {
-        console.log("ctrl content: ", req.params.num);
-        console.log("ctrl content22: ", req.session.username);
+        console.log("ctrl content.num", req.params.num);
+        console.log("ctrl content.id", req.session.username);
         const result = await ser.pageRead.content(req.params.num);
         const data = await ser.pageRead.likeCk(req.params.num, req.session.username);
-        console.log("ctrl result: ", result);
-        console.log("ctrl data: ", data.rows[0]);
+        console.log("ctrl content", result);
+        console.log("ctrl content.like", data.rows[0]);
         res.render("board/content", {result, data: data.rows[0], username : req.session.username, logo : fileList2});
     }
 }
@@ -37,7 +37,7 @@ const views = {
 
 const process  = {
     write : async (req, res) => {
-        console.log("ctrl write: ", req.body);
+        console.log("ctrl write", req.body);
         const msg = await ser.pageInsert.write(req.body);
         res.send(msg);
     },

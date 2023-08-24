@@ -23,7 +23,6 @@ const daoRead = {
         const con = await oracledb.getConnection(dbConfig);
         const sql = `select userid from likes where contnum=${num} and userid='${id}'`;
         const data = await con.execute(sql);
-        console.log("dao likeCk", data);
         return data;
     },
     totalContent : async ()=>{

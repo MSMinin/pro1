@@ -133,7 +133,7 @@ const getList = ()=>{
 
 const mainBL = async () =>{
     const list = await pDAO.mainBL();
-    console.log("ser BL: ", list);
+    console.log("ser BL", list);
     return list;
 }
 

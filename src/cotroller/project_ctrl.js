@@ -231,7 +231,7 @@ const kView={
 const banner={
     index : async (req, res) => {
         const data = await pService.mainBL();
-        console.log("ctrl: ", data.rows);
+        console.log("ctrl mainBL", data.rows);
         res.render("index", {data : data.rows, username : req.session.username, files : fileList2, logo : fileList2});
     },
     image : (req, res) => {

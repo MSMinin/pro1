@@ -57,12 +57,14 @@
             </div>
             <div class="bt_wrap">
                 <form action="/likes" method="post">
-                    <% if(data == undefined) { %>
+                    <% if(username == result.ID){ %>
+                        <% if(data == undefined) { %>
                             <input type="hidden" value="<%= result.NUM %>" name="num">
                             <input type="hidden" value="<%= username %>" name="id">
-                            <button type="submit">좋아요</button>
+                                <button type="submit">좋아요</button>
+                        <% } %>
                     <% } %>
-
+                    
                     <% if(username == result.ID){ %>
                         <a href="/modify_form/<%= result.NUM %>" method="get" name="modify">수정</a>
                         <a href="/delete/<%= result.NUM %>" method="get" name="delete">삭제</a>

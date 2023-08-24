@@ -155,7 +155,6 @@ const mainBL = async () => {
                 select * from proboard order by num desc ) A )B
                 where rn between 1 and 5`;
     const result = await con.execute(sql);
-    console.log("dao BL", result);
     return result;
 }
 

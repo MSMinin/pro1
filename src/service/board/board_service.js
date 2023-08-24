@@ -17,13 +17,13 @@ const pageRead = {
 
         const page = pageOperation(start, total);
         const list = await pDAO.daoRead.boardList(page.startNum, page.endNum);
-        console.log("ser list: ", list);
+        console.log("ser list", list);
 
         let data = {};
         data.page = page;
         data.start = start;
         data.list = list.rows;
-        console.log("ser data : ", data);
+        console.log("ser all", data);
         return data;
     },
     content : async (num) => {
@@ -43,7 +43,7 @@ const pageRead = {
     },
     totalContent : async () => {
         const totalContent = await pDAO.daoRead.totalContent();
-        console.log( totalContent );
+        console.log("ser totalcont", totalContent);
         return totalContent.rows[0]['COUNT(*)'];
     }
 }
